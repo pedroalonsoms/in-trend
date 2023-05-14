@@ -1,4 +1,5 @@
 ---
+import ExpertizeCard from "../components/ExpertizeCard.astro";
 import PillShapeLink from "../components/PillShapeLink.astro";
 import ReportCard from "../components/ReportCard.astro";
 import Layout from "../layouts/Layout.astro";
@@ -76,9 +77,9 @@ import Logo from "../svgs/Logo.astro";
         the events we've attended etc.
       </p>
 
-      <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-12 grid gap-8 pb-14 md:grid-cols-2 lg:grid-cols-3">
         <ReportCard
-          imgSrc="images/clean-beauty-in-london.jpg"
+          imgSrc="images/reports/clean-beauty-in-london.jpg"
           sectionTitle="Out and about"
           title="Clean beauty in london"
           description="Annie spent the day at the Clean Beauty in London show at The Brewery near the Barbican. We loved how much Solid Beauty was on show - it truly has gone from eco-necessity to a product to be enjoyed."
@@ -87,7 +88,7 @@ import Logo from "../svgs/Logo.astro";
         />
         <!-- TODO: host the PDF file on github -->
         <ReportCard
-          imgSrc="images/the-future-of-lip.jpg"
+          imgSrc="images/reports/the-future-of-lip.jpg"
           sectionTitle="Report"
           title="Quarterly report: Q3"
           description="Having a strong lip portfolio is more important than ever, as this product category proves time and time again its recession-resilience. This report contains emerging textures and finishes, growing ingredients, how to address future lip beautification challenges and trends that will shape the category from 2023 and beyond."
@@ -95,13 +96,57 @@ import Logo from "../svgs/Logo.astro";
           href="#"
         />
         <ReportCard
-          imgSrc="images/salon-smart-networking-and-speak-event.jpg"
+          imgSrc="images/reports/salon-smart-networking-and-speak-event.jpg"
           sectionTitle="Out and about"
           title="Salon smart networking and speak event"
           description="Emmanuelle headed down to Salon Smart last month. A business event for hair professionals, it was great to hear about the challenges hairdressers face, and meet lots of creatives."
           linkTitle="Find out more"
           href="#"
         />
+      </div>
+    </section>
+
+    <section class="bg-beige-300">
+      <h2
+        class="pt-10 text-center text-2xl font-medium capitalize tracking-wide text-brown-600"
+      >
+        In-Trend expertize
+      </h2>
+      <div class="mt-6 flex flex-wrap justify-center gap-2">
+        <span
+          class="inline-block rounded-full border border-brown-600/10 px-6 py-2 text-sm font-semibold text-brown-600"
+          >Beauty Tracking</span
+        >
+        <span
+          class="inline-block rounded-full border border-brown-600/10 px-6 py-2 text-sm font-semibold text-brown-600"
+          >Beauty Forecasting</span
+        >
+        <span
+          class="inline-block rounded-full border border-brown-600/10 px-6 py-2 text-sm font-semibold text-brown-600"
+          >Ideation Workshops</span
+        >
+      </div>
+
+      <div class="mt-6 grid gap-6 md:grid-cols-3">
+        <ExpertizeCard
+          imgSrc="images/expertize/100-focused-on-beauty.jpg"
+          title="100% focused on beauty"
+          description="Analysis of all things make-up, skincare, haircare, wellness, fragrance, packaging, nail, body care, salon and spa - with an edge for aesthetic medicine and professional treatments."
+        />
+        <ExpertizeCard
+          imgSrc="images/expertize/worldwide-network-of-experts.jpg"
+          title="Worldwide network of experts"
+          description="Expansive connections with professionals (hairstylists, make-up artists, estheticians etc.) and experts (entrepreneurs, freelancers) across the world"
+        />
+        <ExpertizeCard
+          imgSrc="images/expertize/strong-credentials.jpg"
+          title="Strong credentials"
+          description="Almost two decades of experience helping industry leaders grow"
+        />
+      </div>
+
+      <div class="text-center">
+        <PillShapeLink href="#" title="Schedule a call" variant="dark" />
       </div>
     </section>
   </main>
