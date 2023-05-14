@@ -1,6 +1,7 @@
 ---
+import PillShapeLink from "../components/PillShapeLink.astro";
+import ReportCard from "../components/ReportCard.astro";
 import Layout from "../layouts/Layout.astro";
-import IconArrowLarge from "../svgs/IconArrowLarge.astro";
 import IconClose from "../svgs/IconClose.astro";
 import IconHamburger from "../svgs/IconHamburger.astro";
 import IconSearch from "../svgs/IconSearch.astro";
@@ -60,15 +61,7 @@ import Logo from "../svgs/Logo.astro";
         We create for you, with you
       </p>
       <div class="pb-20 text-center">
-        <a
-          href="#"
-          class="mt-6 inline-flex items-center gap-20 rounded-full border border-white py-3 pl-6 pr-3"
-        >
-          <span class="text-sm font-semibold uppercase text-white"
-            >Find out more</span
-          >
-          <IconArrowLarge class="text-white" />
-        </a>
+        <PillShapeLink href="#" variant="light" title="Find out more" />
       </div>
     </section>
 
@@ -78,32 +71,38 @@ import Logo from "../svgs/Logo.astro";
       >
         What we're doing, where we are, what's going on?
       </h2>
-      <p class="mb-12 mt-4 text-center text-sm font-light text-brown-600">
+      <p class="mt-4 text-center text-sm font-light text-brown-600">
         Take a sneak peek at our latest reports, the trade shows we've been to,
         the events we've attended etc.
       </p>
 
-      <article class="mb-80">
-        <div>
-          <img src="images/the-future-of-lip.jpg" />
-          <div>Report</div>
-        </div>
-        <div class="bg-beige-300">
-          <h2 class="font-serif text-xl">Quarterly Report: Q3</h2>
-          <p>
-            Having a strong lip portfolio is more important than ever, as this
-            product category proves time and time again its
-            recession-resilience. This report contains emerging textures and
-            finishes, growing ingredients, how to address future lip
-            beautification challenges and trends that will shape the category
-            from 2023 and beyond.
-          </p>
-          <a>
-            <span>Find out more</span>
-            <IconArrowLarge />
-          </a>
-        </div>
-      </article>
+      <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <ReportCard
+          imgSrc="images/clean-beauty-in-london.jpg"
+          sectionTitle="Out and about"
+          title="Clean beauty in london"
+          description="Annie spent the day at the Clean Beauty in London show at The Brewery near the Barbican. We loved how much Solid Beauty was on show - it truly has gone from eco-necessity to a product to be enjoyed."
+          linkTitle="Find out more"
+          href="#"
+        />
+        <!-- TODO: host the PDF file on github -->
+        <ReportCard
+          imgSrc="images/the-future-of-lip.jpg"
+          sectionTitle="Report"
+          title="Quarterly report: Q3"
+          description="Having a strong lip portfolio is more important than ever, as this product category proves time and time again its recession-resilience. This report contains emerging textures and finishes, growing ingredients, how to address future lip beautification challenges and trends that will shape the category from 2023 and beyond."
+          linkTitle="Download pdf"
+          href="#"
+        />
+        <ReportCard
+          imgSrc="images/salon-smart-networking-and-speak-event.jpg"
+          sectionTitle="Out and about"
+          title="Salon smart networking and speak event"
+          description="Emmanuelle headed down to Salon Smart last month. A business event for hair professionals, it was great to hear about the challenges hairdressers face, and meet lots of creatives."
+          linkTitle="Find out more"
+          href="#"
+        />
+      </div>
     </section>
   </main>
 

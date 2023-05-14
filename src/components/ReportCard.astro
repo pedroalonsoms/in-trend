@@ -1,0 +1,35 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import PillShapeLink from "./PillShapeLink.astro";
+interface Props extends HTMLAttributes<"a"> {
+  imgSrc: string;
+  sectionTitle: string;
+  title: string;
+  description: string;
+  linkTitle: string;
+}
+const { imgSrc, sectionTitle, title, description, linkTitle, href } =
+  Astro.props;
+---
+
+<article class="overflow-hidden rounded-lg">
+  <div class="relative z-0">
+    <img src={imgSrc} alt="" class="h-auto w-full" />
+    <div
+      class="absolute bottom-0 left-0 z-10 rounded-tr-3xl bg-beige-300 px-20 py-3 text-sm uppercase"
+    >
+      {sectionTitle}
+    </div>
+  </div>
+  <div class="bg-beige-300 px-4">
+    <h2 class="pt-4 font-serif text-xl capitalize text-brown-600">{title}</h2>
+    <p
+      class="pt-4 text-sm font-light leading-relaxed tracking-wide text-rock-200"
+    >
+      {description}
+    </p>
+    <div class="pb-8">
+      <PillShapeLink href={href} variant="dark" title={linkTitle} />
+    </div>
+  </div>
+</article>

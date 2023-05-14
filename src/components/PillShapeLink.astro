@@ -1,0 +1,27 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import IconArrowLarge from "../svgs/IconArrowLarge.astro";
+interface Props extends HTMLAttributes<"a"> {
+  variant: "light" | "dark";
+  title: string;
+}
+const { variant, title, href } = Astro.props;
+
+let variantClasses = "";
+
+if (variant === "light") {
+  variantClasses = "border-white text-white";
+} else if (variant === "dark") {
+  variantClasses = "border-black text-black";
+} else {
+  throw new Error(`Unexpecrted variant ${variant}`);
+}
+---
+
+<a
+  href={href}
+  class={`mt-6 inline-flex items-center text-center justify-between max-w-xs w-full gap-4 rounded-full border py-3 pl-6 pr-3 ${variantClasses}`}
+>
+  <span class="text-sm font-semibold uppercase">{title}</span>
+  <IconArrowLarge />
+</a>
