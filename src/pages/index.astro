@@ -1,82 +1,111 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import IconArrowLarge from "../svgs/IconArrowLarge.astro";
+import IconClose from "../svgs/IconClose.astro";
+import IconHamburger from "../svgs/IconHamburger.astro";
+import IconSearch from "../svgs/IconSearch.astro";
+import Logo from "../svgs/Logo.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main>
-    <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-    <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br
-      />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-    </p>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://docs.astro.build/"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
-      />
-      <Card
-        href="https://astro.build/integrations/"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
-      />
-      <Card
-        href="https://astro.build/themes/"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
-      />
-      <Card
-        href="https://astro.build/chat/"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-    </ul>
-  </main>
-</Layout>
+<Layout title="In Trend - The future of beauty">
+  <header class="fixed left-0 top-0 z-10 w-full">
+    <div
+      class="flex items-center justify-between bg-white/20 px-5 py-5 backdrop-blur"
+    >
+      <Logo class="h-6 w-auto text-white" />
 
-<style>
-  main {
-    margin: auto;
-    padding: 1.5rem;
-    max-width: 60ch;
-  }
-  h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin: 0;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    line-height: 1.6;
-    margin: 1rem 0;
-    border: 1px solid rgba(var(--accent), 25%);
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.4rem;
-  }
-  .instructions code {
-    font-size: 0.875em;
-    font-weight: bold;
-    background: rgba(var(--accent), 12%);
-    color: rgb(var(--accent));
-    border-radius: 4px;
-    padding: 0.3em 0.45em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
-  }
-</style>
+      <div class="flex items-center gap-2">
+        <button>
+          <IconHamburger class="h-7 w-7 text-white" />
+          <span class="sr-only">Toggle Menu</span>
+        </button>
+
+        <button>
+          <!-- TODO: what is this search icon for? -->
+          <IconSearch class="h-6 w-6 text-white" />
+          <span class="sr-only">Search</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- TODO: menu absolute or fixed? -->
+    <nav class="hidden">
+      <a href="#">Meet the team</a>
+      <a href="#">Our services</a>
+      <a href="#">Contact us</a>
+      <IconClose />
+    </nav>
+  </header>
+
+  <main>
+    <section class="relative z-0">
+      <!-- TODO: add image alt-->
+      <!-- TODO: add image width and height to prevent layout shifting-->
+      <img
+        src="images/homepage-main.jpg"
+        class="absolute left-0 top-0 -z-10 h-full object-cover"
+        alt=""
+      />
+      <div class="pt-40">
+        <Logo class="mx-auto h-10 w-auto text-white" />
+      </div>
+      <!-- TODO: do we need to 'trend' this on mobile? -->
+      <h1
+        class="mt-6 break-words px-2 text-center text-6xl tracking-wider text-white"
+      >
+        Your beauty <span class="hidden sm:inline">trend</span> ideation and intelligence
+        partner
+      </h1>
+      <p class="mt-6 text-center font-light tracking-wide text-white">
+        We create for you, with you
+      </p>
+      <div class="pb-20 text-center">
+        <a
+          href="#"
+          class="mt-6 inline-flex items-center gap-20 rounded-full border border-white py-3 pl-6 pr-3"
+        >
+          <span class="text-sm font-semibold uppercase text-white"
+            >Find out more</span
+          >
+          <IconArrowLarge class="text-white" />
+        </a>
+      </div>
+    </section>
+
+    <section class="bg-beige-400 px-4">
+      <h2
+        class="pt-12 text-center text-2xl font-medium leading-tight tracking-wide text-brown-600"
+      >
+        What we're doing, where we are, what's going on?
+      </h2>
+      <p class="mb-12 mt-4 text-center text-sm font-light text-brown-600">
+        Take a sneak peek at our latest reports, the trade shows we've been to,
+        the events we've attended etc.
+      </p>
+
+      <article class="mb-80">
+        <div>
+          <img src="images/the-future-of-lip.jpg" />
+          <div>Report</div>
+        </div>
+        <div class="bg-beige-300">
+          <h2 class="font-serif text-xl">Quarterly Report: Q3</h2>
+          <p>
+            Having a strong lip portfolio is more important than ever, as this
+            product category proves time and time again its
+            recession-resilience. This report contains emerging textures and
+            finishes, growing ingredients, how to address future lip
+            beautification challenges and trends that will shape the category
+            from 2023 and beyond.
+          </p>
+          <a>
+            <span>Find out more</span>
+            <IconArrowLarge />
+          </a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer></footer>
+</Layout>
