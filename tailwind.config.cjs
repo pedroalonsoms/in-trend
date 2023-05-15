@@ -14,6 +14,9 @@ module.exports = {
         rock: {
           200: "#8E8E8E",
         },
+        carrot: {
+          300: "#F09164",
+        },
       },
     },
   },
