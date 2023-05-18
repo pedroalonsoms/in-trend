@@ -10,84 +10,87 @@ import Footer from "../components/Footer.astro";
 <Layout title="In Trend - Our Services">
   <NavigationBar variant="beige" />
   <section class="bg-beige-300">
-    <h1
-      class="pt-20 text-center text-2xl font-medium capitalize tracking-wide text-brown-600"
-    >
-      Our services
-    </h1>
-    <p
-      class="mx-auto mt-4 max-w-5xl px-4 text-center text-3xl font-light leading-10 tracking-wide text-brown-600 sm:text-4xl sm:leading-relaxed"
-    >
-      We offer bespoke product and services analysis across aesthetic medicine
-      <img
-        class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
-        src="../images/our-services/paragraph/medicine.jpg"
-        alt=""
-      />
-      , make-up
-      <img
-        class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
-        src="../images/our-services/paragraph/make-up.jpg"
-        alt=""
-      />
-      , skincare, hair
-      <img
-        class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
-        src="../images/our-services/paragraph/hair.jpg"
-        alt=""
-      />
-      , wellness, fragance, packaging, nails
-      <img
-        class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
-        src="../images/our-services/paragraph/nails.jpg"
-        alt=""
-      />
-      , bodycare, salon and spa.
-    </p>
+    <div class="mx-auto max-w-screen-xl">
+      <h1
+        class="pt-20 text-center text-2xl font-medium capitalize tracking-wide text-brown-600"
+      >
+        Our services
+      </h1>
+      <p
+        class="mx-auto mt-4 max-w-5xl px-4 text-center text-3xl font-light leading-10 tracking-wide text-brown-600 sm:text-4xl sm:leading-relaxed"
+      >
+        We offer bespoke product and services analysis across aesthetic medicine
+        <img
+          class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
+          src="../images/our-services/paragraph/medicine.jpg"
+          alt=""
+        />
+        , make-up
+        <img
+          class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
+          src="../images/our-services/paragraph/make-up.jpg"
+          alt=""
+        />
+        , skincare, hair
+        <img
+          class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
+          src="../images/our-services/paragraph/hair.jpg"
+          alt=""
+        />
+        , wellness, fragance, packaging, nails
+        <img
+          class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
+          src="../images/our-services/paragraph/nails.jpg"
+          alt=""
+        />
+        , bodycare, salon and spa.
+      </p>
 
-    <div class="mt-14 grid lg:grid-cols-3 lg:gap-24">
-      <div class="lg:col-span-2">
-        <ServiceCard
-          title="Beauty tracking"
-          description="Need to stay on top of new launches? Our extensive product database and social media monitoring provides our strategists with the perfect tools to analyse what is happening in your category. We provide you with the curated insights you need."
-        />
-        <ServiceCard
-          title="Beauty forecasting"
-          description="Need to know what's next? In-Trend's creative minds identify visionary white space opportunities driven via cross-category innovations and consumer sentiment. We are committed to ensuring your company stays ahead of the curve."
-        />
-        <ServiceCard
-          title="Ideation workshops"
-          description="Let us be your product development partners. Play with new products, experience their textures and finishes, be inspired by their packaging. In these creative workshops, we create the recipe for the next beauty must-have."
-        />
-        <ServiceCard
-          title="Membership"
-          description="Like the look of everything? Get in touch for our membership options. We can create the perfect mix you can switch about as you wish."
+      <div class="mt-14 grid lg:grid-cols-3 lg:gap-24">
+        <div class="lg:col-span-2">
+          <ServiceCard
+            title="Beauty tracking"
+            description="Need to stay on top of new launches? Our extensive product database and social media monitoring provides our strategists with the perfect tools to analyse what is happening in your category. We provide you with the curated insights you need."
+          />
+          <ServiceCard
+            title="Beauty forecasting"
+            description="Need to know what's next? In-Trend's creative minds identify visionary white space opportunities driven via cross-category innovations and consumer sentiment. We are committed to ensuring your company stays ahead of the curve."
+          />
+          <ServiceCard
+            title="Ideation workshops"
+            description="Let us be your product development partners. Play with new products, experience their textures and finishes, be inspired by their packaging. In these creative workshops, we create the recipe for the next beauty must-have."
+          />
+          <ServiceCard
+            title="Membership"
+            description="Like the look of everything? Get in touch for our membership options. We can create the perfect mix you can switch about as you wish."
+          />
+        </div>
+        <img
+          src="../images/our-services/main.jpg"
+          alt=""
+          class="hidden rounded-3xl lg:block"
         />
       </div>
-      <img
-        src="../images/our-services/main.jpg"
-        alt=""
-        class="hidden rounded-3xl lg:block"
-      />
-    </div>
 
-    <div class="mt-10 px-4 pb-16">
-      <div
-        class="overflow-hidden rounded-2xl border border-brown-600/20 p-4 sm:flex sm:items-center sm:gap-4"
-      >
-        <!-- TODO: change margins to flex gaps? -->
-        <!-- TODO: fix left border radius bug -->
-        <img
-          src="../images/our-services/get-in-touch.jpg"
-          alt=""
-          class="rounded-l-3xl rounded-r-full sm:h-28"
-        />
-        <p class="mt-6 font-semibold text-brown-600 sm:mt-0">
-          Can't see what you're looking for? <br />
-          Get in touch - let us inspire you!
-        </p>
-        <div class="mt-6 sm:ml-auto sm:mt-0">
-          <PillShapeLink title="Get in touch" variant="dark" href="#" />
+      <div class="mt-10 px-4 pb-16">
+        <div
+          class="overflow-hidden rounded-2xl border border-brown-600/20 p-4 sm:flex sm:items-center sm:gap-4"
+        >
+          <!-- TODO: change margins to flex gaps? -->
+          <!-- TODO: fix left border radius bug -->
+          <!-- TODO: (IMPORTANT) add the calendly URL link -->
+          <img
+            src="../images/our-services/get-in-touch.jpg"
+            alt=""
+            class="rounded-l-3xl rounded-r-full sm:h-28"
+          />
+          <p class="mt-6 font-semibold text-brown-600 sm:mt-0">
+            Can't see what you're looking for? <br />
+            Get in touch - let us inspire you!
+          </p>
+          <div class="mt-6 sm:ml-auto sm:mt-0">
+            <PillShapeLink title="Get in touch" variant="dark" href="#" />
+          </div>
         </div>
       </div>
     </div>
