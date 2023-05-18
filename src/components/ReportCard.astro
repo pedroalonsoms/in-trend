@@ -6,14 +6,15 @@ interface Props extends HTMLAttributes<"a"> {
   sectionTitle: string;
   title: string;
   description: string;
+  hasLink: boolean;
   linkTitle: string;
 }
-const { imgSrc, sectionTitle, title, description, linkTitle, href } =
+const { imgSrc, sectionTitle, title, description, hasLink, linkTitle, href } =
   Astro.props;
 ---
 
-<!-- TODO: add small and large variants -->
-<article class="overflow-hidden rounded-lg">
+<!-- TODO: add small and large variants --><!-- TODO: fix border radiuses -->
+<article class="h-min overflow-hidden rounded-2xl">
   <div class="relative z-0">
     <!-- TODO: add image sizing props -->
     <img src={imgSrc} alt="" class="h-auto w-full" />
@@ -30,8 +31,14 @@ const { imgSrc, sectionTitle, title, description, linkTitle, href } =
     >
       {description}
     </p>
-    <div class="mt-6 pb-8">
-      <PillShapeLink href={href} variant="dark" title={linkTitle} />
-    </div>
+    {
+      hasLink ? (
+        <div class="mt-6 pb-8">
+          <PillShapeLink href={href} variant="dark" title={linkTitle} />
+        </div>
+      ) : (
+        <div class="pb-8" />
+      )
+    }
   </div>
 </article>
