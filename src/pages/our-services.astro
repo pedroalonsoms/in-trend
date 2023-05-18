@@ -1,100 +1,157 @@
 ---
 import PillShapeLink from "../components/PillShapeLink.astro";
 import ServiceCard from "../components/ServiceCard.astro";
+import Layout from "../layouts/Layout.astro";
+import LogoShort from "../svgs/LogoShort.astro";
+import NavigationBar from "../components/NavigationBar.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<section class="bg-beige-300">
-  <h1
-    class="text-center text-2xl font-medium capitalize tracking-wide text-brown-600"
-  >
-    Our services
-  </h1>
-  <p
-    class="mx-auto mt-4 max-w-5xl px-4 text-center text-3xl font-light leading-10 tracking-wide text-brown-600 sm:text-4xl sm:leading-relaxed"
-  >
-    We offer bespoke product and services analysis across aesthetic medicine,
-    <img
-      class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
-      src="images/our-services/paragraph/medicine.jpg"
-      alt=""
-    />
-    makeup,
-    <img
-      class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
-      src="images/our-services/paragraph/make-up.jpg"
-      alt=""
-    />
-    skincare, haircare,
-    <img
-      class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
-      src="images/our-services/paragraph/haircare.jpg"
-      alt=""
-    />
-    wellness, fragance, packaging, nails,
-    <img
-      class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
-      src="images/our-services/paragraph/nails.jpg"
-      alt=""
-    />
-    bodycare, salon and spa.
-  </p>
+<Layout title="In Trend - Our Services">
+  <NavigationBar variant="beige" />
+  <section class="bg-beige-300">
+    <h1
+      class="pt-20 text-center text-2xl font-medium capitalize tracking-wide text-brown-600"
+    >
+      Our services
+    </h1>
+    <p
+      class="mx-auto mt-4 max-w-5xl px-4 text-center text-3xl font-light leading-10 tracking-wide text-brown-600 sm:text-4xl sm:leading-relaxed"
+    >
+      We offer bespoke product and services analysis across aesthetic medicine,
+      <img
+        class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
+        src="images/our-services/paragraph/medicine.jpg"
+        alt=""
+      />
+      makeup,
+      <img
+        class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
+        src="images/our-services/paragraph/make-up.jpg"
+        alt=""
+      />
+      skincare, haircare,
+      <img
+        class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
+        src="images/our-services/paragraph/haircare.jpg"
+        alt=""
+      />
+      wellness, fragance, packaging, nails,
+      <img
+        class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
+        src="images/our-services/paragraph/nails.jpg"
+        alt=""
+      />
+      bodycare, salon and spa.
+    </p>
 
-  <div class="mt-14 grid lg:grid-cols-3 lg:gap-24">
-    <div class="lg:col-span-2">
-      <ServiceCard
-        title="Beauty tracking"
-        description="Need to stay on top of new launches? Our extensive product database and social media monitoring provides our strategists with the perfect tools to analyse what is happening in your category. We provide you with the curated insights you need."
-      />
-      <ServiceCard
-        title="Beauty forecasting"
-        description="Need to know what's next? In-Trend's creative minds identify visionary white space opportunities driven via cross-category innovations and consumer sentiment. We are committed to ensuring your company stays ahead of the curve."
-      />
-      <ServiceCard
-        title="Ideation workshops"
-        description="Let us be your product development partners. Play with new products, experience their textures and finishes, be inspired by their packaging. In these creative workshops, we create the recipe for the next beauty must-have."
-      />
-      <ServiceCard
-        title="Membership"
-        description="Like the look of everything? Get in touch for our membership options. We can create the perfect mix you can switch about as you wish."
+    <div class="mt-14 grid lg:grid-cols-3 lg:gap-24">
+      <div class="lg:col-span-2">
+        <ServiceCard
+          title="Beauty tracking"
+          description="Need to stay on top of new launches? Our extensive product database and social media monitoring provides our strategists with the perfect tools to analyse what is happening in your category. We provide you with the curated insights you need."
+        />
+        <ServiceCard
+          title="Beauty forecasting"
+          description="Need to know what's next? In-Trend's creative minds identify visionary white space opportunities driven via cross-category innovations and consumer sentiment. We are committed to ensuring your company stays ahead of the curve."
+        />
+        <ServiceCard
+          title="Ideation workshops"
+          description="Let us be your product development partners. Play with new products, experience their textures and finishes, be inspired by their packaging. In these creative workshops, we create the recipe for the next beauty must-have."
+        />
+        <ServiceCard
+          title="Membership"
+          description="Like the look of everything? Get in touch for our membership options. We can create the perfect mix you can switch about as you wish."
+        />
+      </div>
+      <img
+        src="images/our-services/main.jpg"
+        alt=""
+        class="hidden rounded-3xl lg:block"
       />
     </div>
-    <img
-      src="images/our-services/main.jpg"
-      alt=""
-      class="hidden rounded-3xl lg:block"
-    />
-  </div>
 
-  <div class="mt-10 px-4 pb-16">
-    <div class="overflow-hidden rounded-2xl border border-brown-600/20 p-4">
-      <!-- TODO: fix left border radius bug -->
-      <img
-        src="images/our-services/get-in-touch.jpg"
-        alt=""
-        class="rounded-l-3xl rounded-r-full"
-      />
-      <p class="mt-6 font-semibold text-brown-600">
-        Can't see what you're looking for? <br />
-        Get in touch - let us inspire you!
-      </p>
-      <div class="mt-6">
-        <PillShapeLink title="Get in touch" variant="dark" href="#" />
+    <div class="mt-10 px-4 pb-16">
+      <div
+        class="overflow-hidden rounded-2xl border border-brown-600/20 p-4 sm:flex sm:items-center sm:gap-4"
+      >
+        <!-- TODO: change margins to flex gaps? -->
+        <!-- TODO: fix left border radius bug -->
+        <img
+          src="images/our-services/get-in-touch.jpg"
+          alt=""
+          class="rounded-l-3xl rounded-r-full sm:h-28"
+        />
+        <p class="mt-6 font-semibold text-brown-600 sm:mt-0">
+          Can't see what you're looking for? <br />
+          Get in touch - let us inspire you!
+        </p>
+        <div class="mt-6 sm:ml-auto sm:mt-0">
+          <PillShapeLink title="Get in touch" variant="dark" href="#" />
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <!-- TODO: add here main page carrousel -->
-</section>
+  <section>
+    <!-- TODO: add here main page carrousel -->
+  </section>
 
-<section>
-  <h2 class="capitalize">In Trend is connected</h2>
-  <p>
-    The In-Trend LTD family is a dedicated and dynamic global team with proven
-    expertise. We are fed in roots of information, and turn them into blooming
-    trees of inspiration.
-  </p>
-  <!-- TODO: add missing carrot colors in Tailwind -->
-  <!-- TODO: add bg gradient -->
-</section>
+  <section class="bg-carrot-300">
+    <div class="mx-auto px-2">
+      <h2
+        class="pt-8 text-center font-serif text-xl font-light capitalize text-white"
+      >
+        In Trend is connected
+      </h2>
+      <p class="mt-2 text-center text-sm font-light text-white">
+        The In-Trend LTD family is a dedicated and dynamic global team with
+        proven expertise. We are fed in roots of information, and turn them into
+        blooming trees of inspiration.
+      </p>
+      <!-- TODO: add missing carrot colors in Tailwind -->
+      <!-- TODO: add bg gradient -->
+      <!-- TODO: move all images to webp? -->
+      <div
+        class="relative z-0 mx-auto mt-10 grid aspect-square max-w-3xl place-content-center rounded-full border border-white"
+      >
+        <p class="text-center">
+          <span class="text-xl uppercase text-white">
+            We're in the loop about:
+          </span><br />
+          <span class="text-xl font-bold uppercase text-white">
+            start-ups and incubators
+          </span>
+        </p>
+        <!-- TODO: fix logo alignment -->
+        <!-- TODO: add missing circle decoration -->
+        <div class="absolute inset-x-0 bottom-0 z-10 flex justify-center">
+          <LogoShort class="text-white" />
+        </div>
+      </div>
+
+      <!-- TODO: can this be removed? -->
+      <div class="pb-20"></div>
+    </div>
+  </section>
+
+  <section class="bg-beige-300">
+    <h2
+      class="pt-10 text-center text-2xl font-medium tracking-wide text-brown-600"
+    >
+      Expert Q&A
+    </h2>
+    <p class="mt-4 px-4 text-center text-sm text-brown-600">
+      We ask all of our experts, what would they advise to those trying to get
+      into aesthetic medicine.
+    </p>
+    <p
+      class="mt-40 pb-40 text-center text-5xl capitalize tracking-wide text-rock-100"
+    >
+      Coming soon
+    </p>
+    <!-- TODO: do we need to implement carrousel here? -->
+  </section>
+
+  <Footer />
+</Layout>

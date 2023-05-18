@@ -1,0 +1,55 @@
+---
+import Logo from "../svgs/Logo.astro";
+import IconClose from "../svgs/icons/IconClose.astro";
+import IconHamburger from "../svgs/icons/IconHamburger.astro";
+import IconSearch from "../svgs/icons/IconSearch.astro";
+
+interface Props {
+  variant: "transparent" | "beige";
+}
+
+const { variant } = Astro.props;
+
+let navVariantClasses = "";
+
+if (variant === "transparent") {
+  navVariantClasses = "bg-white/20 backdrop-blur text-white";
+} else if (variant === "beige") {
+  navVariantClasses = "bg-beige-300 text-black";
+} else {
+  throw new Error(`Unexpecrted variant ${variant}`);
+}
+---
+
+<header class="fixed left-0 top-0 z-10 w-full">
+  <div
+    class={`flex items-center justify-between px-5 py-5 ${navVariantClasses}`}
+  >
+    <a href="/">
+      <Logo class="h-6 w-auto" />
+    </a>
+
+    <div class="flex items-center gap-2">
+      <button>
+        <!-- TODO: add aria-expanded stuff -->
+        <IconHamburger class="h-7 w-7" />
+        <span class="sr-only">Toggle Menu</span>
+      </button>
+
+      <button>
+        <!-- TODO: what is this search icon for? -->
+        <IconSearch class="h-6 w-6" />
+        <span class="sr-only">Search</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- TODO: menu absolute or fixed? -->
+  <!-- TODO: implement menu for both desktop and mobile -->
+  <nav class="hidden">
+    <a href="#">Meet the team</a>
+    <a href="#">Our services</a>
+    <a href="#">Contact us</a>
+    <IconClose />
+  </nav>
+</header>

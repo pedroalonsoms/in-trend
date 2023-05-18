@@ -1,0 +1,43 @@
+---
+import Logo from "../svgs/Logo.astro";
+import IconInstagram from "../svgs/icons/IconInstagram.astro";
+import IconLinkedin from "../svgs/icons/IconLinkedin.astro";
+---
+
+<footer class="bg-brown-600 px-5">
+  <div class="grid md:grid-cols-4">
+    <div class="flex gap-9 pt-12">
+      <IconInstagram class="text-white" />
+      <IconLinkedin class="text-white" />
+    </div>
+
+    <div>
+      <!-- TODO: remove margin hack -->
+      <h2 class="mt-16 text-xl font-light uppercase text-white md:mt-8">
+        Contact
+      </h2>
+      <a
+        href="mailto:hello@in-trend-ltd.com"
+        class="mt-2 block font-light text-white">hello@in-trend-ltd.com</a
+      >
+      <a href="tel:+4407738204623" class="block font-light text-white"
+        >+44 (0) 77 3820 4623</a
+      >
+    </div>
+
+    <div>
+      <h2 class="mt-8 text-xl font-light uppercase text-white">Office</h2>
+      <p class="mt-1 font-medium text-white">In Trend Ltd.</p>
+      <p class="mt-1 font-light text-white">
+        Plexal, Here East <br />
+        Hackney Wick, London <br />
+        E15 2GW <br />
+        United Kingdom
+      </p>
+    </div>
+
+    <div class="mt-11 pb-6">
+      <Logo class="h-10 w-auto text-white" />
+    </div>
+  </div>
+</footer>
