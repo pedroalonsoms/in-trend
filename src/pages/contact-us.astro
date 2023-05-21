@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NavigationBar from "../components/NavigationBar.astro";
+import Footer from "../components/Footer.astro";
+import PillShapeLink from "../components/PillShapeLink.astro";
+---
+
+<Layout title="In Trend - Contact us">
+  <NavigationBar variant="beige" />
+
+  <section class="bg-beige-300">
+    <div class="mx-auto max-w-screen-xl">
+      <h1 class="pt-20 text-center text-4xl font-medium">Contact us</h1>
+      <p class="mt-4 text-center">
+        Book a call or email us on:
+        <a class="font-bold" href="mailto:hello@in-trend-ltd.com">
+          hello@in-trend-ltd.com
+        </a>
+      </p>
+
+      <div class="mt-12 grid gap-4 pb-20 md:grid-cols-2">
+        <div class="overflow-hidden rounded-3xl border border-brown-600/20">
+          <h2 class="mx-8 mt-6 text-2xl font-light uppercase">
+            Quick question
+          </h2>
+          <!-- TODO: change this to be a button or use role="button" -->
+          <div class="mx-8 mt-6">
+            <PillShapeLink variant="dark" title="Fill in a form" href="#" />
+          </div>
+          <img
+            src="../images/contact-us/quick-question.jpg"
+            alt=""
+            class="mt-12 max-h-60 w-full object-cover"
+          />
+        </div>
+        <div class="overflow-hidden rounded-3xl border border-brown-600/20">
+          <h2 class="mx-8 mt-6 text-2xl font-light uppercase">Book now</h2>
+          <!-- TODO: change this to be a button or use role="button" -->
+          <div class="mx-8 mt-6">
+            <PillShapeLink variant="dark" title="Fill in a form" href="#" />
+          </div>
+          <img
+            src="../images/contact-us/30-minute-chat.jpg"
+            alt=""
+            class="mt-12 max-h-60 w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

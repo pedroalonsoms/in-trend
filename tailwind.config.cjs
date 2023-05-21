@@ -16,6 +16,7 @@ module.exports = {
           200: "#8E8E8E",
         },
         carrot: {
+          200: "#EFCEBB",
           300: "#F09164",
         },
       },

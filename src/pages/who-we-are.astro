@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NavigationBar from "../components/NavigationBar.astro";
+import EmployeeAndFreelancerCard from "../components/EmployeeAndFreelancerCard.astro";
+import IconArrow from "../svgs/icons/IconArrow.astro";
+import PillShapeLink from "../components/PillShapeLink.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="In Trend - Who we are">
+  <NavigationBar variant="beige" />
+
+  <section class="bg-beige-300">
+    <div class="mx-auto max-w-screen-xl">
+      <h1 class="sr-only">Who we are</h1>
+
+      <h2 class="pt-20 text-center text-2xl font-medium">
+        Some of our Employee and Freelancer Pool
+      </h2>
+
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4">
+        <EmployeeAndFreelancerCard
+          imgSrc="../images/who-we-are/employee-and-freelancer-pool/nazila-amrin.jpg"
+          name="Nazila Amrin"
+          shortDescription="Monitors all Middle Eastern trends."
+          longDescription="Expertise in beauty content creation & makeup educator - loves & swears by The Ordinary, Glow recipe watermelon moisturizer & Glowish range from Huda Beauty"
+        />
+        <EmployeeAndFreelancerCard
+          imgSrc="../images/who-we-are/employee-and-freelancer-pool/emmanuelle-bassmann.jpg"
+          name="Emmanuelle Bassmann"
+          shortDescription="Our founder."
+          longDescription="Mainly works on aesthetic medicine. Pioneering and multi-cultural. Loves cacao, Bikram yoga and all things microbiome!"
+        />
+        <EmployeeAndFreelancerCard
+          imgSrc="../images/who-we-are/employee-and-freelancer-pool/annie-johnstone.jpg"
+          name="Annie Johnstone"
+          shortDescription="Usually stuck into a make-up report."
+          longDescription="Passionate and creative. Loves matcha, all things colorful and a tretinoin that packs a punch"
+        />
+        <EmployeeAndFreelancerCard
+          imgSrc="../images/who-we-are/employee-and-freelancer-pool/soo-min.jpg"
+          name="Soo Min"
+          shortDescription="Korean freelancer."
+          longDescription="Loves genderless beauty, sustainable sustainable makeup & skincare products and is obsessed with the brand Hince."
+        />
+      </div>
+
+      <div class="mt-20 flex justify-between px-4 pb-20">
+        <button
+          class="inline-grid aspect-square place-items-center rounded-full border border-brown-600 p-4"
+        >
+          <IconArrow class="rotate-180" />
+        </button>
+        <button
+          class="inline-grid aspect-square place-items-center rounded-full border border-brown-600 p-4"
+        >
+          <IconArrow />
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="grid md:grid-cols-2">
+      <div class="flex items-center justify-end bg-carrot-200 px-4 py-8">
+        <div class="max-w-lg">
+          <h2 class="text-center text-2xl font-medium">Hang Out IRL</h2>
+          <p class="mt-6 text-center text-sm font-light">
+            Come hang out in our London office: The Innovation hub of the UK in
+            London's coolest neighbourhood* Hackney Wick.
+          </p>
+          <div class="mt-6 text-center">
+            <PillShapeLink variant="dark" title="Come hang out" href="#" />
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- TODO: get this thing in 4K -->
+        <img src="../images/who-we-are/hang-out-irl/here-east.jpg" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
