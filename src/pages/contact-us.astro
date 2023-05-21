@@ -49,5 +49,66 @@ import PillShapeLink from "../components/PillShapeLink.astro";
     </div>
   </section>
 
+  <!-- TODO: where should this go? lol -->
+  <div class="fixed left-0 top-0 z-10 h-full w-full bg-black/20 px-4">
+    <form
+      action="mailto:hello@in-trend-ltd.com"
+      method="post"
+      class="mx-auto mt-24 max-w-screen-xl rounded-xl bg-beige-300 px-16 py-8"
+    >
+      <p class="text-2xl uppercase text-brown-600">Quick question</p>
+
+      <div class="mt-14 grid md:grid-cols-2">
+        <div class="grid gap-4">
+          <label class="uppercase text-rock-200" for="name">Name</label>
+          <input
+            class="border-b border-brown-600/20 bg-transparent"
+            type="text"
+            name="name"
+            id="name"
+          />
+
+          <label class="uppercase text-rock-200" for="company">Company</label>
+          <input
+            class="border-b border-brown-600/20 bg-transparent"
+            type="text"
+            name="company"
+            id="company"
+          />
+
+          <label class="uppercase text-rock-200" for="phone_number"
+            >Phone number</label
+          >
+          <input
+            class="border-b border-brown-600/20 bg-transparent"
+            type="tel"
+            name="phone_number"
+            id="phone_number"
+          />
+
+          <label class="uppercase text-rock-200" for="email">Email</label>
+          <input
+            class="border-b border-brown-600/20 bg-transparent"
+            type="email"
+            name="email"
+            id="email"
+          />
+        </div>
+        <div>
+          <label class="uppercase text-rock-200" for="message">Message</label>
+          <textarea
+            class="border-b border-brown-600/20 bg-transparent"
+            name="message"
+            id="message"
+            rows="3"
+            cols="50"></textarea>
+
+          <!-- TODO: this should be role button -->
+          <PillShapeLink href="#" title="Submit message" variant="dark" />
+        </div>
+      </div>
+    </form>
+  </div>
+
   <Footer />
 </Layout>
