@@ -31,25 +31,35 @@ import Logo from "../svgs/Logo.astro";
       <!-- TODO: add image lazy-loading-->
       <!-- TODO: add image width and height to prevent layout shifting-->
       <!-- TODO: add fonts to this website-->
-      <img
-        src="images/index/main.jpg"
-        class="absolute left-0 top-0 -z-10 h-full w-full object-cover"
-        alt=""
-      />
-      <div class="pt-40">
-        <Logo class="mx-auto h-10 w-auto text-white" />
+      <!-- TODO: (important) this image should come from the Slack zip file-->
+      <!-- TODO: make this a single image?-->
+      <picture>
+        <source
+          srcset="images/index/main-desktop.jpg"
+          media="(min-width: 640px)"
+        />
+        <img
+          src="images/index/main-mobile.jpg"
+          class="absolute left-0 top-0 -z-10 h-full w-full object-cover"
+          alt=""
+        />
+      </picture>
+      <div class="pt-40 sm:pt-80">
+        <Logo class="mx-auto h-10 w-auto text-white sm:h-14" />
       </div>
       <!-- TODO: do we need to 'trend' this on mobile? -->
       <h1
-        class="mt-6 break-words px-2 text-center text-6xl tracking-wider text-white"
+        class="mx-auto mt-6 max-w-screen-lg break-words px-2 text-center text-6xl tracking-wider text-white sm:text-7xl"
       >
         Your beauty <span class="hidden sm:inline">trend</span> ideation and intelligence
         partner
       </h1>
-      <p class="mt-6 text-center font-light tracking-wide text-white">
+      <p
+        class="mt-6 text-center font-light tracking-wide text-white sm:mt-8 sm:text-lg"
+      >
         We create for you, with you
       </p>
-      <div class="mt-6 pb-20 text-center">
+      <div class="mt-6 pb-20 text-center sm:pb-48">
         <PillShapeLink href="#" variant="light" title="Find out more" />
       </div>
     </section>
