@@ -3,7 +3,7 @@ import ExpertizeCard from "../components/ExpertizeCard.astro";
 import Footer from "../components/Footer.astro";
 import NavigationBar from "../components/NavigationBar.astro";
 import PillShapeLink from "../components/PillShapeLink.astro";
-import ReportCard from "../components/ReportCard.astro";
+import ReportSection from "../components/ReportSection.astro";
 import TestimonialCard from "../components/TestimonialCard.astro";
 import Layout from "../layouts/Layout.astro";
 import LogoBioderma from "../svgs/companies/LogoBioderma.astro";
@@ -64,50 +64,8 @@ import Logo from "../svgs/Logo.astro";
       </div>
     </section>
 
-    <section class="bg-beige-400 px-4">
-      <div class="mx-auto max-w-screen-xl">
-        <h2
-          class="pt-12 text-center text-2xl font-medium leading-tight tracking-wide text-brown-600"
-        >
-          What we're doing, where we are, what's going on?
-        </h2>
-        <p class="mt-4 text-center text-sm font-light text-brown-600">
-          Take a sneak peek at our latest reports, the trade shows we've been
-          to, the events we've attended etc.
-        </p>
-
-        <div class="mt-12 grid gap-8 pb-14 md:grid-cols-2 lg:grid-cols-3">
-          <ReportCard
-            imgSrc="images/index/reports/clean-beauty-in-london.jpg"
-            sectionTitle="Out and about"
-            title="Clean beauty in london"
-            description="Annie spent the day at the Clean Beauty in London show at The Brewery near the Barbican. We loved how much Solid Beauty was on show - it truly has gone from eco-necessity to a product to be enjoyed."
-            hasLink={false}
-            linkTitle="Find out more"
-            href="#"
-          />
-          <!-- TODO: host the PDF file on github -->
-          <ReportCard
-            imgSrc="images/index/reports/the-future-of-lip.jpg"
-            sectionTitle="Report"
-            title="The Future of Lip"
-            description="Having a strong lip portfolio is more important than ever, as this product category proves time and time again its recession-resilience. This report contains emerging textures and finishes, growing ingredients, how to address future lip beautification challenges and trends that will shape the category from 2023 and beyond."
-            hasLink={true}
-            linkTitle="Download pdf"
-            href="#"
-          />
-          <ReportCard
-            imgSrc="images/index/reports/salon-smart-networking-and-speak-event.jpg"
-            sectionTitle="Out and about"
-            title="Salon smart networking and speak event"
-            description="Emmanuelle headed down to Salon Smart last month. A business event for hair professionals, it was great to hear about the challenges hairdressers face, and meet lots of creatives."
-            hasLink={false}
-            linkTitle="Find out more"
-            href="#"
-          />
-        </div>
-      </div>
-    </section>
+    <!-- TODO: should we make the wrapper-div of this stuff separate? -->
+    <ReportSection />
 
     <section class="bg-beige-300">
       <div class="mx-auto max-w-screen-xl">
