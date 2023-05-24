@@ -9,12 +9,14 @@ interface Props extends HTMLAttributes<"a"> {
   hasLink: boolean;
   linkTitle: string;
 }
+// TODO: should we remove hasLink attribute?
+// TODO: (important) add SEO optimizations
 const { imgSrc, sectionTitle, title, description, hasLink, linkTitle, href } =
   Astro.props;
 ---
 
 <!-- TODO: add small and large variants --><!-- TODO: fix border radiuses -->
-<article class="overflow-hidden rounded-2xl">
+<article class="h-full overflow-hidden rounded-xl">
   <div class="relative z-0">
     <!-- TODO: add image sizing props -->
     <img src={imgSrc} alt="" class="h-auto w-full" />
@@ -25,9 +27,11 @@ const { imgSrc, sectionTitle, title, description, hasLink, linkTitle, href } =
     </div>
   </div>
   <div class="bg-beige-300 px-4">
-    <h2 class="pt-4 font-serif text-xl capitalize text-brown-600">{title}</h2>
+    <h2 class="line-clamp-1 pt-4 font-serif text-xl capitalize text-brown-600">
+      {title}
+    </h2>
     <p
-      class="pt-4 text-sm font-light leading-relaxed tracking-wide text-rock-200"
+      class="line-clamp-3 pt-4 text-sm font-light leading-relaxed tracking-wide text-rock-200"
     >
       {description}
     </p>

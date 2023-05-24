@@ -1,80 +1,121 @@
 ---
 import ReportCard from "./ReportCard.astro";
+
+// TODO: make an object array for the client to add the pages more easily
 ---
 
-<section class="bg-beige-400 px-4">
-  <div class="mx-auto max-w-screen-xl">
+<section class="bg-beige-400 px-4 lg:px-0">
+  <div class="mx-auto max-w-screen-2xl">
     <h2
       class="pt-12 text-center text-2xl font-medium leading-tight tracking-wide text-brown-600"
     >
       What we're doing, where we are, what's going on?
     </h2>
-    <p class="mt-4 text-center text-sm font-light text-brown-600">
+    <p
+      class="mx-auto mt-4 max-w-lg text-center text-sm font-light text-brown-600"
+    >
       Take a sneak peek at our latest reports, the trade shows we've been to,
       the events we've attended etc.
     </p>
 
-    <div class="splide" id="report-section__carrousel">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide">
-            <div class="mx-auto w-4/5">
-              <ReportCard
-                imgSrc="images/index/reports/clean-beauty-in-london.jpg"
-                sectionTitle="Out and about"
-                title="Clean beauty in london"
-                description="Annie spent the day at the Clean Beauty in London show at The Brewery near the Barbican. We loved how much Solid Beauty was on show - it truly has gone from eco-necessity to a product to be enjoyed."
-                hasLink={false}
-                linkTitle="Find out more"
-                href="#"
-              />
-            </div>
-          </li>
-          <li class="splide__slide">
-            <!-- TODO: host the PDF file on github -->
-            <div class="mx-auto w-4/5">
-              <ReportCard
-                imgSrc="images/index/reports/the-future-of-lip.jpg"
-                sectionTitle="Report"
-                title="The Future of Lip"
-                description="Having a strong lip portfolio is more important than ever, as this product category proves time and time again its recession-resilience. This report contains emerging textures and finishes, growing ingredients, how to address future lip beautification challenges and trends that will shape the category from 2023 and beyond."
-                hasLink={true}
-                linkTitle="Download pdf"
-                href="#"
-              />
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="mx-auto w-4/5">
-              <ReportCard
-                imgSrc="images/index/reports/salon-smart-networking-and-speak-event.jpg"
-                sectionTitle="Out and about"
-                title="Salon smart networking and speak event"
-                description="Emmanuelle headed down to Salon Smart last month. A business event for hair professionals, it was great to hear about the challenges hairdressers face, and meet lots of creatives."
-                hasLink={false}
-                linkTitle="Find out more"
-                href="#"
-              />
-            </div>
-          </li>
-        </ul>
+    <div class="mt-10 pb-8">
+      <!-- TODO: this should match the JS breakpoint at 1024px below -->
+      <div class="splide pb-14" id="report-section__carrousel">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <div class="grid h-full place-items-center">
+                <div class="report-card-width-container lg:w-3/4">
+                  <ReportCard
+                    imgSrc="images/index/reports/clean-beauty-in-london.jpg"
+                    sectionTitle="Out and about"
+                    title="Clean beauty in london"
+                    description="Annie spent the day at the Clean Beauty in London show at The Brewery near the Barbican. We loved how much Solid Beauty was on show - it truly has gone from eco-necessity to a product to be enjoyed."
+                    hasLink={true}
+                    linkTitle="Find out more"
+                    href="#"
+                  />
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="grid h-full place-items-center">
+                <div class="report-card-width-container lg:w-3/4">
+                  <!-- TODO: host the PDF file on github -->
+                  <ReportCard
+                    imgSrc="images/index/reports/the-future-of-lip.jpg"
+                    sectionTitle="Report"
+                    title="The Future of Lip"
+                    description="Having a strong lip portfolio is more important than ever, as this product category proves time and time again its recession-resilience. This report contains emerging textures and finishes, growing ingredients, how to address future lip beautification challenges and trends that will shape the category from 2023 and beyond."
+                    hasLink={true}
+                    linkTitle="Download pdf"
+                    href="#"
+                  />
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="grid h-full place-items-center">
+                <div class="report-card-width-container lg:w-3/4">
+                  <ReportCard
+                    imgSrc="images/index/reports/salon-smart-networking-and-speak-event.jpg"
+                    sectionTitle="Out and about"
+                    title="Salon smart networking and speak event"
+                    description="Emmanuelle headed down to Salon Smart last month. A business event for hair professionals, it was great to hear about the challenges hairdressers face, and meet lots of creatives."
+                    hasLink={true}
+                    linkTitle="Find out more"
+                    href="#"
+                  />
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="grid h-full place-items-center">
+                <div class="report-card-width-container lg:w-3/4">
+                  <ReportCard
+                    imgSrc="images/index/reports/salon-smart-networking-and-speak-event.jpg"
+                    sectionTitle="Out and about"
+                    title="Salon smart networking and speak event"
+                    description="Emmanuelle headed down to Salon Smart last month. A business event for hair professionals, it was great to hear about the challenges hairdressers face, and meet lots of creatives."
+                    hasLink={true}
+                    linkTitle="Find out more"
+                    href="#"
+                  />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- Injected via JavaScript -->
+        <ul class="splide__pagination"></ul>
       </div>
     </div>
-
-    <!-- <div id="report-section__carrousel-dots"></div> -->
   </div>
 </section>
 
-<style>
-  #report-section__carrousel .splide__slide.is-active > div {
-    width: 100%;
-    height: 100%;
-    background-color: red;
+<!-- TODO: can we use global(#report-section__carrousel) to make this even fancier? -->
+<style is:global>
+  /* PAGINATION DOTS */
+  #report-section__carrousel .splide__pagination__page {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  #report-section__carrousel .splide__pagination__page.is-active {
+    background-color: black;
   }
 
-  #report-section__carrousel .splide__slide.is-active article {
+  /* ACTIVE CARD (THE CENTER ONE) */
+  #report-section__carrousel
+    .splide__slide.is-active
+    .report-card-width-container {
     width: 100%;
-    height: 100%;
+  }
+
+  /* MAKE CARROUSEL GRID ON MOBILE */
+  @media (max-width: 1024px) {
+    #report-section__carrousel .splide__list {
+      display: grid;
+      gap: 1.5em;
+    }
   }
 </style>
 
@@ -83,32 +124,21 @@ import ReportCard from "./ReportCard.astro";
   import { Splide } from "@splidejs/splide";
   import "@splidejs/splide/dist/css/splide.min.css";
 
-  // TODO: put this function into a shared/utils folder
-  /*   const getElementByIdOrError = (id: string) => {
-    const element = document.getElementById(id);
-
-    if (element == null) {
-      throw new Error(`Could not find element with id: ${id}`);
-    }
-
-    return element;
-  };
-
-  const reportSectionCarrousel = getElementByIdOrError(
-    "report-section__carrousel"
-  ) as HTMLDivElement; */
   new Splide("#report-section__carrousel", {
     perPage: 3,
     perMove: 1,
     type: "loop",
-    interval: 1000,
-    autoplay: false,
+    interval: 5000,
+    autoplay: true,
+    drag: false,
     focus: "center",
+    start: 1,
+    pagination: true,
+    arrows: false,
     breakpoints: {
-      640: {
+      1024: {
         destroy: true,
       },
     },
   }).mount();
-  // splide.destroy();
 </script>
