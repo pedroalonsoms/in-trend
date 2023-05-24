@@ -4,12 +4,11 @@ import Footer from "../components/Footer.astro";
 import NavigationBar from "../components/NavigationBar.astro";
 import PillShapeLink from "../components/PillShapeLink.astro";
 import ReportSection from "../components/ReportSection.astro";
-import TestimonialCard from "../components/TestimonialCard.astro";
+import TestimonialSection from "../components/TestimonialSection.astro";
 import Layout from "../layouts/Layout.astro";
 import LogoBioderma from "../svgs/companies/LogoBioderma.astro";
 import LogoBuxom from "../svgs/companies/LogoBuxom.astro";
 import LogoChanel from "../svgs/companies/LogoChanel.astro";
-import LogoChristianDior from "../svgs/companies/LogoChristianDior.astro";
 import LogoCoty from "../svgs/companies/LogoCoty.astro";
 import LogoFilorga from "../svgs/companies/LogoFilorga.astro";
 import LogoHenkel from "../svgs/companies/LogoHenkel.astro";
@@ -68,13 +67,13 @@ import Logo from "../svgs/Logo.astro";
     <ReportSection />
 
     <section class="bg-beige-300">
-      <div class="mx-auto max-w-screen-xl">
+      <div class="mx-auto max-w-screen-lg">
         <h2
-          class="pt-10 text-center text-2xl font-medium capitalize tracking-wide text-brown-600"
+          class="pt-10 text-center text-2xl font-medium capitalize tracking-wide text-brown-600 md:pt-40 md:text-3xl"
         >
           In-Trend expertize
         </h2>
-        <div class="mt-6 flex flex-wrap justify-center gap-2">
+        <div class="mt-8 flex flex-wrap justify-center gap-2">
           <span
             class="inline-block rounded-full border border-brown-600/10 px-6 py-2 text-sm font-semibold text-brown-600"
           >
@@ -92,7 +91,7 @@ import Logo from "../svgs/Logo.astro";
           </span>
         </div>
 
-        <div class="mt-6 grid gap-6 md:grid-cols-3">
+        <div class="mt-6 grid gap-6 md:mt-10 md:grid-cols-3 md:gap-10">
           <ExpertizeCard
             imgSrc="images/index/expertize/100-focused-on-beauty.jpg"
             title="100% focused on beauty"
@@ -115,59 +114,43 @@ import Logo from "../svgs/Logo.astro";
         </div>
       </div>
 
-      <div class="mt-14 flex justify-center gap-8 overflow-x-hidden pb-20">
-        <LogoLVMH class="h-10 w-auto shrink-0" />
-        <LogoUnilever class="h-10 w-auto shrink-0" />
-        <LogoLoreal class="h-10 w-auto shrink-0" />
-        <LogoMerck class="h-10 w-auto shrink-0" />
-        <LogoBioderma class="h-10 w-auto shrink-0" />
-        <LogoHenkel class="h-10 w-auto shrink-0" />
-        <LogoChanel class="h-10 w-auto shrink-0" />
-        <LogoFilorga class="h-10 w-auto shrink-0" />
-        <LogoBuxom class="h-10 w-auto shrink-0" />
-        <LogoLauraMercier class="h-10 w-auto shrink-0" />
-        <LogoPuig class="h-10 w-auto shrink-0" />
-        <LogoCoty class="h-10 w-auto shrink-0" />
+      <!-- Reference: Coding with Roby, https://www.youtube.com/watch?v=nAjR0Oj0J8E -->
+      <div class="mt-14 flex gap-8 overflow-x-hidden pb-20 md:mt-20 md:pb-44">
+        <div class="inline-flex animate-slide gap-8">
+          <!-- TODO: some logos are bigger than they should lol -->
+          <LogoLVMH class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoUnilever class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoLoreal class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoMerck class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoBioderma class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoHenkel class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoChanel class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoFilorga class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoBuxom class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoLauraMercier class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoPuig class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoCoty class="h-10 w-auto shrink-0 md:h-8" />
+        </div>
+        <div class="inline-flex animate-slide gap-8">
+          <!-- TODO: some logos are bigger than they should lol -->
+          <LogoLVMH class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoUnilever class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoLoreal class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoMerck class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoBioderma class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoHenkel class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoChanel class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoFilorga class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoBuxom class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoLauraMercier class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoPuig class="h-10 w-auto shrink-0 md:h-8" />
+          <LogoCoty class="h-10 w-auto shrink-0 md:h-8" />
+        </div>
       </div>
     </section>
 
-    <section class="bg-carrot-300 px-4 pt-16">
-      <!-- TODO: there's a different image on mobile and on desktop for one testimonial -->
-      <div class="grid gap-8 md:grid-cols-3 lg:grid-cols-4">
-        <TestimonialCard
-          imgSrc="images/index/testimonials/jacques-valero.jpg"
-          description="In-Trend is a factory of insights, informing us of the latest product claims and highly precious information to help us innovate. Their emerging new trends are always highly accurate, and very useful."
-          author="-Jacques Valero"
-          authorJobTitle="Parfums Responsible Innovation"
-        >
-          <LogoChristianDior class="mx-auto mt-14 h-auto w-40 text-white" />
-        </TestimonialCard>
-        <TestimonialCard
-          imgSrc="images/index/testimonials/kristi-sloe.jpg"
-          description="In-Trend LTD is a valued partner in product innovation and trends. Our teams love their inspiring ideation workshops, which are becoming a crucial touchpoint in our product development process."
-          author="-Kristi Sloe"
-          authorJobTitle="Vice President Global Product Development"
-        >
-          <LogoLauraMercier class="mx-auto mt-14 h-auto w-40 text-white" />
-        </TestimonialCard>
-        <TestimonialCard
-          imgSrc="images/index/testimonials/isabelle-montferrand.jpg"
-          description="In-Trend is a key partner in our innovation monitoring process. For many years, they have supported us in monitoring and decoding beauty innovations. All thanks to an expert, highly responsive and friendly team. Attentive to our needs, they constantly adapt and re-work their proposals and formats. Great relationship."
-          author="-Isabelle Montferrand"
-          authorJobTitle="Competitive Intelligence Innovation Direction"
-        >
-          <LogoLoreal class="mx-auto mt-14 h-auto w-40 text-white" />
-        </TestimonialCard>
-        <TestimonialCard
-          imgSrc="images/index/testimonials/edelina-natale.jpg"
-          description="In-Trend's reporting on product launches and trends in both the Latin American & Asian hair markets, provides vital insights for our team."
-          author="-Edelina Natale"
-          authorJobTitle="Innovation & Trend Manager"
-        >
-          <LogoHenkel class="mx-auto mt-14 h-auto w-24 text-white" />
-        </TestimonialCard>
-      </div>
-    </section>
+    <!-- TODO: should we make this into a separate folder? -->
+    <TestimonialSection />
   </main>
 
   <Footer />

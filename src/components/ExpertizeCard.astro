@@ -16,7 +16,9 @@ const { imgSrc, title, description } = Astro.props;
   <h3 class="mt-4 text-center font-serif text-xl font-thin capitalize">
     {title}
   </h3>
-  <p class="mt-4 pb-4 text-center text-sm text-rock-200">
+  <p
+    class="mx-auto mt-4 max-w-xs pb-4 text-center text-sm tracking-wide text-rock-200 md:font-light"
+  >
     {description}
   </p>
 </article>

@@ -20,6 +20,15 @@ module.exports = {
           300: "#F09164",
         },
       },
+      keyframes: {
+        slide: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
+      animation: {
+        slide: "35s slide infinite linear",
+      },
     },
   },
   plugins: [],
