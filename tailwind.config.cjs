@@ -17,7 +17,8 @@ module.exports = {
         },
         carrot: {
           200: "#EFCEBB",
-          300: "#F09164",
+          400: "#EA8E56",
+          600: "#F97236",
         },
       },
       keyframes: {
@@ -28,6 +29,16 @@ module.exports = {
       },
       animation: {
         slide: "35s slide infinite linear",
+      },
+      fontSize: {
+        "12xl": "12rem",
+        "14xl": "14rem",
+      },
+      lineHeight: {
+        "3/4": 0.75,
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
     },
   },

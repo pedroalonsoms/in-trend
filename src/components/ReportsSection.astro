@@ -20,7 +20,7 @@ import ReportCard from "./ReportCard.astro";
 
     <div class="mt-10 pb-8">
       <!-- TODO: this should match the JS breakpoint at 1024px below -->
-      <div class="splide pb-14" id="report-section__carrousel">
+      <div class="splide pb-14" id="reports-section__carrousel">
         <div class="splide__track">
           <ul class="splide__list">
             <li class="splide__slide">
@@ -93,18 +93,18 @@ import ReportCard from "./ReportCard.astro";
   </div>
 </section>
 
-<!-- TODO: can we use global(#report-section__carrousel) to make this even fancier? -->
+<!-- TODO: can we use global(#reports-section__carrousel) to make this even fancier? -->
 <style is:global>
   /* PAGINATION DOTS */
-  #report-section__carrousel .splide__pagination__page {
+  #reports-section__carrousel .splide__pagination__page {
     background-color: rgba(0, 0, 0, 0.2);
   }
-  #report-section__carrousel .splide__pagination__page.is-active {
+  #reports-section__carrousel .splide__pagination__page.is-active {
     background-color: black;
   }
 
   /* ACTIVE CARD (THE CENTER ONE) */
-  #report-section__carrousel
+  #reports-section__carrousel
     .splide__slide.is-active
     .report-card-width-container {
     width: 100%;
@@ -112,7 +112,7 @@ import ReportCard from "./ReportCard.astro";
 
   /* MAKE CARROUSEL GRID ON MOBILE */
   @media (max-width: 1024px) {
-    #report-section__carrousel .splide__list {
+    #reports-section__carrousel .splide__list {
       display: grid;
       gap: 1.5em;
     }
@@ -124,7 +124,7 @@ import ReportCard from "./ReportCard.astro";
   import { Splide } from "@splidejs/splide";
   import "@splidejs/splide/dist/css/splide.min.css";
 
-  new Splide("#report-section__carrousel", {
+  new Splide("#reports-section__carrousel", {
     perPage: 3,
     perMove: 1,
     type: "loop",

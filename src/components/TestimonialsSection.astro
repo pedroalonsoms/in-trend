@@ -1,0 +1,123 @@
+---
+import LogoChristianDior from "../svgs/companies/LogoChristianDior.astro";
+import LogoHenkel from "../svgs/companies/LogoHenkel.astro";
+import LogoLauraMercier from "../svgs/companies/LogoLauraMercier.astro";
+import LogoLoreal from "../svgs/companies/LogoLoreal.astro";
+import IconArrow from "../svgs/icons/IconArrow.astro";
+import TestimonialCard from "./TestimonialCard.astro";
+
+// TODO: add json here to make it easy for the client to do this stuff?
+---
+
+<section
+  class="relative z-0 bg-gradient-radial from-carrot-600 from-15% via-carrot-400 to-carrot-200 px-4"
+>
+  <p
+    class="absolute inset-x-0 bottom-0 -z-10 text-center font-serif text-7xl leading-3/4 text-white sm:text-9xl lg:text-12xl xl:text-14xl"
+  >
+    Client Love
+  </p>
+  <!-- TODO: there's a different image on mobile and on desktop for one testimonial -->
+  <div class="pb-20 pt-8 lg:pb-24 lg:pt-20">
+    <div class="splide" id="testimonials-section__carrousel">
+      <div class="splide__arrows">
+        <button
+          class="splide__arrow splide__arrow--prev left-12 border border-solid border-white bg-transparent"
+        >
+          <IconArrow class="text-white" />
+        </button>
+        <button
+          class="splide__arrow splide__arrow--next right-12 border border-solid border-white bg-transparent"
+        >
+          <IconArrow class="text-white" />
+        </button>
+      </div>
+
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="grid h-full place-items-center">
+              <div class="max-w-2xl">
+                <TestimonialCard
+                  imgSrc="images/index/testimonials/jacques-valero.jpg"
+                  description="In-Trend is a factory of insights, informing us of the latest product claims and highly precious information to help us innovate. Their emerging new trends are always highly accurate, and very useful."
+                  author="-Jacques Valero"
+                  authorJobTitle="Parfums Responsible Innovation"
+                >
+                  <LogoChristianDior
+                    class="mx-auto mt-8 h-auto w-40 text-white"
+                  />
+                </TestimonialCard>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="grid h-full place-items-center">
+              <div class="max-w-2xl">
+                <TestimonialCard
+                  imgSrc="images/index/testimonials/kristi-sloe.jpg"
+                  description="In-Trend LTD is a valued partner in product innovation and trends. Our teams love their inspiring ideation workshops, which are becoming a crucial touchpoint in our product development process."
+                  author="-Kristi Sloe"
+                  authorJobTitle="Vice President Global Product Development"
+                >
+                  <LogoLauraMercier
+                    class="mx-auto mt-8 h-auto w-40 text-white"
+                  />
+                </TestimonialCard>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="grid h-full place-items-center">
+              <div class="max-w-2xl">
+                <TestimonialCard
+                  imgSrc="images/index/testimonials/isabelle-montferrand.jpg"
+                  description="In-Trend is a key partner in our innovation monitoring process. For many years, they have supported us in monitoring and decoding beauty innovations. All thanks to an expert, highly responsive and friendly team. Attentive to our needs, they constantly adapt and re-work their proposals and formats. Great relationship."
+                  author="-Isabelle Montferrand"
+                  authorJobTitle="Competitive Intelligence Innovation Direction"
+                >
+                  <LogoLoreal class="mx-auto mt-8 h-auto w-40 text-white" />
+                </TestimonialCard>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <div class="grid h-full place-items-center">
+              <div class="max-w-2xl">
+                <TestimonialCard
+                  imgSrc="images/index/testimonials/edelina-natale.jpg"
+                  description="In-Trend's reporting on product launches and trends in both the Latin American & Asian hair markets, provides vital insights for our team."
+                  author="-Edelina Natale"
+                  authorJobTitle="Innovation & Trend Manager"
+                >
+                  <LogoHenkel class="mx-auto mt-14 h-auto w-24 text-white" />
+                </TestimonialCard>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // TODO: add modular stuff
+  import { Splide } from "@splidejs/splide";
+  import "@splidejs/splide/dist/css/splide.min.css";
+
+  new Splide("#testimonials-section__carrousel", {
+    perPage: 1,
+    type: "loop",
+    interval: 5000,
+    autoplay: true,
+    pagination: false,
+    arrows: true,
+    breakpoints: {
+      1024: {
+        arrows: false,
+        gap: "2rem",
+      },
+    },
+  }).mount();
+</script>
