@@ -2,7 +2,6 @@
 import Logo from "../svgs/Logo.astro";
 import IconClose from "../svgs/icons/IconClose.astro";
 import IconHamburger from "../svgs/icons/IconHamburger.astro";
-import IconSearch from "../svgs/icons/IconSearch.astro";
 
 interface Props {
   variant: "transparent" | "beige";
@@ -17,39 +16,131 @@ if (variant === "transparent") {
 } else if (variant === "beige") {
   navVariantClasses = "bg-beige-300 text-black";
 } else {
-  throw new Error(`Unexpecrted variant ${variant}`);
+  throw new Error(`Unexpected variant ${variant}`);
+
+  // TODO: define navigation links here
+  // TODO: (important) fix nav-bar color switching on other pages :S
 }
 ---
 
+<!-- TODO: move this header outside the navigation bar -->
 <header class="fixed left-0 top-0 z-10 w-full">
   <div
-    class={`flex items-center justify-between px-5 py-5 ${navVariantClasses}`}
+    class={`flex items-center justify-between px-5 md:px-14 py-5 ${navVariantClasses}`}
   >
-    <a href="/">
-      <Logo class="h-6 w-auto" />
+    <a href="/" class="z-10">
+      <Logo class="primary-nav__logo-icon h-6 w-auto text-white md:h-8" />
     </a>
 
-    <div class="flex items-center gap-2">
-      <button>
-        <!-- TODO: add aria-expanded stuff -->
-        <IconHamburger class="h-7 w-7" />
-        <span class="sr-only">Toggle Menu</span>
-      </button>
+    <!-- TODO: menu absolute or fixed? -->
+    <!-- TODO: implement menu for both desktop and mobile -->
+    <nav
+      class="primary-nav fixed inset-x-0 top-0 z-0 hidden h-screen bg-beige-300 lg:static lg:inset-auto lg:z-auto lg:block lg:h-auto lg:bg-transparent"
+    >
+      <div
+        class="grid h-full place-content-center justify-items-center gap-40 lg:block lg:h-auto"
+      >
+        <div class="grid gap-4 pt-24 lg:flex lg:gap-12 lg:pt-0">
+          <a
+            href="/who-we-are.html"
+            class="inline-block text-center text-xl font-medium uppercase text-brown-600 lg:text-sm lg:text-white"
+          >
+            Meet the team
+          </a>
+          <a
+            href="/our-services.html"
+            class="inline-block text-center text-xl font-medium uppercase text-brown-600 lg:text-sm lg:text-white"
+          >
+            Our services
+          </a>
+          <a
+            href="/contact-us.html"
+            class="inline-block text-center text-xl font-medium uppercase text-brown-600 lg:text-sm lg:text-white"
+          >
+            Contact us
+          </a>
+        </div>
+        <button class="primary-nav__close-button lg:hidden">
+          <IconClose class="h-12 w-12 text-black" />
+        </button>
+      </div>
+    </nav>
 
-      <button>
-        <!-- TODO: what is this search icon for? -->
-        <IconSearch class="h-6 w-6" />
-        <span class="sr-only">Search</span>
-      </button>
-    </div>
+    <button class="primary-nav__toggle-button z-10 lg:hidden">
+      <!-- TODO: add aria-expanded stuff -->
+      <IconHamburger
+        class="primary-nav__toggle-button-icon h-7 w-7 text-white"
+      />
+      <span class="sr-only">Toggle Menu</span>
+    </button>
   </div>
-
-  <!-- TODO: menu absolute or fixed? -->
-  <!-- TODO: implement menu for both desktop and mobile -->
-  <nav class="hidden">
-    <a href="#">Meet the team</a>
-    <a href="#">Our services</a>
-    <a href="#">Contact us</a>
-    <IconClose />
-  </nav>
 </header>
+
+<script>
+  // TODO: move this stuff into a /shared folder
+  function querySelectorOrError(query: string) {
+    const element = document.querySelector(`${query}`);
+
+    if (element !== null) {
+      return element;
+    }
+
+    throw new Error(`ERROR: no elements matched query ${query}`);
+  }
+
+  const primaryNav = {
+    logoIcon: querySelectorOrError(".primary-nav__logo-icon"),
+    toggleButton: querySelectorOrError(".primary-nav__toggle-button"),
+    toggleButtonIcon: querySelectorOrError(".primary-nav__toggle-button-icon"),
+    closeButton: querySelectorOrError(".primary-nav__close-button"),
+    nav: querySelectorOrError(".primary-nav"),
+  };
+
+  let isNavOpen = false;
+
+  const openPrimaryNav = () => {
+    primaryNav.nav.classList.toggle("hidden");
+    primaryNav.logoIcon.classList.remove("text-white");
+    primaryNav.logoIcon.classList.add("text-black");
+
+    primaryNav.toggleButtonIcon.classList.remove("text-white");
+    primaryNav.toggleButtonIcon.classList.add("text-black");
+    isNavOpen = true;
+  };
+
+  const closePrimaryNav = () => {
+    primaryNav.nav.classList.toggle("hidden");
+    primaryNav.logoIcon.classList.remove("text-black");
+    primaryNav.logoIcon.classList.add("text-white");
+
+    primaryNav.toggleButtonIcon.classList.remove("text-black");
+    primaryNav.toggleButtonIcon.classList.add("text-white");
+    isNavOpen = false;
+  };
+
+  /*
+    Close navigation bar when we resize window
+    Reference: https://css-tricks.com/working-with-javascript-media-queries/
+  */
+
+  const mediaQuery = window.matchMedia("(min-width: 1024px)");
+  mediaQuery.addEventListener("change", (e) => {
+    if (e.matches && isNavOpen) {
+      closePrimaryNav();
+    }
+  });
+
+  primaryNav.toggleButton.addEventListener("click", () => {
+    if (!isNavOpen) {
+      openPrimaryNav();
+    } else {
+      closePrimaryNav();
+    }
+  });
+
+  primaryNav.closeButton.addEventListener("click", () => {
+    if (isNavOpen) {
+      closePrimaryNav();
+    }
+  });
+</script>
