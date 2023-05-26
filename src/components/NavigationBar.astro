@@ -9,32 +9,38 @@ interface Props {
 
 const { variant } = Astro.props;
 
-let navVariantClasses = "";
+let navBarVariantBgColor = "";
+let navBarVariantIconColor = "";
 
 if (variant === "transparent") {
-  navVariantClasses = "bg-white/20 backdrop-blur text-white";
+  navBarVariantBgColor = "bg-white/20 backdrop-blur";
+  navBarVariantIconColor = "text-white";
 } else if (variant === "beige") {
-  navVariantClasses = "bg-beige-300 text-black";
+  navBarVariantBgColor = "bg-beige-300";
+  navBarVariantIconColor = "text-black";
 } else {
   throw new Error(`Unexpected variant ${variant}`);
-
-  // TODO: define navigation links here
-  // TODO: (important) fix nav-bar color switching on other pages :S
 }
+
+// TODO: define navigation links here
+// TODO: (important) fix nav-bar color switching on other pages :S
 ---
 
 <!-- TODO: move this header outside the navigation bar -->
 <header class="fixed left-0 top-0 z-10 w-full">
   <div
-    class={`flex items-center justify-between px-5 md:px-14 py-5 ${navVariantClasses}`}
+    class={`flex items-center justify-between px-5 md:px-14 py-5 ${navBarVariantBgColor}`}
   >
     <a href="/in-trend" class="z-10">
-      <Logo class="primary-nav__logo-icon h-6 w-auto text-white md:h-8" />
+      <Logo
+        class={`primary-nav__logo-icon h-6 w-auto md:h-8 ${navBarVariantIconColor}`}
+      />
     </a>
 
     <!-- TODO: menu absolute or fixed? -->
     <!-- TODO: implement menu for both desktop and mobile -->
     <nav
+      data-variant={variant}
       class="primary-nav fixed inset-x-0 top-0 z-0 hidden h-screen bg-beige-300 lg:static lg:inset-auto lg:z-auto lg:block lg:h-auto lg:bg-transparent"
     >
       <div
@@ -43,19 +49,19 @@ if (variant === "transparent") {
         <div class="grid gap-4 pt-24 lg:flex lg:gap-12 lg:pt-0">
           <a
             href="/in-trend/who-we-are"
-            class="inline-block text-center text-xl font-medium uppercase text-brown-600 lg:text-sm lg:text-white"
+            class={`inline-block text-center text-xl font-medium uppercase text-brown-600 lg:text-sm lg:${navBarVariantIconColor}`}
           >
             Meet the team
           </a>
           <a
             href="/in-trend/our-services"
-            class="inline-block text-center text-xl font-medium uppercase text-brown-600 lg:text-sm lg:text-white"
+            class={`inline-block text-center text-xl font-medium uppercase text-brown-600 lg:text-sm lg:${navBarVariantIconColor}`}
           >
             Our services
           </a>
           <a
             href="/in-trend/contact-us"
-            class="inline-block text-center text-xl font-medium uppercase text-brown-600 lg:text-sm lg:text-white"
+            class={`inline-block text-center text-xl font-medium uppercase text-brown-600 lg:text-sm lg:${navBarVariantIconColor}`}
           >
             Contact us
           </a>
@@ -69,7 +75,7 @@ if (variant === "transparent") {
     <button class="primary-nav__toggle-button z-10 lg:hidden">
       <!-- TODO: add aria-expanded stuff -->
       <IconHamburger
-        class="primary-nav__toggle-button-icon h-7 w-7 text-white"
+        class={`primary-nav__toggle-button-icon h-7 w-7 ${navBarVariantIconColor}`}
       />
       <span class="sr-only">Toggle Menu</span>
     </button>
@@ -100,21 +106,29 @@ if (variant === "transparent") {
 
   const openPrimaryNav = () => {
     primaryNav.nav.classList.toggle("hidden");
-    primaryNav.logoIcon.classList.remove("text-white");
-    primaryNav.logoIcon.classList.add("text-black");
 
-    primaryNav.toggleButtonIcon.classList.remove("text-white");
-    primaryNav.toggleButtonIcon.classList.add("text-black");
+    const variant = primaryNav.nav.getAttribute("data-variant")!;
+    if (variant === "transparent") {
+      primaryNav.logoIcon.classList.remove("text-white");
+      primaryNav.logoIcon.classList.add("text-black");
+
+      primaryNav.toggleButtonIcon.classList.remove("text-white");
+      primaryNav.toggleButtonIcon.classList.add("text-black");
+    }
     isNavOpen = true;
   };
 
   const closePrimaryNav = () => {
     primaryNav.nav.classList.toggle("hidden");
-    primaryNav.logoIcon.classList.remove("text-black");
-    primaryNav.logoIcon.classList.add("text-white");
 
-    primaryNav.toggleButtonIcon.classList.remove("text-black");
-    primaryNav.toggleButtonIcon.classList.add("text-white");
+    const variant = primaryNav.nav.getAttribute("data-variant")!;
+    if (variant === "transparent") {
+      primaryNav.logoIcon.classList.remove("text-black");
+      primaryNav.logoIcon.classList.add("text-white");
+
+      primaryNav.toggleButtonIcon.classList.remove("text-black");
+      primaryNav.toggleButtonIcon.classList.add("text-white");
+    }
     isNavOpen = false;
   };
 
