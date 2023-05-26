@@ -7,6 +7,7 @@ import Footer from "../components/Footer.astro";
 import ReportsSection from "../components/ReportsSection.astro";
 import InTrendIsConnectedRing from "../svgs/InTrendIsConnectedRing.astro";
 import ExpertQASection from "../components/ExpertQASection.astro";
+import ComingSoonSection from "../components/ComingSoonSection.astro";
 ---
 
 <Layout title="In Trend - Our Services">
@@ -49,6 +50,7 @@ import ExpertQASection from "../components/ExpertQASection.astro";
         , bodycare, salon and spa.
       </p>
 
+      <!-- TODO: add horizontal padding -->
       <div class="mt-14 grid lg:grid-cols-3 lg:gap-24">
         <div class="lg:col-span-2">
           <ServiceCard
@@ -143,6 +145,7 @@ import ExpertQASection from "../components/ExpertQASection.astro";
     </div>
   </section>
 
+  <ComingSoonSection />
   <ExpertQASection />
 
   <Footer />

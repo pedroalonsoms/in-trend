@@ -3,9 +3,6 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
-      maxWidth: {
-        xxs: "240px",
-      },
       colors: {
         beige: {
           300: "#F5F5EB",
