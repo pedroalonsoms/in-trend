@@ -4,8 +4,9 @@ import IconArrowLarge from "../svgs/icons/IconArrowLarge.astro";
 interface Props extends HTMLAttributes<"a"> {
   variant: "light" | "dark";
   title: string;
+  isButton?: boolean;
 }
-const { variant, title, href } = Astro.props;
+const { variant, title, href, isButton, class: className } = Astro.props;
 
 let variantClasses = "";
 
@@ -16,12 +17,25 @@ if (variant === "light") {
 } else {
   throw new Error(`Unexpecrted variant ${variant}`);
 }
+
+console.log(isButton);
 ---
 
-<a
-  href={href}
-  class={`inline-flex items-center text-center justify-between max-w-xs w-full gap-4 rounded-full border py-3 pl-6 pr-3 ${variantClasses}`}
->
-  <span class="text-sm font-semibold uppercase">{title}</span>
-  <IconArrowLarge />
-</a>
+{
+  isButton ? (
+    <button
+      class={`inline-flex w-full max-w-xs items-center justify-between gap-4 rounded-full border py-3 pl-6 pr-3 text-center ${variantClasses} ${className}`}
+    >
+      <span class="text-sm font-semibold uppercase">{title}</span>
+      <IconArrowLarge />
+    </button>
+  ) : (
+    <a
+      href={href}
+      class={`inline-flex w-full max-w-xs items-center justify-between gap-4 rounded-full border py-3 pl-6 pr-3 text-center ${variantClasses}`}
+    >
+      <span class="text-sm font-semibold uppercase">{title}</span>
+      <IconArrowLarge />
+    </a>
+  )
+}

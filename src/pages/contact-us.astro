@@ -29,7 +29,13 @@ import IconClose from "../svgs/icons/IconClose.astro";
             </h2>
             <!-- TODO: change this to be a button or use role="button" -->
             <div class="mx-8 mt-6">
-              <PillShapeLink variant="dark" title="Fill in a form" href="#" />
+              <PillShapeLink
+                variant="dark"
+                title="Fill in a form"
+                href="#"
+                isButton={true}
+                class="fill-in-a-form-button"
+              />
             </div>
             <img
               src="../images/contact-us/quick-question.jpg"
@@ -60,7 +66,7 @@ import IconClose from "../svgs/icons/IconClose.astro";
     <!-- TODO: disable scrolling when opened?-->
     <!-- TODO: add aria expanded -->
     <!-- TODO: (important) this thing is supposed to send an email lol -->
-    <div class="absolute inset-0 z-10 hidden bg-black/50 px-4">
+    <div class="contact-us-form absolute inset-0 z-10 hidden bg-black/50 px-4">
       <form
         action="mailto:hello@in-trend-ltd.com"
         method="post"
@@ -69,7 +75,10 @@ import IconClose from "../svgs/icons/IconClose.astro";
         <p class="text-xl uppercase text-brown-600 md:text-2xl">
           Quick question
         </p>
-        <button class="absolute right-4 top-7 z-10" type="button">
+        <button
+          class="contact-us-form-close-button absolute right-4 top-7 z-10"
+          type="button"
+        >
           <IconClose class="h-8 w-8 text-brown-600" />
         </button>
 
@@ -140,7 +149,12 @@ import IconClose from "../svgs/icons/IconClose.astro";
 
             <!-- TODO: this should be role button -->
             <div>
-              <PillShapeLink href="#" title="Submit message" variant="dark" />
+              <PillShapeLink
+                href="#"
+                title="Submit message"
+                variant="dark"
+                isButton={true}
+              />
             </div>
           </div>
         </div>
@@ -150,3 +164,25 @@ import IconClose from "../svgs/icons/IconClose.astro";
     <Footer />
   </div>
 </Layout>
+
+<script>
+  const fillInAFormButton = document.querySelector(
+    ".fill-in-a-form-button"
+  ) as HTMLButtonElement;
+
+  const contactUsForm = document.querySelector(
+    ".contact-us-form"
+  ) as HTMLDivElement;
+
+  const contactUsFormCloseButton = document.querySelector(
+    ".contact-us-form-close-button"
+  ) as HTMLDivElement;
+
+  fillInAFormButton.addEventListener("click", () => {
+    contactUsForm.classList.toggle("hidden");
+  });
+
+  contactUsFormCloseButton.addEventListener("click", () => {
+    contactUsForm.classList.toggle("hidden");
+  });
+</script>
