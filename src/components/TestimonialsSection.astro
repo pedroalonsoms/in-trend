@@ -21,14 +21,10 @@ import TestimonialCard from "./TestimonialCard.astro";
   <div class="pb-20 pt-8 lg:pb-24 lg:pt-20">
     <div class="splide" id="testimonials-section__carrousel">
       <div class="splide__arrows">
-        <button
-          class="splide__arrow splide__arrow--prev left-12 border border-solid border-white bg-transparent"
-        >
+        <button class="splide__arrow splide__arrow--prev">
           <IconArrow class="text-white" />
         </button>
-        <button
-          class="splide__arrow splide__arrow--next right-12 border border-solid border-white bg-transparent"
-        >
+        <button class="splide__arrow splide__arrow--next">
           <IconArrow class="text-white" />
         </button>
       </div>
@@ -100,6 +96,20 @@ import TestimonialCard from "./TestimonialCard.astro";
     </div>
   </div>
 </section>
+
+<style>
+  .splide__arrow--prev {
+    left: 3rem;
+    border: 1px solid white;
+    background-color: transparent;
+  }
+
+  .splide__arrow--next {
+    right: 3rem;
+    border: 1px solid white;
+    background-color: transparent;
+  }
+</style>
 
 <script>
   // TODO: add modular stuff

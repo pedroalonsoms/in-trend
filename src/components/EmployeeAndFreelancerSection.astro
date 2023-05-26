@@ -19,14 +19,10 @@ let i = 0;
         <!-- TODO: improve arrow circle padding and circled border -->
         <!-- TODO: move arrows to the right -->
         <div class="splide__arrows">
-          <button
-            class="splide__arrow splide__arrow--prev bottom-0 left-0 top-auto border border-solid border-black bg-transparent"
-          >
+          <button class="splide__arrow splide__arrow--prev">
             <IconArrow class="text-black" />
           </button>
-          <button
-            class="splide__arrow splide__arrow--next bottom-0 right-5 top-auto border border-solid border-black bg-transparent md:right-0"
-          >
+          <button class="splide__arrow splide__arrow--next">
             <IconArrow class="text-black" />
           </button>
         </div>
@@ -75,6 +71,30 @@ let i = 0;
     </div>
   </div>
 </section>
+
+<style>
+  .splide__arrow--prev {
+    bottom: 0;
+    left: 0;
+    top: auto;
+    border: 1px solid black;
+    background: transparent;
+  }
+
+  .splide__arrow--next {
+    bottom: 0;
+    right: 1.25rem;
+    top: auto;
+    border: 1px solid black;
+    background: transparent;
+  }
+
+  @media (min-width: 768px) {
+    .splide__arrow-next {
+      right: 0;
+    }
+  }
+</style>
 
 <script>
   // TODO: add modular stuff
