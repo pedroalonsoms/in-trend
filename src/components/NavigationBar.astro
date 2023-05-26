@@ -31,7 +31,7 @@ if (variant === "transparent") {
   <div
     class={`flex items-center justify-between px-5 md:px-14 py-5 ${navBarVariantBgColor}`}
   >
-    <a href="/" class="z-10">
+    <a href=`${import.meta.env.BASE_URL}` class="z-10">
       <Logo
         class={`primary-nav__logo-icon h-6 w-auto md:h-8 ${navBarVariantIconColor}`}
       />
@@ -48,19 +48,19 @@ if (variant === "transparent") {
       >
         <div class="grid gap-4 pt-24 lg:flex lg:gap-12 lg:pt-0">
           <a
-            href="/who-we-are"
+            href=`${import.meta.env.BASE_URL}who-we-are`
             class={`inline-block text-center text-xl font-medium uppercase text-brown-600 lg:text-sm lg:${navBarVariantIconColor}`}
           >
             Meet the team
           </a>
           <a
-            href="/our-services"
+            href=`${import.meta.env.BASE_URL}our-services`
             class={`inline-block text-center text-xl font-medium uppercase text-brown-600 lg:text-sm lg:${navBarVariantIconColor}`}
           >
             Our services
           </a>
           <a
-            href="/contact-us"
+            href=`${import.meta.env.BASE_URL}contact-us`
             class={`inline-block text-center text-xl font-medium uppercase text-brown-600 lg:text-sm lg:${navBarVariantIconColor}`}
           >
             Contact us

@@ -16,7 +16,7 @@ const { imgSrc, quoteText, quoteAuthor } = Astro.props;
     <IconOpenQuote class="mx-auto h-5 w-auto text-white" />
   </div>
   <img
-    src={imgSrc}
+    src=`${import.meta.env.BASE_URL}${imgSrc}`
     alt=""
     class="absolute left-0 top-0 -z-10 h-full w-full object-cover"
   />

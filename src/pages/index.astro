@@ -38,7 +38,7 @@ import Logo from "../svgs/Logo.astro";
           media="(min-width: 640px)"
         />
         <img
-          src="images/index/main-mobile.jpg"
+          src=`${import.meta.env.BASE_URL}images/index/main-mobile.jpg`
           class="absolute left-0 top-0 -z-10 h-full w-full object-cover"
           alt=""
         />
@@ -64,7 +64,7 @@ import Logo from "../svgs/Logo.astro";
     </section>
 
     <!-- TODO: should we make the wrapper-div of this stuff separate? -->
-    <ReportSection isMainPage={true} />
+    <ReportSection />
 
     <section class="bg-beige-300">
       <div class="mx-auto max-w-screen-lg">
