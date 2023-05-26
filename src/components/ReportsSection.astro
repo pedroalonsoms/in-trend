@@ -8,7 +8,7 @@ interface Props {
 const { isMainPage } = Astro.props;
 
 let prefix = "";
-if (isMainPage) {
+if (!isMainPage) {
   prefix = "/in-trend/";
 }
 
