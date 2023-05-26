@@ -1,0 +1,29 @@
+---
+import IconOpenQuote from "../svgs/icons/IconOpenQuote.astro";
+
+interface Props {
+  imgSrc: string;
+  quoteText: string;
+  quoteAuthor: string;
+}
+const { imgSrc, quoteText, quoteAuthor } = Astro.props;
+---
+
+<div
+  class="relative z-0 max-w-xxs overflow-hidden rounded-3xl px-5 sm:max-w-xs"
+>
+  <div class="pt-16 sm:pt-36">
+    <IconOpenQuote class="mx-auto h-5 w-auto text-white" />
+  </div>
+  <img
+    src={imgSrc}
+    alt=""
+    class="absolute left-0 top-0 -z-10 h-full w-full object-cover"
+  />
+  <p class="mt-12 text-center text-sm leading-relaxed text-white sm:mt-8">
+    {quoteText}
+  </p>
+  <p class="mt-10 pb-16 text-center font-medium text-white sm:mt-6 sm:pb-36">
+    {quoteAuthor}
+  </p>
+</div>

@@ -2,10 +2,11 @@
 import PillShapeLink from "../components/PillShapeLink.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 import Layout from "../layouts/Layout.astro";
-import LogoShort from "../svgs/LogoShort.astro";
 import NavigationBar from "../components/NavigationBar.astro";
 import Footer from "../components/Footer.astro";
 import ReportsSection from "../components/ReportsSection.astro";
+import InTrendIsConnectedRing from "../svgs/InTrendIsConnectedRing.astro";
+import ExpertQASection from "../components/ExpertQASection.astro";
 ---
 
 <Layout title="In Trend - Our Services">
@@ -100,14 +101,18 @@ import ReportsSection from "../components/ReportsSection.astro";
 
   <ReportsSection isMainPage={false} />
 
-  <section class="bg-carrot-400">
-    <div class="mx-auto px-2">
+  <section
+    class="bg-gradient-radial from-carrot-600 from-5% via-carrot-400 via-45% to-carrot-200 to-100%"
+  >
+    <div class="mx-auto px-5">
       <h2
-        class="pt-8 text-center font-serif text-xl font-light capitalize text-white"
+        class="pt-8 text-center font-serif text-xl font-light capitalize text-white md:pt-20 md:text-3xl"
       >
         In Trend is connected
       </h2>
-      <p class="mt-2 text-center text-sm font-light text-white">
+      <p
+        class="mx-auto mt-2 max-w-xl text-center text-sm font-light text-white md:mt-4"
+      >
         The In-Trend LTD family is a dedicated and dynamic global team with
         proven expertise. We are fed in roots of information, and turn them into
         blooming trees of inspiration.
@@ -116,20 +121,20 @@ import ReportsSection from "../components/ReportsSection.astro";
       <!-- TODO: add bg gradient -->
       <!-- TODO: move all images to webp? -->
       <div
-        class="relative z-0 mx-auto mt-10 grid aspect-square max-w-3xl place-content-center rounded-full border border-white"
+        class="relative z-0 mx-auto mt-10 grid aspect-square max-w-xl place-content-center rounded-full md:mt-16"
       >
-        <p class="text-center">
-          <span class="text-xl uppercase text-white">
+        <p class="px-4 text-center">
+          <span class="uppercase text-white sm:text-2xl">
             We're in the loop about:
           </span><br />
-          <span class="text-xl font-bold uppercase text-white">
+          <span class="font-bold uppercase text-white sm:text-2xl">
             start-ups and incubators
           </span>
         </p>
         <!-- TODO: fix logo alignment -->
         <!-- TODO: add missing circle decoration -->
-        <div class="absolute inset-x-0 bottom-0 z-10 flex justify-center">
-          <LogoShort class="text-white" />
+        <div class="absolute inset-0 -z-10">
+          <InTrendIsConnectedRing class="h-full w-full text-white" />
         </div>
       </div>
 
@@ -138,23 +143,7 @@ import ReportsSection from "../components/ReportsSection.astro";
     </div>
   </section>
 
-  <section class="bg-beige-300">
-    <h2
-      class="pt-10 text-center text-2xl font-medium tracking-wide text-brown-600"
-    >
-      Expert Q&A
-    </h2>
-    <p class="mt-4 px-4 text-center text-sm text-brown-600">
-      We ask all of our experts, what would they advise to those trying to get
-      into aesthetic medicine.
-    </p>
-    <p
-      class="mt-40 pb-40 text-center text-5xl capitalize tracking-wide text-rock-100"
-    >
-      Coming soon
-    </p>
-    <!-- TODO: (IMPORTANT) implement carrousel and activate it when needed  -->
-  </section>
+  <ExpertQASection />
 
   <Footer />
 </Layout>
