@@ -4,6 +4,8 @@ import NavigationBar from "../../shared/components/NavigationBar.astro";
 import Footer from "../../shared/components/Footer.astro";
 import PillShapeLink from "../../shared/components/PillShapeLink.astro";
 import IconClose from "../../shared/svgs/icons/IconClose.astro";
+import bookNow from "./images/book-now.jpg";
+import quickQuestion from "./images/quick-question.jpg";
 ---
 
 <!-- TODO: (important) improve 4k view for this page -->
@@ -39,7 +41,7 @@ import IconClose from "../../shared/svgs/icons/IconClose.astro";
               />
             </div>
             <img
-              src=`${import.meta.env.BASE_URL}images/contact-us/quick-question.jpg`
+              src={quickQuestion}
               alt=""
               class="mt-12 max-h-60 w-full object-cover"
             />
@@ -51,7 +53,7 @@ import IconClose from "../../shared/svgs/icons/IconClose.astro";
               <PillShapeLink variant="dark" title="Fill in a form" href="#" />
             </div>
             <img
-              src=`${import.meta.env.BASE_URL}images/contact-us/30-minute-chat.jpg`
+              src={bookNow}
               alt=""
               class="mt-12 max-h-60 w-full object-cover"
             />
