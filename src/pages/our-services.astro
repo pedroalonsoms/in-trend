@@ -103,47 +103,83 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
 
   <ReportsSection isMainPage={false} />
 
-  <section
-    class="bg-gradient-radial from-carrot-600 from-5% via-carrot-400 via-45% to-carrot-200 to-100%"
-  >
-    <div class="mx-auto px-5">
-      <h2
-        class="pt-8 text-center font-serif text-xl font-light capitalize text-white md:pt-20 md:text-3xl"
-      >
-        In Trend is connected
-      </h2>
-      <p
-        class="mx-auto mt-2 max-w-xl text-center text-sm font-light text-white md:mt-4"
-      >
-        The In-Trend LTD family is a dedicated and dynamic global team with
-        proven expertise. We are fed in roots of information, and turn them into
-        blooming trees of inspiration.
+  <div>
+    <div
+      class="grid gap-[100vh] pt-[calc(48vh+2.5rem)] sm:pt-[calc(48vh+2.5rem)]"
+    >
+      <p class="px-4 text-center">
+        <span class="uppercase text-white sm:text-2xl">
+          We're in the loop about:
+        </span><br />
+        <span class="font-bold uppercase text-white sm:text-2xl">
+          start-ups and incubators
+        </span>
       </p>
-      <!-- TODO: add missing carrot colors in Tailwind -->
-      <!-- TODO: add bg gradient -->
-      <!-- TODO: move all images to webp? -->
-      <div
-        class="relative z-0 mx-auto mt-10 grid aspect-square max-w-xl place-content-center rounded-full md:mt-16"
-      >
-        <p class="px-4 text-center">
+      <p class="px-4 text-center">
+        <span class="uppercase text-white sm:text-2xl"> We attend:</span><br />
+        <span class="font-bold uppercase text-white sm:text-2xl">
+          trade shows + conferences
+        </span>
+      </p>
+      <p class="px-4 text-center">
+        <span class="uppercase text-white sm:text-2xl"> We talk to:</span><br />
+        <span class="font-bold uppercase text-white sm:text-2xl">
+          professionals / experts
+        </span>
+      </p>
+      <p class="px-4 text-center">
+        <span class="uppercase text-white sm:text-2xl"> We analyze:</span><br />
+        <span class="font-bold uppercase text-white sm:text-2xl">
+          social media
+        </span>
+      </p>
+      <p class="px-4 text-center">
+        <span class="uppercase text-white sm:text-2xl">
+          We have an extensive database:</span
+        ><br />
+        <span class="font-bold uppercase text-white sm:text-2xl">
+          product | services
+        </span>
+      </p>
+    </div>
+
+    <section
+      class="sticky bottom-0 -z-10 grid h-[calc(100vh-4.5rem)] items-center bg-gradient-radial from-carrot-600 from-5% via-carrot-400 via-45% to-carrot-200 to-100%"
+    >
+      <div class="mx-auto px-5">
+        <h2
+          class="pt-20 text-center font-serif text-xl font-light capitalize text-white md:text-3xl"
+        >
+          In Trend is connected
+        </h2>
+        <p
+          class="mx-auto mt-2 max-w-xl text-center text-sm font-light text-white md:mt-4"
+        >
+          The In-Trend LTD family is a dedicated and dynamic global team with
+          proven expertise. We are fed in roots of information, and turn them
+          into blooming trees of inspiration.
+        </p>
+        <!-- TODO: add missing carrot colors in Tailwind -->
+        <!-- TODO: add bg gradient -->
+        <!-- TODO: move all images to webp? -->
+        <div class="mx-auto mt-10 max-w-xl rounded-full pb-20 md:mt-16">
+          <!-- <p class="px-4 text-center">
           <span class="uppercase text-white sm:text-2xl">
             We're in the loop about:
           </span><br />
           <span class="font-bold uppercase text-white sm:text-2xl">
             start-ups and incubators
           </span>
-        </p>
-        <!-- TODO: fix logo alignment -->
-        <!-- TODO: add missing circle decoration -->
-        <div class="absolute inset-0 -z-10">
+        </p> -->
+          <!-- TODO: fix logo alignment -->
+          <!-- TODO: add missing circle decoration -->
           <InTrendIsConnectedRing class="h-full w-full text-white" />
         </div>
-      </div>
 
-      <!-- TODO: can this be removed? -->
-      <div class="pb-20"></div>
-    </div>
-  </section>
+        <!-- TODO: can this be removed? -->
+      </div>
+    </section>
+  </div>
 
   <ComingSoonSection />
   <ExpertQASection />
