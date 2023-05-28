@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        avenir: ["Avenir", "sans-serif"],
-        "big-caslon": ["Big Caslon", "serif"],
+        monsterrat: ["Monsterrat", "sans-serif"],
+        "frank-ruhl-libre": ["Frank Ruhl Libre", "serif"],
       },
       colors: {
         beige: {

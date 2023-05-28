@@ -15,119 +15,208 @@ const { title } = Astro.props;
     <meta name="description" content={title} />
 
     <!-- Fonts -->
+    <!-- TODO: this into a separate folder -->
     <style>
-      /* AVENIR */
+      /* FRANK RUHL LIBRE */
       @font-face {
-        font-family: "Avenir";
-        font-weight: 900;
-        font-style: italic;
-        font-display: swap;
-        src: url("fonts/avenir/black-italic.woff2") format("woff2");
-      }
-
-      @font-face {
-        font-family: "Avenir";
+        font-family: "Frank Ruhl Libre";
         font-weight: 900;
         font-style: normal;
         font-display: swap;
-        src: url("fonts/avenir/black.woff2") format("woff2");
+        src: url("fonts/frank-ruhl-libre/black.woff2") format("woff2");
       }
 
       @font-face {
-        font-family: "Avenir";
-        font-weight: 300;
-        font-style: italic;
-        font-display: swap;
-        src: url("fonts/avenir/light-italic.woff2") format("woff2");
-      }
-
-      @font-face {
-        font-family: "Avenir";
-        font-weight: 300;
-        font-style: normal;
-        font-display: swap;
-        src: url("fonts/avenir/light.woff2") format("woff2");
-      }
-
-      @font-face {
-        font-family: "Avenir";
-        font-weight: 500;
-        font-style: italic;
-        font-display: swap;
-        src: url("fonts/avenir/medium-italic.woff2") format("woff2");
-      }
-
-      @font-face {
-        font-family: "Avenir";
-        font-weight: 500;
-        font-style: normal;
-        font-display: swap;
-        src: url("fonts/avenir/medium.woff2") format("woff2");
-      }
-
-      @font-face {
-        font-family: "Avenir";
-        font-weight: 400;
-        font-style: italic;
-        font-display: swap;
-        src: url("fonts/avenir/normal-italic.woff2") format("woff2");
-      }
-
-      @font-face {
-        font-family: "Avenir";
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-        src: url("fonts/avenir/normal.woff2") format("woff2");
-      }
-
-      /* BIG CASLON */
-      @font-face {
-        font-family: "Big Caslon";
-        font-weight: 900;
-        font-style: italic;
-        font-display: swap;
-        src: url("fonts/big-caslon/black-italic.woff2") format("woff2");
-      }
-
-      @font-face {
-        font-family: "Big Caslon";
-        font-weight: 900;
-        font-style: normal;
-        font-display: swap;
-        src: url("fonts/big-caslon/black.woff2") format("woff2");
-      }
-
-      @font-face {
-        font-family: "Big Caslon";
-        font-weight: 700;
-        font-style: italic;
-        font-display: swap;
-        src: url("fonts/big-caslon/bold-italic.woff2") format("woff2");
-      }
-
-      @font-face {
-        font-family: "Big Caslon";
+        font-family: "Frank Ruhl Libre";
         font-weight: 700;
         font-style: normal;
         font-display: swap;
-        src: url("fonts/big-caslon/bold.woff2") format("woff2");
+        src: url("fonts/frank-ruhl-libre/bold.woff2") format("woff2");
       }
 
       @font-face {
-        font-family: "Big Caslon";
-        font-weight: 400;
-        font-style: italic;
+        font-family: "Frank Ruhl Libre";
+        font-weight: 800;
+        font-style: normal;
         font-display: swap;
-        src: url("fonts/big-caslon/normal-italic.woff2") format("woff2");
+        src: url("fonts/frank-ruhl-libre/extrabold.woff2") format("woff2");
       }
 
       @font-face {
-        font-family: "Big Caslon";
+        font-family: "Frank Ruhl Libre";
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+        src: url("fonts/frank-ruhl-libre/light.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Frank Ruhl Libre";
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+        src: url("fonts/frank-ruhl-libre/medium.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Frank Ruhl Libre";
         font-weight: 400;
         font-style: normal;
         font-display: swap;
-        src: url("fonts/big-caslon/normal.woff2") format("woff2");
+        src: url("fonts/frank-ruhl-libre/regular.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Frank Ruhl Libre";
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+        src: url("fonts/frank-ruhl-libre/semibold.woff2") format("woff2");
+      }
+
+      /* MONSTERRAT */
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 900;
+        font-style: italic;
+        font-display: swap;
+        src: url("fonts/monsterrat/black-italic.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+        src: url("fonts/monsterrat/black.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 700;
+        font-style: italic;
+        font-display: swap;
+        src: url("fonts/monsterrat/bold-italic.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+        src: url("fonts/monsterrat/bold.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 800;
+        font-style: italic;
+        font-display: swap;
+        src: url("fonts/monsterrat/extrabold-italic.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+        src: url("fonts/monsterrat/extrabold.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 200;
+        font-style: italic;
+        font-display: swap;
+        src: url("fonts/monsterrat/extralight-italic.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 200;
+        font-style: normal;
+        font-display: swap;
+        src: url("fonts/monsterrat/extralight.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 300;
+        font-style: italic;
+        font-display: swap;
+        src: url("fonts/monsterrat/light-italic.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+        src: url("fonts/monsterrat/light.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 500;
+        font-style: italic;
+        font-display: swap;
+        src: url("fonts/monsterrat/medium-italic.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+        src: url("fonts/monsterrat/medium.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+        src: url("fonts/monsterrat/regular-italic.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+        src: url("fonts/monsterrat/regular.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 600;
+        font-style: italic;
+        font-display: swap;
+        src: url("fonts/monsterrat/semibold-italic.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+        src: url("fonts/monsterrat/semibold.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 300;
+        font-style: italic;
+        font-display: swap;
+        src: url("fonts/monsterrat/thin-italic.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Monsterrat";
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+        src: url("fonts/monsterrat/thin.woff2") format("woff2");
       }
     </style>
 
