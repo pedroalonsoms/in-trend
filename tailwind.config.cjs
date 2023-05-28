@@ -39,7 +39,7 @@ module.exports = {
         "14xl": "14rem",
       },
       lineHeight: {
-        "3/4": 0.75,
+        "2/3": 0.6666,
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

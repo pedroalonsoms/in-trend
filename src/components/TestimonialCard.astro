@@ -20,13 +20,15 @@ const { imgSrc, description, author, authorJobTitle } = Astro.props;
       <IconOpenQuote class="mx-auto text-white" />
     </div>
     <p
-      class="mt-6 text-center text-sm font-light leading-relaxed tracking-wide text-white"
+      class="mt-6 text-center font-monsterrat text-sm leading-relaxed text-white"
     >
       {description}
     </p>
-    <p class="mt-6 text-center font-medium text-white">{author}</p>
+    <p class="mt-6 text-center font-monsterrat font-medium text-white">
+      {author}
+    </p>
     <slot />
-    <p class="mt-2 pb-10 text-center text-sm text-white">
+    <p class="mt-2 pb-10 text-center font-monsterrat text-xs text-white">
       {authorJobTitle}
     </p>
   </div>
