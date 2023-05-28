@@ -1,30 +1,24 @@
 ---
-import ExpertizeCard from "../shared/components/ExpertizeCard.astro";
-import Footer from "../shared/components/Footer.astro";
-import NavigationBar from "../shared/components/NavigationBar.astro";
-import PillShapeLink from "../shared/components/PillShapeLink.astro";
-import ReportSection from "../shared/components/ReportsSection.astro";
-import TestimonialSection from "./_TestimonialsSection.astro";
+import ExpertizeCard from "../components/ExpertizeCard.astro";
+import Footer from "../components/Footer.astro";
+import NavigationBar from "../components/NavigationBar.astro";
+import PillShapeLink from "../components/PillShapeLink.astro";
+import ReportSection from "../components/ReportsSection.astro";
+import TestimonialSection from "../components/TestimonialsSection.astro";
 import Layout from "../layouts/Layout.astro";
-import LogoBioderma from "../shared/svgs/companies/LogoBioderma.astro";
-import LogoBuxom from "../shared/svgs/companies/LogoBuxom.astro";
-import LogoChanel from "../shared/svgs/companies/LogoChanel.astro";
-import LogoCoty from "../shared/svgs/companies/LogoCoty.astro";
-import LogoFilorga from "../shared/svgs/companies/LogoFilorga.astro";
-import LogoHenkel from "../shared/svgs/companies/LogoHenkel.astro";
-import LogoLauraMercier from "../shared/svgs/companies/LogoLauraMercier.astro";
-import LogoLoreal from "../shared/svgs/companies/LogoLoreal.astro";
-import LogoLVMH from "../shared/svgs/companies/LogoLVMH.astro";
-import LogoMerck from "../shared/svgs/companies/LogoMerck.astro";
-import LogoPuig from "../shared/svgs/companies/LogoPuig.astro";
-import LogoUnilever from "../shared/svgs/companies/LogoUnilever.astro";
-import Logo from "../shared/svgs/Logo.astro";
-
-import mainDesktop from "./images/main-desktop.jpg";
-import mainMobile from "./images/main-mobile.jpg";
-import expertize100FocusedOnBeauty from "./images/expertize-100-focused-on-beauty.jpg";
-import expertizeStrongCredentials from "./images/expertize-strong-credentials.jpg";
-import expertizeWorldWideNetworkOfExperts from "./images/expertize-worldwide-network-of-experts.jpg";
+import LogoBioderma from "../svgs/companies/LogoBioderma.astro";
+import LogoBuxom from "../svgs/companies/LogoBuxom.astro";
+import LogoChanel from "../svgs/companies/LogoChanel.astro";
+import LogoCoty from "../svgs/companies/LogoCoty.astro";
+import LogoFilorga from "../svgs/companies/LogoFilorga.astro";
+import LogoHenkel from "../svgs/companies/LogoHenkel.astro";
+import LogoLauraMercier from "../svgs/companies/LogoLauraMercier.astro";
+import LogoLoreal from "../svgs/companies/LogoLoreal.astro";
+import LogoLVMH from "../svgs/companies/LogoLVMH.astro";
+import LogoMerck from "../svgs/companies/LogoMerck.astro";
+import LogoPuig from "../svgs/companies/LogoPuig.astro";
+import LogoUnilever from "../svgs/companies/LogoUnilever.astro";
+import Logo from "../svgs/Logo.astro";
 ---
 
 <Layout title="In Trend - The future of beauty">
@@ -39,9 +33,12 @@ import expertizeWorldWideNetworkOfExperts from "./images/expertize-worldwide-net
       <!-- TODO: (important) this image should come from the Slack zip file-->
       <!-- TODO: make this a single image?-->
       <picture>
-        <source srcset={mainDesktop} media="(min-width: 640px)" />
+        <source
+          srcset="images/index/main-desktop.jpg"
+          media="(min-width: 640px)"
+        />
         <img
-          src={mainMobile}
+          src=`${import.meta.env.BASE_URL}images/index/main-mobile.jpg`
           class="absolute left-0 top-0 -z-10 h-full w-full object-cover"
           alt=""
         />
@@ -96,17 +93,17 @@ import expertizeWorldWideNetworkOfExperts from "./images/expertize-worldwide-net
 
         <div class="mt-6 grid gap-6 md:mt-10 md:grid-cols-3 md:gap-10">
           <ExpertizeCard
-            imgSrc={expertize100FocusedOnBeauty}
+            imgSrc="images/index/expertize/100-focused-on-beauty.jpg"
             title="100% focused on beauty"
             description="Analysis of all things make-up, skincare, hair, wellness, fragrance, packaging, nail, body care, salon and spa - with an edge for aesthetic medicine and professional treatments"
           />
           <ExpertizeCard
-            imgSrc={expertizeWorldWideNetworkOfExperts}
+            imgSrc="images/index/expertize/worldwide-network-of-experts.jpg"
             title="Worldwide network of experts"
             description="Expansive connections with professionals (hairstylists, make-up artists, estheticians etc.) and experts (entrepreneurs, freelancers) across the world"
           />
           <ExpertizeCard
-            imgSrc={expertizeStrongCredentials}
+            imgSrc="images/index/expertize/strong-credentials.jpg"
             title="Strong credentials"
             description="Almost two decades of experience helping industry leaders grow"
           />
