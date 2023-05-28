@@ -1,11 +1,15 @@
 ---
-import LogoChristianDior from "../svgs/companies/LogoChristianDior.astro";
-import LogoHenkel from "../svgs/companies/LogoHenkel.astro";
-import LogoLauraMercier from "../svgs/companies/LogoLauraMercier.astro";
-import LogoLoreal from "../svgs/companies/LogoLoreal.astro";
-import IconArrow from "../svgs/icons/IconArrow.astro";
-import TestimonialCard from "./TestimonialCard.astro";
+import LogoChristianDior from "../shared/svgs/companies/LogoChristianDior.astro";
+import LogoHenkel from "../shared/svgs/companies/LogoHenkel.astro";
+import LogoLauraMercier from "../shared/svgs/companies/LogoLauraMercier.astro";
+import LogoLoreal from "../shared/svgs/companies/LogoLoreal.astro";
+import IconArrow from "../shared/svgs/icons/IconArrow.astro";
+import TestimonialCard from "./_TestimonialCard.astro";
 
+import testimonialEdelinaNatale from "./images/testimonial-edelina-natale.jpg";
+import testimonialIsabelleMontferrand from "./images/testimonial-isabelle-montferrand.jpg";
+import testimonialJacquesValero from "./images/testimonial-jacques-valero.jpg";
+import testimonialKristiSloe from "./images/testimonial-kristi-sloe.jpg";
 // TODO: add json here to make it easy for the client to do this stuff?
 ---
 
@@ -35,7 +39,7 @@ import TestimonialCard from "./TestimonialCard.astro";
             <div class="grid h-full place-items-center">
               <div class="max-w-2xl">
                 <TestimonialCard
-                  imgSrc="images/index/testimonials/jacques-valero.jpg"
+                  imgSrc={testimonialJacquesValero}
                   description="In-Trend is a factory of insights, informing us of the latest product claims and highly precious information to help us innovate. Their emerging new trends are always highly accurate, and very useful."
                   author="-Jacques Valero"
                   authorJobTitle="Parfums Responsible Innovation"
@@ -51,7 +55,7 @@ import TestimonialCard from "./TestimonialCard.astro";
             <div class="grid h-full place-items-center">
               <div class="max-w-2xl">
                 <TestimonialCard
-                  imgSrc="images/index/testimonials/kristi-sloe.jpg"
+                  imgSrc={testimonialKristiSloe}
                   description="In-Trend LTD is a valued partner in product innovation and trends. Our teams love their inspiring ideation workshops, which are becoming a crucial touchpoint in our product development process."
                   author="-Kristi Sloe"
                   authorJobTitle="Vice President Global Product Development"
@@ -67,7 +71,7 @@ import TestimonialCard from "./TestimonialCard.astro";
             <div class="grid h-full place-items-center">
               <div class="max-w-2xl">
                 <TestimonialCard
-                  imgSrc="images/index/testimonials/isabelle-montferrand.jpg"
+                  imgSrc={testimonialIsabelleMontferrand}
                   description="In-Trend is a key partner in our innovation monitoring process. For many years, they have supported us in monitoring and decoding beauty innovations. All thanks to an expert, highly responsive and friendly team. Attentive to our needs, they constantly adapt and re-work their proposals and formats. Great relationship."
                   author="-Isabelle Montferrand"
                   authorJobTitle="Competitive Intelligence Innovation Direction"
@@ -81,7 +85,7 @@ import TestimonialCard from "./TestimonialCard.astro";
             <div class="grid h-full place-items-center">
               <div class="max-w-2xl">
                 <TestimonialCard
-                  imgSrc="images/index/testimonials/edelina-natale.jpg"
+                  imgSrc={testimonialEdelinaNatale}
                   description="In-Trend's reporting on product launches and trends in both the Latin American & Asian hair markets, provides vital insights for our team."
                   author="-Edelina Natale"
                   authorJobTitle="Innovation & Trend Manager"

@@ -4,7 +4,7 @@ import Footer from "../shared/components/Footer.astro";
 import NavigationBar from "../shared/components/NavigationBar.astro";
 import PillShapeLink from "../shared/components/PillShapeLink.astro";
 import ReportSection from "../shared/components/ReportsSection.astro";
-import TestimonialSection from "../shared/components/TestimonialsSection.astro";
+import TestimonialSection from "./_TestimonialsSection.astro";
 import Layout from "../layouts/Layout.astro";
 import LogoBioderma from "../shared/svgs/companies/LogoBioderma.astro";
 import LogoBuxom from "../shared/svgs/companies/LogoBuxom.astro";
@@ -19,6 +19,12 @@ import LogoMerck from "../shared/svgs/companies/LogoMerck.astro";
 import LogoPuig from "../shared/svgs/companies/LogoPuig.astro";
 import LogoUnilever from "../shared/svgs/companies/LogoUnilever.astro";
 import Logo from "../shared/svgs/Logo.astro";
+
+import mainDesktop from "./images/main-desktop.jpg";
+import mainMobile from "./images/main-mobile.jpg";
+import expertize100FocusedOnBeauty from "./images/expertize-100-focused-on-beauty.jpg";
+import expertizeStrongCredentials from "./images/expertize-strong-credentials.jpg";
+import expertizeWorldWideNetworkOfExperts from "./images/expertize-worldwide-network-of-experts.jpg";
 ---
 
 <Layout title="In Trend - The future of beauty">
@@ -33,12 +39,9 @@ import Logo from "../shared/svgs/Logo.astro";
       <!-- TODO: (important) this image should come from the Slack zip file-->
       <!-- TODO: make this a single image?-->
       <picture>
-        <source
-          srcset="images/index/main-desktop.jpg"
-          media="(min-width: 640px)"
-        />
+        <source srcset={mainDesktop} media="(min-width: 640px)" />
         <img
-          src=`${import.meta.env.BASE_URL}images/index/main-mobile.jpg`
+          src={mainMobile}
           class="absolute left-0 top-0 -z-10 h-full w-full object-cover"
           alt=""
         />
@@ -93,17 +96,17 @@ import Logo from "../shared/svgs/Logo.astro";
 
         <div class="mt-6 grid gap-6 md:mt-10 md:grid-cols-3 md:gap-10">
           <ExpertizeCard
-            imgSrc="images/index/expertize/100-focused-on-beauty.jpg"
+            imgSrc={expertize100FocusedOnBeauty}
             title="100% focused on beauty"
             description="Analysis of all things make-up, skincare, hair, wellness, fragrance, packaging, nail, body care, salon and spa - with an edge for aesthetic medicine and professional treatments"
           />
           <ExpertizeCard
-            imgSrc="images/index/expertize/worldwide-network-of-experts.jpg"
+            imgSrc={expertizeWorldWideNetworkOfExperts}
             title="Worldwide network of experts"
             description="Expansive connections with professionals (hairstylists, make-up artists, estheticians etc.) and experts (entrepreneurs, freelancers) across the world"
           />
           <ExpertizeCard
-            imgSrc="images/index/expertize/strong-credentials.jpg"
+            imgSrc={expertizeStrongCredentials}
             title="Strong credentials"
             description="Almost two decades of experience helping industry leaders grow"
           />
