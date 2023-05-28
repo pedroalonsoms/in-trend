@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      fontFamily: {
+        avenir: ["Avenir", "sans-serif"],
+        "big-caslon": ["Big Caslon", "serif"],
+      },
       colors: {
         beige: {
           300: "#F5F5EB",
