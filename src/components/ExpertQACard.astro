@@ -18,10 +18,14 @@ const { imgSrc, quoteText, quoteAuthor } = Astro.props;
     alt=""
     class="absolute left-0 top-0 -z-10 h-full w-full object-cover"
   />
-  <p class="mt-12 text-center text-sm leading-relaxed text-white sm:mt-8">
+  <p
+    class="mt-12 text-center font-monsterrat text-sm leading-relaxed text-white sm:mt-8"
+  >
     {quoteText}
   </p>
-  <p class="mt-10 pb-16 text-center font-medium text-white sm:mt-6 sm:pb-36">
+  <p
+    class="mt-10 pb-16 text-center font-monsterrat font-semibold text-white sm:mt-6 sm:pb-36 sm:text-sm"
+  >
     {quoteAuthor}
   </p>
 </div>
