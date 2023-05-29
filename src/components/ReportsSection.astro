@@ -104,6 +104,11 @@ import ReportCard from "./ReportCard.astro";
     background-color: black;
   }
 
+  /* ALL CARDS */
+  #reports-section__carrousel .splide__slide .report-card-width-container {
+    transition: width 0.3s linear;
+  }
+
   /* ACTIVE CARD (THE CENTER ONE) */
   #reports-section__carrousel
     .splide__slide.is-active
@@ -131,11 +136,13 @@ import ReportCard from "./ReportCard.astro";
     type: "loop",
     interval: 5000,
     autoplay: true,
-    drag: false,
+    drag: true,
     focus: "center",
     start: 1,
     pagination: true,
     arrows: false,
+    speed: 750,
+    flickPower: 100,
     breakpoints: {
       1024: {
         destroy: true,
