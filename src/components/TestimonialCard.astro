@@ -27,9 +27,10 @@ const { imgSrc, description, author, authorJobTitle } = Astro.props;
     <p class="mt-6 text-center font-monsterrat font-medium text-white">
       {author}
     </p>
-    <slot />
-    <p class="mt-2 pb-10 text-center font-monsterrat text-xs text-white">
+    <p class="mt-8 text-center font-monsterrat text-xs text-white">
       {authorJobTitle}
     </p>
+    <slot />
+    <div class="pb-10"></div>
   </div>
 </div>
