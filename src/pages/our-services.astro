@@ -6,7 +6,6 @@ import NavigationBar from "../components/NavigationBar.astro";
 import Footer from "../components/Footer.astro";
 import ReportsSection from "../components/ReportsSection.astro";
 import InTrendIsConnectedRing from "../svgs/InTrendIsConnectedRing.astro";
-import ExpertQASection from "../components/ExpertQASection.astro";
 import ComingSoonSection from "../components/ComingSoonSection.astro";
 ---
 
@@ -20,7 +19,7 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
       Our services
     </h1>
     <p
-      class="mx-auto mt-4 max-w-6xl px-4 text-center font-monsterrat text-3xl leading-10 tracking-wide text-brown-600 sm:text-4xl sm:leading-relaxed"
+      class="mx-auto mt-4 max-w-6xl px-4 text-center font-monsterrat text-3xl leading-11 tracking-wide text-brown-600 sm:text-4xl sm:leading-relaxed"
     >
       We offer bespoke product and services analysis across aesthetic medicine
       <img
@@ -105,7 +104,7 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
 
   <div>
     <div class="grid gap-[100vh] pt-[calc(51vh)] sm:pt-[calc(50vh)]">
-      <p class="px-4 text-center fade-in-out">
+      <p class="fade-in-out px-4 text-center">
         <span class="font-monsterrat uppercase text-white 2xl:text-xl">
           We're in the loop about:
         </span><br />
@@ -115,7 +114,7 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
           start-ups and incubators
         </span>
       </p>
-      <p class="px-4 text-center fade-in-out">
+      <p class="fade-in-out px-4 text-center">
         <span class="font-monsterrat uppercase text-white 2xl:text-xl">
           We attend:</span
         ><br />
@@ -125,7 +124,7 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
           trade shows + conferences
         </span>
       </p>
-      <p class="px-4 text-center fade-in-out">
+      <p class="fade-in-out px-4 text-center">
         <span class="font-monsterrat uppercase text-white 2xl:text-xl">
           We talk to:</span
         ><br />
@@ -135,7 +134,7 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
           professionals / experts
         </span>
       </p>
-      <p class="px-4 text-center fade-in-out">
+      <p class="fade-in-out px-4 text-center">
         <span class="font-monsterrat uppercase text-white 2xl:text-xl">
           We analyze:</span
         ><br />
@@ -145,7 +144,7 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
           social media
         </span>
       </p>
-      <p class="px-4 text-center fade-in-out">
+      <p class="fade-in-out px-4 text-center">
         <span class="font-monsterrat uppercase text-white 2xl:text-xl">
           We have an extensive database:</span
         ><br />
@@ -175,7 +174,7 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
         blooming trees of inspiration.
       </p>
       <div
-        class="mx-auto mt-6 flex max-h-[576px] w-full max-w-xl flex-grow flex-col pb-12 is-connected-ring"
+        class="is-connected-ring mx-auto mt-6 flex max-h-[576px] w-full max-w-xl flex-grow flex-col pb-12"
       >
         <InTrendIsConnectedRing class="w-full flex-grow text-white" />
       </div>
@@ -183,34 +182,36 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
   </div>
 
   <ComingSoonSection />
-  <ExpertQASection />
+  <!-- TODO: enable this when required -->
+  <!-- <ExpertQASection /> -->
 
   <Footer />
 </Layout>
 
 <style>
-.fade-in-out {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
+  .fade-in-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', (event) => {
-    window.addEventListener('scroll', fadeOnScroll);
+  document.addEventListener("DOMContentLoaded", (event) => {
+    window.addEventListener("scroll", fadeOnScroll);
 
     function fadeOnScroll() {
       const scrollPos = window.scrollY + window.innerHeight;
-      const elements = document.querySelectorAll('.fade-in-out');
-      const connectedRingElement = document.querySelector('.is-connected-ring');
-      
+      const elements = document.querySelectorAll(".fade-in-out");
+      const connectedRingElement = document.querySelector(".is-connected-ring");
+
       // Get the top and bottom position of the .is-connected-ring element
-      const ringTop = connectedRingElement.getBoundingClientRect().top + window.scrollY;
+      const ringTop =
+        connectedRingElement.getBoundingClientRect().top + window.scrollY;
       const ringBottom = ringTop + connectedRingElement.offsetHeight;
 
       // Create a 10% boundary for fading in and out
       const boundary = connectedRingElement.offsetHeight * 0.1;
-      
+
       // Reduce the boundaries of the .is-connected-ring by 20%
       const boundaryReduction = connectedRingElement.offsetHeight * 0.2;
 
@@ -226,14 +227,14 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
           // Element is within the ring
           if (elementBottom > fadeStart && elementTop < fadeEnd) {
             // Element is within the fade boundaries - full opacity
-            el.style.opacity = '1';
+            el.style.opacity = "1";
           } else {
             // Element is within the fade boundaries - fading in or out
-            el.style.opacity = '0.5';
+            el.style.opacity = "0.5";
           }
         } else {
           // Element is not within the ring - full transparency
-          el.style.opacity = '0';
+          el.style.opacity = "0";
         }
       });
     }

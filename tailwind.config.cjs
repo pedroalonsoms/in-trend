@@ -39,6 +39,7 @@ module.exports = {
         "14xl": "14rem",
       },
       lineHeight: {
+        11: "2.75rem",
         "2/3": 0.6666,
       },
       backgroundImage: {
