@@ -34,15 +34,22 @@ import Logo from "../svgs/Logo.astro";
       <!-- TODO: make this a single image?-->
       <picture>
         <source
-          srcset="images/index/main-desktop.jpg"
+          srcset="images/index/main-desktop.webp"
           media="(min-width: 640px)"
         />
         <img
-          src=`${import.meta.env.BASE_URL}images/index/main-mobile.jpg`
-          class="absolute left-0 top-0 -z-10 h-full w-full object-cover"
+          src=`${import.meta.env.BASE_URL}images/index/main-mobile.webp`
+          class="absolute left-0 top-0 -z-20 h-full w-full object-cover"
           alt=""
         />
       </picture>
+
+      <!-- Image overlay -->
+      <div
+        class="absolute left-0 top-0 -z-10 h-full w-full bg-brown-800 opacity-20"
+      >
+      </div>
+
       <div class="pt-40 sm:pt-80">
         <Logo class="mx-auto h-10 w-auto text-white sm:h-14" />
       </div>
@@ -110,7 +117,12 @@ import Logo from "../svgs/Logo.astro";
         </div>
 
         <div class="mt-6 text-center">
-          <PillShapeLink href="https://calendly.com/aj-intrend/30min" target="_blank" title="Schedule a call" variant="dark" />
+          <PillShapeLink
+            href="https://calendly.com/aj-intrend/30min"
+            target="_blank"
+            title="Schedule a call"
+            variant="dark"
+          />
         </div>
       </div>
 
