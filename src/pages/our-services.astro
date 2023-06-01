@@ -14,12 +14,12 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
 
   <section class="bg-beige-300">
     <h1
-      class="pt-20 text-center text-2xl font-semibold capitalize tracking-wide text-brown-600 sm:pt-32 sm:text-3xl"
+      class="pt-20 text-center text-2xl font-bold capitalize text-brown-600 sm:pt-32 sm:text-3xl"
     >
       Our services
     </h1>
     <p
-      class="mx-auto mt-4 max-w-6xl px-4 text-center text-3xl leading-11 tracking-wide text-brown-600 sm:text-4xl sm:leading-relaxed"
+      class="mx-auto mt-4 max-w-5xl px-4 text-center text-3xl leading-10 text-brown-600 sm:text-4xl sm:leading-13"
     >
       We offer bespoke product and services analysis across aesthetic medicine
       <img
@@ -76,22 +76,31 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
     <div class="mx-auto max-w-screen-2xl px-4 lg:px-12">
       <div class="mt-10 pb-16">
         <div
-          class="grid overflow-hidden rounded-2xl border border-brown-600/20 p-4 lg:flex lg:items-center lg:gap-4 lg:p-0 lg:pr-8"
+          class="grid overflow-hidden rounded-2xl border border-brown-600/20 p-4 lg:flex lg:items-center lg:justify-between lg:gap-6 lg:p-0 lg:pr-8"
         >
           <!-- TODO: change margins to flex gaps? -->
           <!-- TODO: fix left border radius bug -->
           <!-- TODO: (IMPORTANT) add the calendly URL link -->
-          <img
-            src=`${import.meta.env.BASE_URL}images/our-services/get-in-touch.jpg`
-            alt=""
-            class="w-full rounded-l-3xl rounded-r-full lg:h-28 lg:w-auto"
-          />
-          <p class="mt-6 text-sm font-bold text-brown-600 lg:mt-0">
-            Can't see what you're looking for? <br />
-            Get in touch - let us inspire you!
-          </p>
-          <div class="mt-6 lg:ml-auto lg:mt-0">
-            <PillShapeLink title="Get in touch" variant="dark" href="#" />
+          <div class="lg:flex lg:items-center lg:gap-6">
+            <img
+              src=`${import.meta.env.BASE_URL}images/our-services/get-in-touch.jpg`
+              alt=""
+              class="w-full rounded-l-3xl rounded-r-full lg:h-28 lg:w-auto"
+            />
+            <p class="mt-6 font-black text-brown-600 lg:mt-0">
+              Can't see what you're looking for? <br />
+              Get in touch - let us inspire you!
+            </p>
+          </div>
+
+          <!-- TODO: this is a bit hacky lol -->
+          <div class="mt-6 lg:mt-0 lg:flex-grow lg:text-end">
+            <PillShapeLink
+              title="Get in touch"
+              variant="dark"
+              href="https://calendly.com/aj-intrend/30min"
+              target="_black"
+            />
           </div>
         </div>
       </div>
