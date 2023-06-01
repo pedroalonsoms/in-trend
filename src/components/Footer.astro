@@ -38,7 +38,7 @@ import IconLinkedin from "../svgs/icons/IconLinkedin.astro";
     <div class="md:grid md:content-between md:gap-20">
       <h2 class="text-xl uppercase text-white">Office</h2>
       <div>
-        <p class="mt-1 font-medium text-white">In Trend Ltd.</p>
+        <p class="mt-1 font-bold text-white">In Trend Ltd.</p>
         <p class="mt-1 text-sm text-white">
           Plexal, Here East <br />
           Hackney Wick, London <br />
@@ -49,7 +49,9 @@ import IconLinkedin from "../svgs/icons/IconLinkedin.astro";
     </div>
 
     <div class="block md:hidden">
-      <Logo class="h-10 w-auto text-white" />
+      <a href=`${import.meta.env.BASE_URL}`>
+        <Logo class="h-10 w-auto text-white" />
+      </a>
     </div>
   </div>
 </footer>
