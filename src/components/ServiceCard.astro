@@ -9,12 +9,10 @@ const { title, description } = Astro.props;
 
 <div class="grid border-t px-4 lg:grid-cols-3 lg:gap-24">
   <!-- TODO: fix top border issue, it should be full width -->
-  <h2
-    class="pt-6 font-frank-ruhl-libre text-2xl font-light capitalize lg:col-span-1"
-  >
+  <h2 class="pt-6 font-big-caslon text-2xl font-light capitalize lg:col-span-1">
     {title}
   </h2>
-  <p class="mb-8 mt-6 font-monsterrat text-sm text-brown-600 lg:col-span-2">
+  <p class="mb-8 mt-6 text-sm text-brown-600 lg:col-span-2">
     {description}
   </p>
 </div>
