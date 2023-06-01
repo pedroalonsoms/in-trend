@@ -10,6 +10,8 @@ export const post: APIRoute = async ({ request, redirect }) => {
   emailContent += `<p><b>Email:</b> ${formData.get("email")}</p>`;
   emailContent += `<p><b>Message:</b> ${formData.get("message")}</p>`;
 
+  console.error(import.meta.env.SEND_GRID_KET);
+
   const res = await fetch("https://api.sendgrid.com/v3/mail/send", {
     headers: {
       Authorization: `Bearer ${import.meta.env.SEND_GRID_KEY}`,
