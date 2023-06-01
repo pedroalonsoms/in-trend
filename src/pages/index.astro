@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import ExpertizeCard from "../components/ExpertizeCard.astro";
 import Footer from "../components/Footer.astro";
 import NavigationBar from "../components/NavigationBar.astro";
@@ -34,11 +36,11 @@ import Logo from "../svgs/Logo.astro";
       <!-- TODO: make this a single image?-->
       <picture>
         <source
-          srcset="images/index/main-desktop.webp"
+          srcset="/images/index/main-desktop.webp"
           media="(min-width: 640px)"
         />
         <img
-          src=`${import.meta.env.BASE_URL}images/index/main-mobile.webp`
+          src="/images/index/main-mobile.webp"
           class="absolute left-0 top-0 -z-20 h-full w-full object-cover"
           alt=""
         />
@@ -102,17 +104,17 @@ import Logo from "../svgs/Logo.astro";
 
         <div class="mt-6 grid gap-6 md:mt-10 md:grid-cols-3 md:gap-10">
           <ExpertizeCard
-            imgSrc="images/index/expertize/100-focused-on-beauty.jpg"
+            imgSrc="/images/index/expertize/100-focused-on-beauty.jpg"
             title="100% focused on beauty"
             description="Analysis of all things make-up, skincare, hair, wellness, fragrance, packaging, nail, body care, salon and spa - with an edge for aesthetic medicine and professional treatments"
           />
           <ExpertizeCard
-            imgSrc="images/index/expertize/strong-credentials.jpg"
+            imgSrc="/images/index/expertize/strong-credentials.jpg"
             title="Strong credentials"
             description="Almost two decades of experience helping industry leaders grow"
           />
           <ExpertizeCard
-            imgSrc="images/index/expertize/worldwide-network-of-experts.jpg"
+            imgSrc="/images/index/expertize/worldwide-network-of-experts.jpg"
             title="Worldwide network of experts"
             description="Expansive connections with professionals (hairstylists, make-up artists, estheticians etc.) and experts (entrepreneurs, freelancers) across the world"
           />

@@ -9,7 +9,7 @@ const { imgSrc, title, description } = Astro.props;
 
 <article class="px-2">
   <img
-    src=`${import.meta.env.BASE_URL}${imgSrc}`
+    src={imgSrc}
     alt=""
     class="mx-auto h-44 w-44 rounded-full border border-brown-600/10 object-cover p-3"
   />

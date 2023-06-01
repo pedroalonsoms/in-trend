@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import Layout from "../layouts/Layout.astro";
 import NavigationBar from "../components/NavigationBar.astro";
 import PillShapeLink from "../components/PillShapeLink.astro";
@@ -23,14 +25,18 @@ import EmployeeAndFreelancerSection from "../components/EmployeeAndFreelancerSec
             London's coolest neighbourhood* Hackney Wick.
           </p>
           <div class="mt-6 text-center">
-            <PillShapeLink variant="dark" title="Come hang out" href="#" />
+            <PillShapeLink
+              variant="dark"
+              title="Come hang out"
+              href="https://calendly.com/aj-intrend/30min"
+            />
           </div>
         </div>
       </div>
       <div>
         <!-- TODO: get this thing in 4K -->
         <img
-          src=`${import.meta.env.BASE_URL}images/who-we-are/hang-out-irl/here-east.jpg`
+          src="/images/who-we-are/hang-out-irl/here-east.jpg"
           alt=""
           class="h-full w-full object-cover"
         />

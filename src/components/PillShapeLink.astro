@@ -6,7 +6,7 @@ interface Props extends HTMLAttributes<"a"> {
   title: string;
   isButton?: boolean;
 }
-const { variant, title, href, isButton, class: className } = Astro.props;
+const { variant, title, href, isButton, class: className, id } = Astro.props;
 
 let variantClasses = "";
 
@@ -22,6 +22,7 @@ if (variant === "light") {
 {
   isButton ? (
     <button
+      id={id}
       class={`inline-flex w-full max-w-xs items-center justify-between gap-4 rounded-full border border-rock-200 py-3 pl-6 pr-3 text-center ${variantClasses} ${className}`}
     >
       <span class="text-sm font-black uppercase">{title}</span>
@@ -29,6 +30,7 @@ if (variant === "light") {
     </button>
   ) : (
     <a
+      id={id}
       target="_blank"
       href={href}
       class={`inline-flex w-full max-w-xs items-center justify-between gap-4 rounded-full border border-rock-200 py-3 pl-6 pr-3 text-center ${variantClasses}`}

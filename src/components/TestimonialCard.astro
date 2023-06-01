@@ -10,11 +10,7 @@ const { imgSrc, description, author, authorJobTitle } = Astro.props;
 ---
 
 <div class="overflow-hidden rounded-2xl">
-  <img
-    src=`${import.meta.env.BASE_URL}${imgSrc}`
-    alt=""
-    class="h-auto w-full"
-  />
+  <img src={imgSrc} alt="" class="h-auto w-full" />
   <div class="bg-white/10 px-8 backdrop-blur-lg lg:px-16">
     <div class="pt-12">
       <IconOpenQuote class="mx-auto text-white" />

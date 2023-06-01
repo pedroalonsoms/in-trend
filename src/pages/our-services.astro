@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 import PillShapeLink from "../components/PillShapeLink.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 import Layout from "../layouts/Layout.astro";
@@ -24,22 +26,22 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
       We offer bespoke product and services analysis across aesthetic medicine
       <img
         class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
-        src=`${import.meta.env.BASE_URL}images/our-services/paragraph/medicine.jpg`
+        src="/images/our-services/paragraph/medicine.jpg"
         alt=""
       />, make-up
       <img
         class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
-        src=`${import.meta.env.BASE_URL}images/our-services/paragraph/make-up.jpg`
+        src="/images/our-services/paragraph/make-up.jpg"
         alt=""
       />, skincare, <br class="hidden xl:block" />hair
       <img
         class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
-        src=`${import.meta.env.BASE_URL}images/our-services/paragraph/hair.jpg`
+        src="/images/our-services/paragraph/hair.jpg"
         alt=""
       />, wellness, fragance, packaging, nails
       <img
         class="inline-block h-8 w-24 rounded-full object-cover sm:h-10 sm:w-28"
-        src=`${import.meta.env.BASE_URL}images/our-services/paragraph/nails.jpg`
+        src="/images/our-services/paragraph/nails.jpg"
         alt=""
       />, bodycare, salon and spa.
     </p>
@@ -66,7 +68,7 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
           />
         </div>
         <img
-          src=`${import.meta.env.BASE_URL}images/our-services/main.jpg`
+          src="images/our-services/main.jpg"
           alt=""
           class="hidden rounded-3xl lg:block"
         />
@@ -83,7 +85,7 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
           <!-- TODO: (IMPORTANT) add the calendly URL link -->
           <div class="lg:flex lg:items-center lg:gap-6">
             <img
-              src=`${import.meta.env.BASE_URL}images/our-services/get-in-touch.jpg`
+              src="/images/our-services/get-in-touch.jpg"
               alt=""
               class="w-full rounded-l-3xl rounded-r-full lg:h-28 lg:w-auto"
             />

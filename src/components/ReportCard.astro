@@ -19,11 +19,7 @@ const { imgSrc, sectionTitle, title, description, hasLink, linkTitle, href } =
 <article class="h-full overflow-hidden rounded-xl">
   <div class="relative z-0">
     <!-- TODO: add image sizing props -->
-    <img
-      src=`${import.meta.env.BASE_URL}${imgSrc}`
-      alt=""
-      class="h-auto w-full"
-    />
+    <img src={imgSrc} alt="" class="h-auto w-full" />
     <div
       class="absolute bottom-0 left-0 z-10 rounded-tr-3xl bg-beige-300 px-20 py-3 text-sm uppercase"
     >
