@@ -29,6 +29,7 @@ export const post: APIRoute = async ({ request, redirect }) => {
   });
 
   if (!res.ok) {
+    console.error(res);
     return new Response(null, {
       status: 500,
       statusText: "Email could not be delivered",
