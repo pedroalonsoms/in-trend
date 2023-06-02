@@ -13,7 +13,7 @@ let variantClasses = "";
 if (variant === "light") {
   variantClasses = "border-white text-white";
 } else if (variant === "dark") {
-  variantClasses = "border-black text-black";
+  variantClasses = "border-brown-600 text-brown-600";
 } else {
   throw new Error(`Unexpecrted variant ${variant}`);
 }
@@ -23,7 +23,7 @@ if (variant === "light") {
   isButton ? (
     <button
       id={id}
-      class={`inline-flex w-full max-w-xs items-center justify-between gap-4 rounded-full border border-rock-200 py-3 pl-6 pr-3 text-center ${variantClasses} ${className}`}
+      class={`inline-flex w-full max-w-xs items-center justify-between gap-4 rounded-full border py-3 pl-6 pr-3 text-center ${variantClasses} ${className}`}
     >
       <span class="text-sm font-black uppercase">{title}</span>
       <IconArrowLarge />
@@ -33,7 +33,7 @@ if (variant === "light") {
       id={id}
       target="_blank"
       href={href}
-      class={`inline-flex w-full max-w-xs items-center justify-between gap-4 rounded-full border border-rock-200 py-3 pl-6 pr-3 text-center ${variantClasses}`}
+      class={`inline-flex w-full max-w-xs items-center justify-between gap-4 rounded-full border py-3 pl-6 pr-3 text-center ${variantClasses}`}
     >
       <span class="text-sm font-black uppercase">{title}</span>
       <IconArrowLarge />
