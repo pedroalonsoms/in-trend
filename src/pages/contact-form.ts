@@ -10,8 +10,6 @@ export const post: APIRoute = async ({ request, redirect }) => {
   emailContent += `<p><b>Email:</b> ${formData.get("email")}</p>`;
   emailContent += `<p><b>Message:</b> ${formData.get("message")}</p>`;
 
-  console.error("test:", import.meta.env.SEND_GRID_KEY);
-
   const res = await fetch("https://api.sendgrid.com/v3/mail/send", {
     headers: {
       Authorization: `Bearer ${import.meta.env.SEND_GRID_KEY}`,
@@ -19,6 +17,7 @@ export const post: APIRoute = async ({ request, redirect }) => {
     },
     method: "POST",
     body: JSON.stringify({
+      personalizations: [{ to: [{ email: "pedro123ben10@gmail.com" }] }],
       from: { email: "pedro123ben10@gmail.com" },
       subject: "Contact Form - In-Trend's main webpage",
       content: [
@@ -31,7 +30,8 @@ export const post: APIRoute = async ({ request, redirect }) => {
   });
 
   if (!res.ok) {
-    console.error(res);
+    const data = await res.json();
+    console.error(data);
     return new Response(null, {
       status: 500,
       statusText: "Email could not be delivered",
