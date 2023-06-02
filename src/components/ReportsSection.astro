@@ -20,7 +20,7 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
     </p>
 
     <div class="mt-10 pb-8">
-      <div class="swiper pb-8" id="reports-section__carrousel">
+      <div class="swiper" id="reports-section__carrousel">
         <div class="swiper-wrapper max-lg:grid max-lg:gap-6">
           <!-- TODO: can we extract-out this component? -->
           <ReportsSectionSlideBlock />
@@ -34,9 +34,15 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
 
 <!-- TODO: can we use global(#reports-section__carrousel) to make this even fancier? -->
 <style is:global>
+  /* ACTIVE PAGINATION */
   .reports-section__carrousel__swiper-pagination-bullet-active {
     background-color: #333333;
     opacity: 1;
+  }
+
+  /* REPORTS SECTION CARROUSEL */
+  #reports-section__carrousel {
+    padding-bottom: 2rem !important;
   }
 </style>
 
