@@ -17,7 +17,7 @@ export const post: APIRoute = async ({ request, redirect }) => {
     },
     method: "POST",
     body: JSON.stringify({
-      personalizations: [{ to: [{ email: "pedro123ben10@gmail.com" }] }],
+      personalizations: [{ to: [{ email: "A01741437@tec.mx" }] }],
       from: { email: "pedro123ben10@gmail.com" },
       subject: "Contact Form - In-Trend's main webpage",
       content: [
