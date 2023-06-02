@@ -38,5 +38,5 @@ export const post: APIRoute = async ({ request, redirect }) => {
     });
   }
 
-  return redirect("/", 307);
+  return redirect("/", 303);
 };
