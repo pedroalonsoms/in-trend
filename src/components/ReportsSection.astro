@@ -1,5 +1,5 @@
 ---
-import ReportCard from "./ReportCard.astro";
+import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
 
 // TODO: fix this prop
 // TODO: make an object array for the client to add the pages more easily
@@ -19,135 +19,104 @@ import ReportCard from "./ReportCard.astro";
       the events we've attended...
     </p>
 
-    <div class="mt-10 pb-24">
-      <div class="swiper" id="reports-section__carrousel">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <!-- TODO: this should match the JS breakpoint at 1024px below -->
-            <ReportCard
-              imgSrc="/images/index/reports/clean-beauty-in-london.jpg"
-              sectionTitle="Out and about"
-              title="Clean beauty in london"
-              description="Annie spent the day at the Clean Beauty in London show at The Brewery near the Barbican. We loved how much Solid Beauty was on show - it truly has gone from eco-necessity to a product to be enjoyed."
-              hasLink={true}
-              linkTitle="Find out more"
-              href="https://www.instagram.com/p/CroOUUFvvGx/"
-            />
-          </div>
-          <div class="swiper-slide">
-            <!-- TODO: host the PDF file on github -->
-            <ReportCard
-              imgSrc="/images/index/reports/the-future-of-lip.jpg"
-              sectionTitle="Report"
-              title="The Future of Lip"
-              description="Having a strong lip portfolio is more important than ever, as this product category proves time and time again its recession-resilience. This report contains emerging textures and finishes, growing ingredients, how to address future lip beautification challenges and trends that will shape the category from 2023 and beyond."
-              hasLink={true}
-              linkTitle="Download pdf"
-              href="#"
-            />
-          </div>
-          <div class="swiper-slide">
-            <ReportCard
-              imgSrc="/images/index/reports/salon-smart-networking-and-speak-event.jpg"
-              sectionTitle="Out and about"
-              title="Salon smart networking"
-              description="Emmanuelle headed down to Salon Smart last month. A business event for hair professionals, it was great to hear about the challenges hairdressers face, and meet lots of creatives."
-              hasLink={true}
-              linkTitle="Find out more"
-              href="https://creativeheadmag.com/salon-smart-2023-the-event-delivering-proactive-advice-to-drive-your-business-forward/"
-            />
-          </div>
-          <div class="swiper-slide">
-            <ReportCard
-              imgSrc="/images/index/reports/make-up-paris.jpg"
-              sectionTitle="Out and about"
-              title="Make-up Paris"
-              description="Come and see us at Make-up in Paris! We'll be at booth E36, and Annie will be presenting on June 14th at 1:30pm."
-              hasLink={true}
-              linkTitle="Find out more"
-              href="https://www.linkedin.com/posts/anniemegjohnstone_facialcare-aestheticmedicine-beauty-activity-7069684756749115393-98Gb?utm_source=share&utm_medium=member_desktop"
-            />
-          </div>
-          <div class="swiper-slide">
-            <!-- TODO: this should match the JS breakpoint at 1024px below -->
-            <ReportCard
-              imgSrc="/images/index/reports/clean-beauty-in-london.jpg"
-              sectionTitle="Out and about"
-              title="Clean beauty in london"
-              description="Annie spent the day at the Clean Beauty in London show at The Brewery near the Barbican. We loved how much Solid Beauty was on show - it truly has gone from eco-necessity to a product to be enjoyed."
-              hasLink={true}
-              linkTitle="Find out more"
-              href="https://www.instagram.com/p/CroOUUFvvGx/"
-            />
-          </div>
-          <div class="swiper-slide">
-            <!-- TODO: host the PDF file on github -->
-            <ReportCard
-              imgSrc="/images/index/reports/the-future-of-lip.jpg"
-              sectionTitle="Report"
-              title="The Future of Lip"
-              description="Having a strong lip portfolio is more important than ever, as this product category proves time and time again its recession-resilience. This report contains emerging textures and finishes, growing ingredients, how to address future lip beautification challenges and trends that will shape the category from 2023 and beyond."
-              hasLink={true}
-              linkTitle="Download pdf"
-              href="#"
-            />
-          </div>
-          <div class="swiper-slide">
-            <ReportCard
-              imgSrc="/images/index/reports/salon-smart-networking-and-speak-event.jpg"
-              sectionTitle="Out and about"
-              title="Salon smart networking"
-              description="Emmanuelle headed down to Salon Smart last month. A business event for hair professionals, it was great to hear about the challenges hairdressers face, and meet lots of creatives."
-              hasLink={true}
-              linkTitle="Find out more"
-              href="https://creativeheadmag.com/salon-smart-2023-the-event-delivering-proactive-advice-to-drive-your-business-forward/"
-            />
-          </div>
-          <div class="swiper-slide">
-            <ReportCard
-              imgSrc="/images/index/reports/make-up-paris.jpg"
-              sectionTitle="Out and about"
-              title="Make-up Paris"
-              description="Come and see us at Make-up in Paris! We'll be at booth E36, and Annie will be presenting on June 14th at 1:30pm."
-              hasLink={true}
-              linkTitle="Find out more"
-              href="https://www.linkedin.com/posts/anniemegjohnstone_facialcare-aestheticmedicine-beauty-activity-7069684756749115393-98Gb?utm_source=share&utm_medium=member_desktop"
-            />
-          </div>
+    <div class="mt-10 pb-8">
+      <div class="swiper pb-8" id="reports-section__carrousel">
+        <div class="swiper-wrapper max-lg:grid max-lg:gap-6">
+          <!-- TODO: can we extract-out this component? -->
+          <ReportsSectionSlideBlock />
         </div>
+
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- TODO: can we use global(#reports-section__carrousel) to make this even fancier? -->
-<style is:global></style>
+<style is:global>
+  .reports-section__carrousel__swiper-pagination-bullet-active {
+    background-color: #333333;
+    opacity: 1;
+  }
+</style>
 
 <script>
-  // TODO: add modular stuff
-  import Swiper, { EffectCoverflow, Autoplay } from "swiper";
+  /*
+   References 
+   https://www.youtube.com/watch?v=li-ylRo7VEc 
+   https://github.com/nolimits4web/swiper/issues/3175
+   https://codepen.io/EFX/pen/xxKOwLw
+   https://css-tricks.com/working-with-javascript-media-queries/
+  */
+  import Swiper, {
+    EffectCoverflow,
+    Autoplay,
+    Pagination,
+    Virtual,
+  } from "swiper";
   import "swiper/css";
   import "swiper/css/effect-coverflow";
+  import "swiper/css/pagination";
 
-  // Reference https://www.youtube.com/watch?v=li-ylRo7VEc
-  new Swiper("#reports-section__carrousel", {
-    centeredSlides: true,
-    grabCursor: true,
-    slidesPerView: 3,
-    initialSlide: 1,
-    spaceBetween: 100,
-    loop: true,
-    modules: [EffectCoverflow, Autoplay],
-    effect: "coverflow",
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 100,
-      modifier: 2.5,
-      slideShadows: false,
-    },
-    autoplay: {
-      delay: 5000,
-    },
+  let swiper: Swiper | undefined;
+
+  const enableSwiper = () => {
+    if (!swiper) {
+      swiper = new Swiper("#reports-section__carrousel", {
+        centeredSlides: true,
+        grabCursor: true,
+        initialSlide: 1,
+        loop: false,
+        spaceBetween: 100,
+        modules: [EffectCoverflow, Autoplay, Pagination, Virtual],
+        effect: "coverflow",
+        coverflowEffect: {
+          rotate: 0,
+          depth: 100,
+          modifier: 2.5,
+          slideShadows: false,
+        },
+        autoplay: {
+          delay: 5000,
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 2.4,
+          },
+          1536: {
+            slidesPerView: 2.437,
+          },
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          bulletActiveClass:
+            "reports-section__carrousel__swiper-pagination-bullet-active",
+          clickable: true,
+        },
+        virtual: {
+          enabled: true,
+        },
+      });
+    }
+  };
+
+  const disableSwiper = () => {
+    if (swiper) {
+      swiper.destroy();
+      swiper = undefined;
+    }
+  };
+
+  const mediaQuery = window.matchMedia("(min-width: 1024px)");
+  if (mediaQuery.matches) {
+    enableSwiper();
+  }
+
+  mediaQuery.addEventListener("change", (e) => {
+    if (e.matches) {
+      enableSwiper();
+    } else {
+      disableSwiper();
+    }
   });
 </script>

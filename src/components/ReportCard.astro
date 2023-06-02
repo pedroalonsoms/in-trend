@@ -16,33 +16,35 @@ const { imgSrc, sectionTitle, title, description, hasLink, linkTitle, href } =
 ---
 
 <!-- TODO: add small and large variants --><!-- TODO: fix border radiuses -->
-<article class="h-full overflow-hidden rounded-xl">
-  <div class="relative z-0">
-    <!-- TODO: add image sizing props -->
-    <img src={imgSrc} alt="" class="h-auto w-full" />
-    <div
-      class="absolute bottom-0 left-0 z-10 rounded-tr-3xl bg-beige-300 px-20 py-3 text-sm uppercase"
-    >
-      {sectionTitle}
+<article class="lg:grid lg:h-[571px] lg:place-content-center">
+  <div class="overflow-hidden rounded-xl">
+    <div class="relative z-0">
+      <!-- TODO: add image sizing props -->
+      <img src={imgSrc} alt="" class="aspect-video h-auto w-full" />
+      <div
+        class="absolute bottom-0 left-0 z-10 rounded-tr-3xl bg-beige-300 px-20 py-3 text-sm uppercase"
+      >
+        {sectionTitle}
+      </div>
     </div>
-  </div>
-  <div class="bg-beige-300 px-4">
-    <h2
-      class="line-clamp-1 pt-4 font-big-caslon text-xl capitalize text-brown-600"
-    >
-      {title}
-    </h2>
-    <p class="line-clamp-4 pt-4 text-sm text-rock-200">
-      {description}
-    </p>
-    {
-      hasLink ? (
-        <div class="mt-6 pb-8">
-          <PillShapeLink href={href} variant="dark" title={linkTitle} />
-        </div>
-      ) : (
-        <div class="pb-8" />
-      )
-    }
+    <div class="bg-beige-300 px-4">
+      <h2
+        class="line-clamp-1 pt-4 font-big-caslon text-xl capitalize text-brown-600"
+      >
+        {title}
+      </h2>
+      <p class="line-clamp-4 pt-4 text-sm text-rock-200">
+        {description}
+      </p>
+      {
+        hasLink ? (
+          <div class="mt-6 pb-8">
+            <PillShapeLink href={href} variant="dark" title={linkTitle} />
+          </div>
+        ) : (
+          <div class="pb-8" />
+        )
+      }
+    </div>
   </div>
 </article>
