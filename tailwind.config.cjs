@@ -23,6 +23,7 @@ module.exports = {
         rock: {
           100: "#D6D6D6",
           200: "#8E8E8E",
+          700: "#474747",
         },
         carrot: {
           200: "#EFCEBB",

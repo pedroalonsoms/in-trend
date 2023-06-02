@@ -16,8 +16,10 @@ const { imgSrc, quoteText, quoteAuthor } = Astro.props;
   <img
     src={imgSrc}
     alt=""
-    class="absolute left-0 top-0 -z-10 h-full w-full object-cover"
+    class="absolute left-0 top-0 -z-20 h-full w-full object-cover"
   />
+  <div class="absolute left-0 top-0 -z-10 h-full w-full bg-rock-700 opacity-50">
+  </div>
   <p class="mt-12 text-center text-sm font-medium text-white sm:mt-8">
     {quoteText}
   </p>
