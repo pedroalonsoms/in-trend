@@ -9,6 +9,7 @@ import Footer from "../components/Footer.astro";
 import ReportsSection from "../components/ReportsSection.astro";
 import InTrendIsConnectedRing from "../svgs/InTrendIsConnectedRing.astro";
 import ComingSoonSection from "../components/ComingSoonSection.astro";
+import ExpertQASection from "../components/ExpertQASection.astro";
 ---
 
 <Layout title="In Trend - Our Services">
@@ -117,33 +118,33 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
         <span class="uppercase text-white 2xl:text-xl">
           We're in the loop about:
         </span><br />
-        <span class="font-bold uppercase text-white 2xl:text-xl">
+        <span class="font-black uppercase text-white 2xl:text-xl">
           start-ups and incubators
         </span>
       </p>
       <p class="fade-in-out px-4 text-center">
-        <span class="uppercase text-white 2xl:text-xl"> We attend:</span><br />
-        <span class="font-bold uppercase text-white 2xl:text-xl">
+        <span class="uppercase text-white 2xl:text-xl">We attend:</span><br />
+        <span class="font-black uppercase text-white 2xl:text-xl">
           trade shows + conferences
         </span>
       </p>
       <p class="fade-in-out px-4 text-center">
-        <span class="uppercase text-white 2xl:text-xl"> We talk to:</span><br />
-        <span class="font-bold uppercase text-white 2xl:text-xl">
+        <span class="uppercase text-white 2xl:text-xl">We talk to:</span><br />
+        <span class="font-black uppercase text-white 2xl:text-xl">
           professionals / experts
         </span>
       </p>
       <p class="fade-in-out px-4 text-center">
-        <span class="uppercase text-white 2xl:text-xl"> We analyze:</span><br />
-        <span class="font-bold uppercase text-white 2xl:text-xl">
+        <span class="uppercase text-white 2xl:text-xl">We analyze:</span><br />
+        <span class="font-black uppercase text-white 2xl:text-xl">
           social media
         </span>
       </p>
       <p class="fade-in-out px-4 text-center">
         <span class="uppercase text-white 2xl:text-xl">
-          We have an extensive database:</span
-        ><br />
-        <span class="font-bold uppercase text-white 2xl:text-xl">
+          We have an extensive database:
+        </span><br />
+        <span class="font-black uppercase text-white 2xl:text-xl">
           product | services
         </span>
       </p>
@@ -155,19 +156,19 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
       class="sticky bottom-0 -z-10 flex h-[calc(100vh-1.25rem-1.25rem-1.5rem)] flex-col justify-center bg-gradient-radial from-carrot-600 from-5% via-carrot-400 via-45% to-carrot-200 to-100% px-4 md:h-[calc(100vh-1.25rem-1.25rem-2rem)]"
     >
       <h2
-        class="pt-12 text-center font-big-caslon text-2xl font-light capitalize text-white md:text-4xl"
+        class="pt-12 text-center font-big-caslon text-2xl font-light text-white md:text-3xl"
       >
-        In Trend is connected
+        In Trend is Connected
       </h2>
       <p
-        class="mx-auto mt-2 max-w-xl text-center text-xs leading-relaxed text-white md:mt-4"
+        class="mx-auto mt-2 max-w-2xl text-center leading-relaxed text-white md:mt-4"
       >
         The In-Trend LTD family is a dedicated and dynamic global team with
         proven expertise. We are fed in roots of information, and turn them into
         blooming trees of inspiration.
       </p>
       <div
-        class="is-connected-ring mx-auto mt-6 flex max-h-[576px] w-full max-w-xl flex-grow flex-col pb-12"
+        class="is-connected-ring mx-auto mt-12 flex max-h-[576px] w-full max-w-xl flex-grow flex-col pb-12"
       >
         <InTrendIsConnectedRing class="w-full flex-grow text-white" />
       </div>
@@ -176,7 +177,7 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
 
   <ComingSoonSection />
   <!-- TODO: enable this when required -->
-  <!-- <ExpertQASection /> -->
+  <ExpertQASection />
 
   <Footer />
 </Layout>
