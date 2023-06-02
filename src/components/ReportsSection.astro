@@ -19,119 +19,57 @@ import ReportCard from "./ReportCard.astro";
       the events we've attended...
     </p>
 
-    <div class="mt-10 pb-8">
-      <!-- TODO: this should match the JS breakpoint at 1024px below -->
-      <div class="splide pb-14" id="reports-section__carrousel">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li class="splide__slide">
-              <div class="grid h-full place-items-center">
-                <div class="report-card-width-container lg:w-3/4">
-                  <ReportCard
-                    imgSrc="/images/index/reports/clean-beauty-in-london.jpg"
-                    sectionTitle="Out and about"
-                    title="Clean beauty in london"
-                    description="Annie spent the day at the Clean Beauty in London show at The Brewery near the Barbican. We loved how much Solid Beauty was on show - it truly has gone from eco-necessity to a product to be enjoyed."
-                    hasLink={true}
-                    linkTitle="Find out more"
-                    href="https://www.instagram.com/p/CroOUUFvvGx/"
-                  />
-                </div>
-              </div>
-            </li>
-            <li class="splide__slide">
-              <div class="grid h-full place-items-center">
-                <div class="report-card-width-container lg:w-3/4">
-                  <!-- TODO: host the PDF file on github -->
-                  <ReportCard
-                    imgSrc="/images/index/reports/the-future-of-lip.jpg"
-                    sectionTitle="Report"
-                    title="The Future of Lip"
-                    description="Having a strong lip portfolio is more important than ever, as this product category proves time and time again its recession-resilience. This report contains emerging textures and finishes, growing ingredients, how to address future lip beautification challenges and trends that will shape the category from 2023 and beyond."
-                    hasLink={true}
-                    linkTitle="Download pdf"
-                    href="#"
-                  />
-                </div>
-              </div>
-            </li>
-            <li class="splide__slide">
-              <div class="grid h-full place-items-center">
-                <div class="report-card-width-container lg:w-3/4">
-                  <ReportCard
-                    imgSrc="/images/index/reports/salon-smart-networking-and-speak-event.jpg"
-                    sectionTitle="Out and about"
-                    title="Salon smart networking"
-                    description="Emmanuelle headed down to Salon Smart last month. A business event for hair professionals, it was great to hear about the challenges hairdressers face, and meet lots of creatives."
-                    hasLink={true}
-                    linkTitle="Find out more"
-                    href="https://creativeheadmag.com/salon-smart-2023-the-event-delivering-proactive-advice-to-drive-your-business-forward/"
-                  />
-                </div>
-              </div>
-            </li>
-          </ul>
+    <div class="mt-10 pb-24">
+      <div class="swiper" id="reports-section__carrousel">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <!-- TODO: this should match the JS breakpoint at 1024px below -->
+            <ReportCard
+              imgSrc="/images/index/reports/clean-beauty-in-london.jpg"
+              sectionTitle="Out and about"
+              title="Clean beauty in london"
+              description="Annie spent the day at the Clean Beauty in London show at The Brewery near the Barbican. We loved how much Solid Beauty was on show - it truly has gone from eco-necessity to a product to be enjoyed."
+              hasLink={true}
+              linkTitle="Find out more"
+              href="https://www.instagram.com/p/CroOUUFvvGx/"
+            />
+          </div>
+          <div class="swiper-slide">
+            <!-- TODO: host the PDF file on github -->
+            <ReportCard
+              imgSrc="/images/index/reports/the-future-of-lip.jpg"
+              sectionTitle="Report"
+              title="The Future of Lip"
+              description="Having a strong lip portfolio is more important than ever, as this product category proves time and time again its recession-resilience. This report contains emerging textures and finishes, growing ingredients, how to address future lip beautification challenges and trends that will shape the category from 2023 and beyond."
+              hasLink={true}
+              linkTitle="Download pdf"
+              href="#"
+            />
+          </div>
+          <div class="swiper-slide">
+            <ReportCard
+              imgSrc="/images/index/reports/salon-smart-networking-and-speak-event.jpg"
+              sectionTitle="Out and about"
+              title="Salon smart networking"
+              description="Emmanuelle headed down to Salon Smart last month. A business event for hair professionals, it was great to hear about the challenges hairdressers face, and meet lots of creatives."
+              hasLink={true}
+              linkTitle="Find out more"
+              href="https://creativeheadmag.com/salon-smart-2023-the-event-delivering-proactive-advice-to-drive-your-business-forward/"
+            />
+          </div>
         </div>
-        <!-- Injected via JavaScript -->
-        <ul class="splide__pagination"></ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- TODO: can we use global(#reports-section__carrousel) to make this even fancier? -->
-<style is:global>
-  /* PAGINATION DOTS */
-  #reports-section__carrousel .splide__pagination__page {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-  #reports-section__carrousel .splide__pagination__page.is-active {
-    background-color: black;
-  }
-
-  /* ALL CARDS */
-  #reports-section__carrousel .splide__slide .report-card-width-container {
-    transition: width 0.15s linear;
-  }
-
-  /* ACTIVE CARD (THE CENTER ONE) */
-  #reports-section__carrousel
-    .splide__slide.is-active
-    .report-card-width-container {
-    width: 100%;
-  }
-
-  /* MAKE CARROUSEL GRID ON MOBILE */
-  @media (max-width: 1024px) {
-    #reports-section__carrousel .splide__list {
-      display: grid;
-      gap: 1.5em;
-    }
-  }
-</style>
+<style is:global></style>
 
 <script>
   // TODO: add modular stuff
-  import { Splide } from "@splidejs/splide";
-  import "@splidejs/splide/dist/css/splide.min.css";
+  import Swiper from "swiper";
+  import "swiper/css";
 
-  new Splide("#reports-section__carrousel", {
-    perPage: 3,
-    perMove: 1,
-    type: "loop",
-    interval: 5000,
-    autoplay: true,
-    drag: true,
-    focus: "center",
-    start: 1,
-    pagination: true,
-    arrows: false,
-    speed: 300,
-    flickPower: 100,
-    breakpoints: {
-      1024: {
-        destroy: true,
-      },
-    },
-  }).mount();
+  new Swiper("#reports-section__carrousel", {});
 </script>
