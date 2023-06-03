@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from "astro/types";
+type Props = HTMLAttributes<"svg">;
+const { class: className } = Astro.props;
+---
+
+<svg
+  width="38"
+  height="38"
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 38 38"
+  class={className}
+>
+  <path
+    stroke="currentColor"
+    d="M1 19c0 9.941 8.059 18 18 18s18-8.059 18-18S28.941 1 19 1"></path><path
+    fill="currentColor"
+    d="M25.52 20.479a.5.5 0 0 0 0-.708l-3.183-3.181a.5.5 0 0 0-.707.707l2.829 2.828-2.829 2.828a.5.5 0 0 0 .707.707l3.182-3.181Zm-12.683.146h12.329v-1h-12.33v1Z"
+  ></path>
+</svg>

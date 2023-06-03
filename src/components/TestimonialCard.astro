@@ -9,22 +9,24 @@ interface Props {
 const { imgSrc, description, author, authorJobTitle } = Astro.props;
 ---
 
-<div class="overflow-hidden rounded-2xl">
-  <img src={imgSrc} alt="" class="h-auto w-full" />
-  <div class="bg-white/10 px-8 backdrop-blur-lg lg:px-16">
-    <div class="pt-12">
-      <IconOpenQuote class="mx-auto text-white" />
+<div class="grid place-content-center">
+  <div class="max-w-2xl overflow-hidden rounded-2xl">
+    <img src={imgSrc} alt="" class="h-auto w-full" />
+    <div class="bg-white/10 px-8 backdrop-blur-lg lg:px-16">
+      <div class="pt-12">
+        <IconOpenQuote class="mx-auto text-white" />
+      </div>
+      <p class="mt-6 text-center text-white">
+        {description}
+      </p>
+      <p class="mt-4 text-center font-black text-white">
+        {author}
+      </p>
+      <p class="mt-8 text-center text-sm font-medium text-white">
+        {authorJobTitle}
+      </p>
+      <slot />
+      <div class="pb-10"></div>
     </div>
-    <p class="mt-6 text-center text-white">
-      {description}
-    </p>
-    <p class="mt-4 text-center font-black text-white">
-      {author}
-    </p>
-    <p class="mt-8 text-center text-sm font-medium text-white">
-      {authorJobTitle}
-    </p>
-    <slot />
-    <div class="pb-10"></div>
   </div>
 </div>
