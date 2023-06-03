@@ -21,7 +21,7 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
 
     <div class="mt-10 pb-12">
       <div class="swiper" id="reports-section__carrousel">
-        <div class="swiper-wrapper max-lg:grid max-lg:gap-6">
+        <div class="swiper-wrapper">
           <!-- TODO: can we extract-out this component? -->
           <ReportsSectionSlideBlock />
         </div>
@@ -40,7 +40,7 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
     opacity: 1;
   }
 
-  /* REPORTS SECTION CARROUSEL */
+  /* PAGINATION DOTS SPACING */
   #reports-section__carrousel {
     padding-bottom: 2rem !important;
   }
@@ -48,6 +48,14 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
   @media (min-width: 1280px) {
     #reports-section__carrousel {
       padding-bottom: 4rem !important;
+    }
+  }
+
+  /* STACKING ON MOBILE */
+  @media (max-width: 1024px) {
+    #reports-section__carrousel .swiper-wrapper {
+      display: grid;
+      gap: 1.5rem;
     }
   }
 </style>
