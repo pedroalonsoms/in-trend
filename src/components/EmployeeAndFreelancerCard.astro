@@ -4,18 +4,12 @@ interface Props {
   name: string;
   shortDescription: string;
   longDescription: string;
-  smallImage: boolean;
 }
-const { imgSrc, name, shortDescription, longDescription, smallImage } =
-  Astro.props;
+const { imgSrc, name, shortDescription, longDescription } = Astro.props;
 ---
 
-<div class=`${smallImage ? "w-40 md:w-64" : "w-64"}`>
-  <img
-    src={imgSrc}
-    alt=""
-    class=`rounded-xl object-cover ${smallImage ? "w-40" : "w-64"}`
-  />
+<div>
+  <img src={imgSrc} alt="" class="aspect-square h-60 rounded-xl object-cover" />
   <h3 class="mt-6 font-big-caslon text-2xl">{name}</h3>
   <p class="mt-1 text-sm text-rock-200">
     <span class="font-black">{shortDescription}</span>
