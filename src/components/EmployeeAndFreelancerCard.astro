@@ -8,8 +8,12 @@ interface Props {
 const { imgSrc, name, shortDescription, longDescription } = Astro.props;
 ---
 
-<div>
-  <img src={imgSrc} alt="" class="aspect-square h-60 rounded-xl object-cover" />
+<div class="pr-12 md:px-6">
+  <img
+    src={imgSrc}
+    alt=""
+    class="aspect-square h-auto w-full rounded-xl object-cover"
+  />
   <h3 class="mt-6 font-big-caslon text-2xl">{name}</h3>
   <p class="mt-1 text-sm text-rock-200">
     <span class="font-black">{shortDescription}</span>

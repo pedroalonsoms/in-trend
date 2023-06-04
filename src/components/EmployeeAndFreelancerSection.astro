@@ -15,7 +15,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
 
     <div class="mt-12 pb-10 pl-5 md:px-5">
       <div class="swiper" id="employee-and-freelancer-section__carrousel">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper md:pb-6">
           <div class="swiper-slide">
             <EmployeeAndFreelancerCard
               imgSrc="/images/who-we-are/employee-and-freelancer-pool/nazila-amrin.jpg"
@@ -125,25 +125,34 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
   </div>
 </section>
 
-<style></style>
+<style>
+  .employee-and-freelancer-section__carrousel__button--disabled svg {
+    opacity: 0.5;
+  }
+</style>
 
 <script>
   // TODO: add modular stuff
-  import Swiper, { Autoplay, Navigation } from "swiper";
+  import Swiper, { Autoplay, Navigation, FreeMode } from "swiper";
   import "swiper/css";
 
   new Swiper("#employee-and-freelancer-section__carrousel", {
-    loop: true,
     grabCursor: true,
-    modules: [Autoplay, Navigation],
+    modules: [Autoplay, Navigation, FreeMode],
     autoplay: {
       delay: 5000,
     },
-    spaceBetween: 100,
-    slidesPerView: 4,
+    slidesPerView: 1.5,
     navigation: {
+      disabledClass:
+        "employee-and-freelancer-section__carrousel__button--disabled",
       prevEl: "#employee-and-freelancer-section__carrousel__button-prev",
       nextEl: "#employee-and-freelancer-section__carrousel__button-next",
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 4,
+      },
     },
   });
 </script>
