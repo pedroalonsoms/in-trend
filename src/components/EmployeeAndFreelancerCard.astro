@@ -4,11 +4,18 @@ interface Props {
   name: string;
   shortDescription: string;
   longDescription: string;
+  class: string;
 }
-const { imgSrc, name, shortDescription, longDescription } = Astro.props;
+const {
+  imgSrc,
+  name,
+  shortDescription,
+  longDescription,
+  class: className,
+} = Astro.props;
 ---
 
-<div class=`pr-12 md:px-6`>
+<div class=`pr-12 md:px-6 ${className}`>
   <img
     src={imgSrc}
     alt=""

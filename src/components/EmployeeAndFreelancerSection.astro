@@ -22,6 +22,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
               name="Nazila Amrin"
               shortDescription="Monitors all Middle Eastern trends."
               longDescription="Expertise in beauty content creation & makeup educator - loves & swears by The Ordinary, Glow recipe watermelon moisturizer & Glowish range from Huda Beauty"
+              class="employee-and-freelancer-card odd-card"
             />
           </div>
           <div class="swiper-slide">
@@ -30,6 +31,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
               name="Emmanuelle Bassmann"
               shortDescription="Our founder."
               longDescription="Mainly works on aesthetic medicine. Pioneering and multi-cultural. Loves cacao, Bikram yoga and all things microbiome!"
+              class="employee-and-freelancer-card even-card"
             />
           </div>
           <div class="swiper-slide">
@@ -38,6 +40,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
               name="Annie Johnstone"
               shortDescription="Usually stuck into a make-up report."
               longDescription="Passionate and creative. Loves matcha, all things colorful and a tretinoin that packs a punch"
+              class="employee-and-freelancer-card odd-card"
             />
           </div>
           <div class="swiper-slide">
@@ -46,6 +49,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
               name="Soo Min"
               shortDescription="Korean freelancer."
               longDescription="Loves genderless beauty, sustainable sustainable makeup & skincare products and is obsessed with the brand Hince."
+              class="employee-and-freelancer-card even-card"
             />
           </div>
           <div class="swiper-slide">
@@ -54,6 +58,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
               name="Ming Ding"
               shortDescription="Freelancer for the Chinese market."
               longDescription="Searching for freedom and diversity of the life. Loves marathon, croissant and Florasis's Floral Engraving Phoenix Makeup Palette."
+              class="employee-and-freelancer-card odd-card"
             />
           </div>
           <div class="swiper-slide">
@@ -62,6 +67,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
               name="Tomoko Baba"
               shortDescription="London-based make-up artist and Japanese cosmetics expert."
               longDescription="Loves Italian food, culture and lifestyle. Can't live without hair oil and feeling grateful for scented candles."
+              class="employee-and-freelancer-card even-card"
             />
           </div>
           <div class="swiper-slide">
@@ -70,6 +76,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
               name="Theresa Yee"
               shortDescription="Beauty & wellness journalist."
               longDescription="Fitness addict, endurance runner and skincare obsessed. Loves matcha green tea!"
+              class="employee-and-freelancer-card odd-card"
             />
           </div>
           <div class="swiper-slide">
@@ -78,6 +85,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
               name="Charlotte Ballard"
               shortDescription="Lusually deep in research."
               longDescription="Obsessed with coffee and any beauty product that goes viral on TikTok (especially the Rare Beauty Soft Pinch Liquid Blushes)."
+              class="employee-and-freelancer-card even-card"
             />
           </div>
           <div class="swiper-slide">
@@ -86,6 +94,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
               name="Mary Li"
               shortDescription="The cosmetic science aficionado."
               longDescription="Mainly works on aesthetic medicine and skincare. Outgoing and flexible. Loves coffee, exploring good food and Kiehl's Clearly Corrective Dark Spot Solution."
+              class="employee-and-freelancer-card odd-card"
             />
           </div>
           <div class="swiper-slide">
@@ -94,6 +103,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
               name="Joana Greimers"
               shortDescription="Beauty journalist and hair & make-up artist based in Munich, Germany."
               longDescription="Expert in #glowingskin from inside & outside. Loves a good morning workout, coffee with friends, texturizing hairsprays and is currently obsessed with Allies of Skin skincare."
+              class="employee-and-freelancer-card even-card"
             />
           </div>
           <div class="swiper-slide">
@@ -102,6 +112,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
               name="Angelika Zadranowicz"
               shortDescription="Always discovering new products and innovations."
               longDescription="Loves travelling, reading and the Byredo Mojave Ghost Perfume."
+              class="employee-and-freelancer-card odd-card"
             />
           </div>
         </div>
@@ -125,9 +136,25 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
   </div>
 </section>
 
-<style>
+<style is:global>
   .employee-and-freelancer-section__carrousel__button--disabled svg {
     opacity: 0.5;
+  }
+
+  .swiper-slide .odd-card {
+    transform: scale(1.2);
+  }
+
+  .swiper-slide .even-card {
+    transform: scale(0.8);
+  }
+
+  .swiper-slide .odd-card {
+    transition: transform 0.3s ease;
+  }
+
+  .swiper-slide .even-card {
+    transition: transform 0.3s ease;
   }
 </style>
 
@@ -142,7 +169,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
   import "swiper/css";
   import "swiper/css/effect-coverflow";
 
-  new Swiper("#employee-and-freelancer-section__carrousel", {
+  const swiper = new Swiper("#employee-and-freelancer-section__carrousel", {
     grabCursor: true,
     modules: [Autoplay, Navigation, FreeMode, EffectCoverflow],
     autoplay: {
@@ -156,7 +183,6 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
       nextEl: "#employee-and-freelancer-section__carrousel__button-next",
     },
     loop: true,
-    effect: "coverflow",
     coverflowEffect: {
       rotate: 0,
       depth: 0,
@@ -169,5 +195,41 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
         slidesPerView: 4,
       },
     },
+  });
+
+  swiper.on("slideChange", () => {
+    console.log("CHANGED");
+    const slides = swiper.slides;
+
+    for (let i = 0; i < slides.length; i++) {
+      const card = slides[i]!.querySelector(
+        ".employee-and-freelancer-card"
+      ) as HTMLDivElement;
+
+      if (i % 2 === 0) {
+        card.classList.remove("odd-card");
+        card.classList.add("even-card");
+      } else {
+        card.classList.remove("even-card");
+        card.classList.add("odd-card");
+      }
+    }
+  });
+
+  swiper.on("slideChangeTransitionStart", () => {
+    const currentSlideIndex = swiper.activeIndex;
+    const slides = swiper.slides;
+
+    for (let i = 0; i < slides.length; i++) {
+      const card = slides[i]!.querySelector(
+        ".employee-and-freelancer-card"
+      ) as HTMLDivElement;
+
+      if (i === currentSlideIndex) {
+        card.classList.add("active-card");
+      } else {
+        card.classList.remove("active-card");
+      }
+    }
   });
 </script>
