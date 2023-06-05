@@ -133,12 +133,18 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
 
 <script>
   // TODO: add modular stuff
-  import Swiper, { Autoplay, Navigation, FreeMode } from "swiper";
+  import Swiper, {
+    Autoplay,
+    Navigation,
+    FreeMode,
+    EffectCoverflow,
+  } from "swiper";
   import "swiper/css";
+  import "swiper/css/effect-coverflow";
 
   new Swiper("#employee-and-freelancer-section__carrousel", {
     grabCursor: true,
-    modules: [Autoplay, Navigation, FreeMode],
+    modules: [Autoplay, Navigation, FreeMode, EffectCoverflow],
     autoplay: {
       delay: 5000,
     },
@@ -148,6 +154,15 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
         "employee-and-freelancer-section__carrousel__button--disabled",
       prevEl: "#employee-and-freelancer-section__carrousel__button-prev",
       nextEl: "#employee-and-freelancer-section__carrousel__button-next",
+    },
+    loop: true,
+    effect: "coverflow",
+    coverflowEffect: {
+      rotate: 0,
+      depth: 0,
+      modifier: 3,
+      slideShadows: false,
+      scale: 0.9,
     },
     breakpoints: {
       768: {
