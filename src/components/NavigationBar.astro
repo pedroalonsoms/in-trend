@@ -17,7 +17,7 @@ if (variant === "transparent") {
   navBarVariantIconColor = "text-white";
 } else if (variant === "beige") {
   navBarVariantBgColor = "bg-beige-300";
-  navBarVariantIconColor = "text-black";
+  navBarVariantIconColor = "text-brown-600";
 } else {
   throw new Error(`Unexpected variant ${variant}`);
 }
@@ -27,7 +27,7 @@ if (variant === "transparent") {
 ---
 
 <!-- TODO: move this header outside the navigation bar -->
-<header class="fixed left-0 top-0 z-10 w-full">
+<header class="primary-nav-wrapper fixed left-0 top-0 z-10 w-full">
   <div
     class={`flex items-center justify-between px-5 md:px-14 py-5 ${navBarVariantBgColor}`}
   >
@@ -67,7 +67,7 @@ if (variant === "transparent") {
           </a>
         </div>
         <button class="primary-nav__close-button lg:hidden">
-          <IconClose class="h-12 w-12 text-black" />
+          <IconClose class="h-12 w-12 text-brown-600" />
         </button>
       </div>
     </nav>
@@ -81,6 +81,17 @@ if (variant === "transparent") {
     </button>
   </div>
 </header>
+
+<style is:global>
+  .force-dark-navbar {
+    background-color: #f5f5eb !important;
+  }
+
+  .force-dark-navbar a,
+  .force-dark-navbar svg {
+    color: #333333 !important;
+  }
+</style>
 
 <script>
   // TODO: move this stuff into a /shared folder
@@ -110,10 +121,10 @@ if (variant === "transparent") {
     const variant = primaryNav.nav.getAttribute("data-variant")!;
     if (variant === "transparent") {
       primaryNav.logoIcon.classList.remove("text-white");
-      primaryNav.logoIcon.classList.add("text-black");
+      primaryNav.logoIcon.classList.add("text-brown-600");
 
       primaryNav.toggleButtonIcon.classList.remove("text-white");
-      primaryNav.toggleButtonIcon.classList.add("text-black");
+      primaryNav.toggleButtonIcon.classList.add("text-brown-600");
     }
     isNavOpen = true;
   };
@@ -123,10 +134,10 @@ if (variant === "transparent") {
 
     const variant = primaryNav.nav.getAttribute("data-variant")!;
     if (variant === "transparent") {
-      primaryNav.logoIcon.classList.remove("text-black");
+      primaryNav.logoIcon.classList.remove("text-brown-600");
       primaryNav.logoIcon.classList.add("text-white");
 
-      primaryNav.toggleButtonIcon.classList.remove("text-black");
+      primaryNav.toggleButtonIcon.classList.remove("text-brown-600");
       primaryNav.toggleButtonIcon.classList.add("text-white");
     }
     isNavOpen = false;
