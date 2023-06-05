@@ -52,7 +52,7 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
   }
 
   /* STACKING ON MOBILE */
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     #reports-section__carrousel .swiper-wrapper {
       display: grid;
       gap: 1.5rem;
@@ -96,13 +96,11 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
           modifier: 2.5,
           slideShadows: false,
         },
+        slidesPerView: 2.4,
         autoplay: {
           delay: 5000,
         },
         breakpoints: {
-          1024: {
-            slidesPerView: 2.4,
-          },
           1536: {
             slidesPerView: 2.437,
           },
@@ -131,7 +129,10 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
 
   const mediaQuery = window.matchMedia("(min-width: 1024px)");
   if (mediaQuery.matches) {
+    console.log("MATCHED");
     enableSwiper();
+  } else {
+    disableSwiper();
   }
 
   mediaQuery.addEventListener("change", (e) => {
