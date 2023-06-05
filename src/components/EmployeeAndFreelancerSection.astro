@@ -163,7 +163,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
 
   const swiper = new Swiper("#employee-and-freelancer-section__carrousel", {
     grabCursor: true,
-    modules: [Navigation, FreeMode],
+    modules: [Autoplay, Navigation, FreeMode],
     autoplay: {
       delay: 5000,
     },
@@ -174,7 +174,7 @@ import EmployeeAndFreelancerCard from "./EmployeeAndFreelancerCard.astro";
       prevEl: "#employee-and-freelancer-section__carrousel__button-prev",
       nextEl: "#employee-and-freelancer-section__carrousel__button-next",
     },
-    loop: true,
+    loop: false,
     breakpoints: {
       600: {
         slidesPerView: 4,
