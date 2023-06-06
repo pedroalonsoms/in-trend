@@ -189,15 +189,16 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', (event) => {
-    window.addEventListener('scroll', fadeOnScroll);
+  document.addEventListener("DOMContentLoaded", (event) => {
+    window.addEventListener("scroll", fadeOnScroll);
 
     function fadeOnScroll() {
       const scrollPos = window.scrollY + window.innerHeight;
-      const connectedRingElement = document.querySelector('.is-connected-ring');
+      const connectedRingElement = document.querySelector(".is-connected-ring");
 
       // Get the top and bottom position of the .is-connected-ring element
-      const ringTop = connectedRingElement.getBoundingClientRect().top + window.scrollY;
+      const ringTop =
+        connectedRingElement.getBoundingClientRect().top + window.scrollY;
       const ringBottom = ringTop + connectedRingElement.offsetHeight;
 
       // Reduce the boundaries of the .is-connected-ring by 20%
@@ -207,9 +208,9 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
       const fadeEnd = ringBottom - boundaryReduction;
 
       let fullyOpaqueIndex = 0;
-      
-      for(let i=1; i<=5; i++) {
-        const el = document.getElementById('p' + i);
+
+      for (let i = 1; i <= 5; i++) {
+        const el = document.getElementById("p" + i);
         const elementTop = el.getBoundingClientRect().top + window.scrollY;
         const elementBottom = elementTop + el.offsetHeight;
 
@@ -218,24 +219,23 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
           // Element is within the ring
           if (elementBottom > fadeStart && elementTop < fadeEnd) {
             // Element is within the fade boundaries - full opacity
-            el.style.opacity = '1';
+            el.style.opacity = "1";
             fullyOpaqueIndex = i;
           } else {
             // Element is not within the fade boundaries - full transparency
-            el.style.opacity = '0';
+            el.style.opacity = "0";
           }
         } else {
           // Element is not within the ring - full transparency
-          el.style.opacity = '0';
+          el.style.opacity = "0";
         }
       }
 
       // Update the opacity of the dots
-      for(let i=1; i<=5; i++) {
-          const dot = document.getElementById('dot' + i);
-          dot.style.opacity = (i % 5) + 1 === fullyOpaqueIndex ? '1' : '0.5';
+      for (let i = 1; i <= 5; i++) {
+        const dot = document.getElementById("dot" + i);
+        dot.style.opacity = (i % 5) + 1 === fullyOpaqueIndex ? "1" : "0.5";
       }
-
     }
   });
 </script>
