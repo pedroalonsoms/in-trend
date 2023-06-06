@@ -113,7 +113,7 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
 
   <div>
     <div class="grid gap-[100vh] pt-[calc(51vh)] sm:pt-[calc(50vh)]">
-      <p class="fade-in-out px-4 text-center">
+      <p id="p1" class="fade-in-out px-4 text-center">
         <span class="uppercase text-white 2xl:text-xl">
           We're in the loop about:
         </span><br />
@@ -121,25 +121,25 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
           start-ups and incubators
         </span>
       </p>
-      <p class="fade-in-out px-4 text-center">
+      <p id="p2" class="fade-in-out px-4 text-center">
         <span class="uppercase text-white 2xl:text-xl">We attend:</span><br />
         <span class="font-black uppercase text-white 2xl:text-xl">
           trade shows + conferences
         </span>
       </p>
-      <p class="fade-in-out px-4 text-center">
+      <p id="p3" class="fade-in-out px-4 text-center">
         <span class="uppercase text-white 2xl:text-xl">We talk to:</span><br />
         <span class="font-black uppercase text-white 2xl:text-xl">
           professionals / experts
         </span>
       </p>
-      <p class="fade-in-out px-4 text-center">
+      <p id="p4" class="fade-in-out px-4 text-center">
         <span class="uppercase text-white 2xl:text-xl">We analyze:</span><br />
         <span class="font-black uppercase text-white 2xl:text-xl">
           social media
         </span>
       </p>
-      <p class="fade-in-out px-4 text-center">
+      <p id="p5" class="fade-in-out px-4 text-center">
         <span class="uppercase text-white 2xl:text-xl">
           We have an extensive database:
         </span><br />
@@ -184,34 +184,32 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
 <style>
   .fade-in-out {
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
   }
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", (event) => {
-    window.addEventListener("scroll", fadeOnScroll);
+  document.addEventListener('DOMContentLoaded', (event) => {
+    window.addEventListener('scroll', fadeOnScroll);
 
     function fadeOnScroll() {
       const scrollPos = window.scrollY + window.innerHeight;
-      const elements = document.querySelectorAll(".fade-in-out");
-      const connectedRingElement = document.querySelector(".is-connected-ring");
+      const connectedRingElement = document.querySelector('.is-connected-ring');
 
       // Get the top and bottom position of the .is-connected-ring element
-      const ringTop =
-        connectedRingElement.getBoundingClientRect().top + window.scrollY;
+      const ringTop = connectedRingElement.getBoundingClientRect().top + window.scrollY;
       const ringBottom = ringTop + connectedRingElement.offsetHeight;
-
-      // Create a 10% boundary for fading in and out
-      const boundary = connectedRingElement.offsetHeight * 0.1;
 
       // Reduce the boundaries of the .is-connected-ring by 20%
       const boundaryReduction = connectedRingElement.offsetHeight * 0.2;
 
-      const fadeStart = ringTop + boundary + boundaryReduction;
-      const fadeEnd = ringBottom - boundary - boundaryReduction;
+      const fadeStart = ringTop + boundaryReduction;
+      const fadeEnd = ringBottom - boundaryReduction;
 
-      elements.forEach((el) => {
+      let fullyOpaqueIndex = 0;
+      
+      for(let i=1; i<=5; i++) {
+        const el = document.getElementById('p' + i);
         const elementTop = el.getBoundingClientRect().top + window.scrollY;
         const elementBottom = elementTop + el.offsetHeight;
 
@@ -220,16 +218,24 @@ import ComingSoonSection from "../components/ComingSoonSection.astro";
           // Element is within the ring
           if (elementBottom > fadeStart && elementTop < fadeEnd) {
             // Element is within the fade boundaries - full opacity
-            el.style.opacity = "1";
+            el.style.opacity = '1';
+            fullyOpaqueIndex = i;
           } else {
-            // Element is within the fade boundaries - fading in or out
-            el.style.opacity = "0.5";
+            // Element is not within the fade boundaries - full transparency
+            el.style.opacity = '0';
           }
         } else {
           // Element is not within the ring - full transparency
-          el.style.opacity = "0";
+          el.style.opacity = '0';
         }
-      });
+      }
+
+      // Update the opacity of the dots
+      for(let i=1; i<=5; i++) {
+          const dot = document.getElementById('dot' + i);
+          dot.style.opacity = (i % 5) + 1 === fullyOpaqueIndex ? '1' : '0.5';
+      }
+
     }
   });
 </script>
