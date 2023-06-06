@@ -12,6 +12,7 @@ const { title, description } = Astro.props;
   <head>
     <!-- SEO Tags -->
     <!-- https://www.socialmediatoday.com/news/8-of-the-most-important-html-tags-for-seo/574987/ -->
+    <!-- https://ahrefs.com/blog/open-graph-meta-tags/ -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=7" />
 
@@ -19,6 +20,21 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="Experts, Beauty, Trends, Creativity, Agency, Future, Beauty Partners, London, UK, Lip, Make-Up, Skincare, Hair, Wellness, Fragrance, Nail, Body Care, Salon, Spa, Industry"
+    />
+    <meta name="creator" content="In-Trend Ltd" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content=`${import.meta.env.SITE}/images/main-desktop.webp`
+    />
+    <meta property="og:url" content={import.meta.env.SITE} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_GB" />
 
     <link rel="canonical" href={import.meta.env.SITE} />
     <link rel="icon" type="image/svg+xml" href="/favicon.webp" />
