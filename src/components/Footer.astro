@@ -10,12 +10,14 @@ import IconLinkedin from "../svgs/icons/IconLinkedin.astro";
       <div class="flex gap-9 md:gap-4">
         <a href="https://www.instagram.com/intrendltd/" target="_blank">
           <IconInstagram class="text-white" />
+          <span class="sr-only">Instagram</span>
         </a>
         <a
           href="https://www.linkedin.com/company/in-trend-ltd/mycompany/?viewAsMember=true"
           target="_blank"
         >
           <IconLinkedin class="text-white" />
+          <span class="sr-only">Linked-In</span>
         </a>
       </div>
       <Logo class="hidden h-10 w-auto text-white md:block" />
@@ -27,9 +29,9 @@ import IconLinkedin from "../svgs/icons/IconLinkedin.astro";
       <div>
         <a
           href="mailto:hello@in-trend-ltd.com"
-          class="mt-2 block text-sm text-white">hello@in-trend-ltd.com</a
+          class="block py-1 text-sm text-white">hello@in-trend-ltd.com</a
         >
-        <a href="tel:+4407738204623" class="block text-sm text-white"
+        <a href="tel:+4407738204623" class="block py-1 text-sm text-white"
           >+44 (0) 77 3820 4623</a
         >
       </div>
@@ -39,7 +41,7 @@ import IconLinkedin from "../svgs/icons/IconLinkedin.astro";
       <h2 class="text-xl uppercase text-white">Office</h2>
       <div>
         <p class="mt-1 font-bold text-white">In Trend Ltd.</p>
-        <p class="mt-1 text-sm text-white">
+        <p class="mt-2 text-sm text-white">
           Plexal, Here East <br />
           Hackney Wick, London <br />
           E15 2GW <br />
@@ -51,6 +53,7 @@ import IconLinkedin from "../svgs/icons/IconLinkedin.astro";
     <div class="block md:hidden">
       <a href="/">
         <Logo class="h-10 w-auto text-white" />
+        <span class="sr-only">In-Trend</span>
       </a>
     </div>
   </div>
