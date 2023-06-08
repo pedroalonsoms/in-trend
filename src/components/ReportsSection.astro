@@ -24,6 +24,7 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
         <div class="swiper-wrapper">
           <!-- TODO: can we extract-out this component? -->
           <ReportsSectionSlideBlock />
+          <ReportsSectionSlideBlock />
         </div>
 
         <div class="swiper-pagination"></div>
@@ -86,7 +87,7 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
         centeredSlides: true,
         grabCursor: true,
         initialSlide: 1,
-        loop: false,
+        loop: true,
         spaceBetween: 100,
         modules: [EffectCoverflow, Autoplay, Pagination, Virtual],
         effect: "coverflow",
