@@ -1,4 +1,6 @@
 ---
+import IconArrowLeftRounded from "../svgs/icons/IconArrowLeftRounded.astro";
+import IconArrowRightRounded from "../svgs/icons/IconArrowRightRounded.astro";
 import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
 
 // TODO: fix this prop
@@ -19,7 +21,7 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
       the events we've attended...
     </p>
 
-    <div class="mt-10 pb-12">
+    <div class="mt-10 pb-10">
       <div class="swiper" id="reports-section__carrousel">
         <div class="swiper-wrapper">
           <!-- TODO: can we extract-out this component? -->
@@ -27,7 +29,20 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
           <ReportsSectionSlideBlock />
         </div>
 
-        <div class="swiper-pagination"></div>
+        <div class="mt-16 hidden justify-center gap-40 lg:flex">
+          <div
+            class="swiper-button-prev rounded-full hover:cursor-pointer"
+            id="reports-section__carrousel__button-prev"
+          >
+            <IconArrowLeftRounded class="text-brown-600" />
+          </div>
+          <div
+            class="swiper-button-next rounded-full hover:cursor-pointer"
+            id="reports-section__carrousel__button-next"
+          >
+            <IconArrowRightRounded class="text-brown-600" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -69,15 +84,9 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
    https://codepen.io/EFX/pen/xxKOwLw
    https://css-tricks.com/working-with-javascript-media-queries/
   */
-  import Swiper, {
-    EffectCoverflow,
-    Autoplay,
-    Pagination,
-    Virtual,
-  } from "swiper";
+  import Swiper, { EffectCoverflow, Autoplay, Navigation } from "swiper";
   import "swiper/css";
   import "swiper/css/effect-coverflow";
-  import "swiper/css/pagination";
 
   let swiper: Swiper | undefined;
 
@@ -89,7 +98,7 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
         initialSlide: 1,
         loop: true,
         spaceBetween: 100,
-        modules: [EffectCoverflow, Autoplay, Pagination, Virtual],
+        modules: [EffectCoverflow, Autoplay, Navigation],
         effect: "coverflow",
         coverflowEffect: {
           rotate: 0,
@@ -106,16 +115,10 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
             slidesPerView: 2.437,
           },
         },
-        pagination: {
-          el: ".swiper-pagination",
-          bulletActiveClass:
-            "reports-section__carrousel__swiper-pagination-bullet-active",
-          clickable: true,
-        },
-        virtual: {
-          addSlidesBefore: 1,
-          addSlidesAfter: 1,
-          enabled: false,
+        navigation: {
+          enabled: true,
+          prevEl: "#reports-section__carrousel__button-prev",
+          nextEl: "#reports-section__carrousel__button-next",
         },
       });
     }
