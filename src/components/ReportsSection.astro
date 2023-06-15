@@ -26,7 +26,7 @@ import ReportsSectionSlideBlock from "./ReportsSectionSlideBlock.astro";
         <div class="swiper-wrapper">
           <!-- TODO: can we extract-out this component? -->
           <ReportsSectionSlideBlock />
-          <ReportsSectionSlideBlock class="hidden lg:block" />
+          <ReportsSectionSlideBlock onlyShowOnLg={true} />
         </div>
 
         <div class="mt-16 hidden justify-center gap-40 lg:flex">
