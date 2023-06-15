@@ -1,8 +1,14 @@
 ---
 import ReportCard from "./ReportCard.astro";
+
+export type Props = {
+  class?: string;
+};
+
+const { class: className } = Astro.props;
 ---
 
-<div class="swiper-slide">
+<div class=`swiper-slide ${className}`>
   <!-- TODO: this should match the JS breakpoint at 1024px below -->
   <ReportCard
     imgSrc="/images/index/reports/clean-beauty-in-london.jpg"
@@ -14,7 +20,7 @@ import ReportCard from "./ReportCard.astro";
     href="https://www.instagram.com/p/CroOUUFvvGx/"
   />
 </div>
-<div class="swiper-slide">
+<div class=`swiper-slide ${className}`>
   <!-- TODO: host the PDF file on github -->
   <ReportCard
     imgSrc="/images/index/reports/the-future-of-lip.jpg"
@@ -26,7 +32,7 @@ import ReportCard from "./ReportCard.astro";
     href="/pdfs/in-trend-lip-report-snippet.pdf"
   />
 </div>
-<div class="swiper-slide">
+<div class=`swiper-slide ${className}`>
   <ReportCard
     imgSrc="/images/index/reports/salon-smart-networking-and-speak-event.jpg"
     sectionTitle="Out and about"
@@ -37,7 +43,7 @@ import ReportCard from "./ReportCard.astro";
     href="https://creativeheadmag.com/salon-smart-2023-the-event-delivering-proactive-advice-to-drive-your-business-forward/"
   />
 </div>
-<div class="swiper-slide">
+<div class=`swiper-slide ${className}`>
   <ReportCard
     imgSrc="/images/index/reports/make-up-paris.jpg"
     sectionTitle="Out and about"
