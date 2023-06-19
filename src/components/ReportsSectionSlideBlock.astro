@@ -54,6 +54,17 @@ const { onlyShowOnLg } = Astro.props;
     href="https://www.linkedin.com/posts/anniemegjohnstone_facialcare-aestheticmedicine-beauty-activity-7069684756749115393-98Gb?utm_source=share&utm_medium=member_desktop"
   />
 </div>
+<div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
+  <ReportCard
+    imgSrc="/images/index/reports/fast-track-to-aesthetics.jpg"
+    sectionTitle="Out and about"
+    title="Make-up Paris Presentation"
+    description="Thank you to everyone who came to watch Annie's presentation at @Makeup in Paris. We loved discussing this insightful topic with you all. Drop us an email for the full version."
+    hasLink={true}
+    linkTitle="Find out more"
+    href="/pdfs/fast-track-to-aesthetics.pdf"
+  />
+</div>
 
 <style>
   .onlyShowOnLg {
