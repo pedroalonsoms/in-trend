@@ -31,14 +31,15 @@ const { onlyShowOnLg } = Astro.props;
   />
 </div>
 <div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
+  <!-- TODO: host the PDF file on github -->
   <ReportCard
-    imgSrc="/images/index/reports/back-2-hair-school.jpg"
-    sectionTitle="Out and about"
-    title="Back 2 Hair School"
-    description="There’s no doubt that the Hair market is booming at the moment, with hairstyling products replacing lipstick as the UK’s affordable recession treat. This month, we’ve gone back to hair school with some of our amazing clients! In this Hair Newsletter we explore the developing consumer demand for color analysis, closing the textured hair gap, full head health and the massification of bonding (to name just a few). Want to learn more? Drop us an email today."
+    imgSrc="/images/index/reports/quarterly-hair-newsletter.jpg"
+    sectionTitle="Report"
+    title="Quarterly Hair Newsletter"
+    description="In this Hair Newsletter we explore the developing consumer demand for color analysis, closing the textured hair gap, full head health and the massification of bonding (to name just a few). Want to learn more? Drop us an email today."
     hasLink={true}
-    linkTitle="Find out more"
-    href="https://www.in-trend-ltd.com/contact-us"
+    linkTitle="Download pdf"
+    href="/pdfs/hair-newsletter-october-23.pdf"
   />
 </div>
 <div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
