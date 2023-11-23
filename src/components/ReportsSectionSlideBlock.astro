@@ -9,6 +9,18 @@ const { onlyShowOnLg } = Astro.props;
 ---
 
 <div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
+    <!-- TODO: host the PDF file on github -->
+    <ReportCard
+      imgSrc="/images/index/reports/whats-up-haircare.jpg"
+      sectionTitle="Report"
+      title="What’s Up in Haircare?"
+      description="Want to be in the know about the latest haircare macro and product trends? Our What's Up in Haircare analyzes all global product launches to create product recommendations specific to your product development or marketing needs. Download a snippet of the report here and get in touch for more information."
+      hasLink={true}
+      linkTitle="Download pdf"
+      href="/pdfs/whats-up-haircare.pdf"
+    />
+</div>
+<div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
   <ReportCard
     imgSrc="/images/index/reports/luxepack.jpg"
     sectionTitle="Out and about"
