@@ -11,6 +11,18 @@ const { onlyShowOnLg } = Astro.props;
 <div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
     <!-- TODO: host the PDF file on github -->
     <ReportCard
+      imgSrc="/images/index/reports/Sample-WNISalon.jpg"
+      sectionTitle="Report"
+      title="The Future of Salon"
+      description="The hair salon of the future will be a place for entertainment, health and community. Discover the industry-leading salon concepts and treatments in our Future of Salon report, available now. Swipe for a sneak peek."
+      hasLink={true}
+      linkTitle="Download pdf"
+      href="/pdfs/Sample-WNISalon.pdf"
+    />
+</div>
+<div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
+    <!-- TODO: host the PDF file on github -->
+    <ReportCard
       imgSrc="/images/index/reports/whats-up-haircare.jpg"
       sectionTitle="Report"
       title="What’s Up in Haircare?"
