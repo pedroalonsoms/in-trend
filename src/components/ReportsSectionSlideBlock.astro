@@ -9,6 +9,28 @@ const { onlyShowOnLg } = Astro.props;
 ---
 
 <div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
+    <ReportCard
+      imgSrc="/images/index/reports/latest-beauty-trends.jpg"
+      sectionTitle="Out and About"
+      title="Cosmoprof India"
+      description="Last week, In-Trend had a blast discovering the latest beauty trends and connecting with industry innovators at Cosmoprof India. Swipe through to read some of our key insights from the event :point_right:"
+      hasLink={true}
+      linkTitle="Download pdf"
+      href="/pdfs/latest-beauty-trends.pdf"
+    />
+</div>
+<div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
+    <ReportCard
+      imgSrc="/images/index/reports/mitra-bio.jpg"
+      sectionTitle="Innovator Spotlight"
+      title="Company Profile"
+      description="We're always in the loop about the next up-and-coming beauty innovators and start-ups. Meet Mitra bio the first DNA skin testing that is non-invasive, user-friendly, affordable and ready to be used at home. With an easy-to-use tape that replaces invasive biopsies and a data platform that develops predictive biomarkers, Mitra bio is the future of personalised treatment plans. Want to learn more about the next up-and-coming beauty market players? Drop us an email today."
+      hasLink={true}
+      linkTitle="Download pdf"
+      href="/pdfs/mitra-bio.pdf"
+    />
+</div>
+<div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
     <!-- TODO: host the PDF file on github -->
     <ReportCard
       imgSrc="/images/index/reports/Sample-WNISalon.jpg"
