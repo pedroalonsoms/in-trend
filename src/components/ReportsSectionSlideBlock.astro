@@ -10,6 +10,17 @@ const { onlyShowOnLg } = Astro.props;
 
 <div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
     <ReportCard
+      imgSrc="/images/index/reports/vb-interview.jpg"
+      sectionTitle="Out and About"
+      title="Interview With Victor Bechara"
+      description="Our recent expert interview was with Brazilian dermatologist and aesthetic clinic owner, Victor Bechara. His soft sculpting approach brings forth a new era of dermatology in the country famed for its aesthetic protocols."
+      hasLink={true}
+      linkTitle="Download pdf"
+      href="/pdfs/vb-interview.pdf"
+    />
+</div>
+<div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
+    <ReportCard
       imgSrc="/images/index/reports/latest-beauty-trends.jpg"
       sectionTitle="Out and About"
       title="Cosmoprof India"
