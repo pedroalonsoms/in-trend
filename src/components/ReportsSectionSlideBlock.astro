@@ -10,8 +10,19 @@ const { onlyShowOnLg } = Astro.props;
 
 <div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
     <ReportCard
+      imgSrc="/images/index/reports/06-maca-min.png"
+      sectionTitle="Expert Interview"
+      title="Interview With Maca Barrera"
+      description="In-Trend had the privilege of interviewing Biodesign consultant and sustainability innovator, Maca Barrera, to delve into her work in sustainable UV protection."
+      hasLink={true}
+      linkTitle="Download pdf"
+      href="/pdfs/06-maca.pdf"
+    />
+</div>
+<div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
+    <ReportCard
       imgSrc="/images/index/reports/05-ifeyinwa-min.png"
-      sectionTitle="Out and About"
+      sectionTitle="Expert Interview"
       title="Interview With Ifeyinwa Lauretta"
       description="In-Trend recently sat down with Ifeyinwa Lauretta Ihonor, a medical doctor turned alternative medicine expert and the visionary founder of 8 Within. Her unique apothecary offers ceremonial-grade cacao, meticulously hand-blended with powerful mood-boosting plant extracts and unique herbal tinctures from ancient plant medicines. 8 Within is more than just a wellness brand. It’s a tapestry of cross-culturally sourced plant medicines and practices, creating next-generation products that aim to expand consciousness and elevate the mind."
       hasLink={true}
@@ -22,7 +33,7 @@ const { onlyShowOnLg } = Astro.props;
 <div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
     <ReportCard
       imgSrc="/images/index/reports/04-nika-min.png"
-      sectionTitle="Out and About"
+      sectionTitle="Expert Interview"
       title="Interview With Nika Amrbozic"
       description="At IMCAS, we had the pleasure of meeting @Nika Ambrozic - make-up artist and education advocate.  Nika has recently collaborated with derma brand Sensilis on industry-disrupting extensive 'Make-up Bibles' that promote the importance of hyper-targeting make-up routines towards an individual's skin concerns, especially post-professional services. We sat down again with Nika to further discuss this topic, slow beauty, as well as many more topics impacting the future of the make-up category."
       hasLink={true}
@@ -33,7 +44,7 @@ const { onlyShowOnLg } = Astro.props;
 <div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
     <ReportCard
       imgSrc="/images/index/reports/03-roy-min.png"
-      sectionTitle="Out and About"
+      sectionTitle="Expert Interview"
       title="Interview With Roy Cowley"
       description="Recently, the In-Trend Aesthetic Medicine team had the privilege of interviewing Roy Cowley, the innovative Founder and Managing Director of 3D Aesthetics. His company is at the forefront of non-surgical aesthetic technology, developing multi-technology platform devices and comprehensive skincare solutions. To learn more, click through to read the full interview."
       hasLink={true}
@@ -44,7 +55,7 @@ const { onlyShowOnLg } = Astro.props;
 <div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
     <ReportCard
       imgSrc="/images/index/reports/02-shin-min.png"
-      sectionTitle="Out and About"
+      sectionTitle="Expert Interview"
       title="Interview With Shin Watanabe"
       description="An interactive touchscreen interface designed to intuitively guide consumers through the journey of purchasing fragrance. Leveraging natural language processing AI, it invites users to describe their scent preferences with evocative terms like romantic, unique, and energetic."
       hasLink={true}
@@ -55,7 +66,7 @@ const { onlyShowOnLg } = Astro.props;
 <div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
     <ReportCard
       imgSrc="/images/index/reports/01-sifat-min.png"
-      sectionTitle="Out and About"
+      sectionTitle="Expert Interview"
       title="Interview With Sifat Khurana"
       description="Back in December we spoke with Sifat Khurana, co-founder of leading Indian suncare brand, SunScoop. SPF Amidst India's suncare boom, our conversation highlights the specific desires of its consumers and the vital quest for SPF and ingredient education. For more information on Innovist's brand click here."
       hasLink={true}
@@ -66,7 +77,7 @@ const { onlyShowOnLg } = Astro.props;
 <div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
     <ReportCard
       imgSrc="/images/index/reports/vb-interview.jpg"
-      sectionTitle="Out and About"
+      sectionTitle="Expert Interview"
       title="Interview With Victor Bechara"
       description="Our recent expert interview was with Brazilian dermatologist and aesthetic clinic owner, Victor Bechara. His soft sculpting approach brings forth a new era of dermatology in the country famed for its aesthetic protocols."
       hasLink={true}
@@ -140,18 +151,6 @@ const { onlyShowOnLg } = Astro.props;
     hasLink={true}
     linkTitle="Find out more"
     href="https://www.linkedin.com/feed/update/urn:li:activity:7113145392803770368"
-  />
-</div>
-<div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
-  <!-- TODO: host the PDF file on github -->
-  <ReportCard
-    imgSrc="/images/index/reports/quarterly-hair-newsletter.jpg"
-    sectionTitle="Report"
-    title="Quarterly Hair Newsletter"
-    description="In this Hair Newsletter we explore the developing consumer demand for color analysis, closing the textured hair gap, full head health and the massification of bonding (to name just a few). Want to learn more? Drop us an email today."
-    hasLink={true}
-    linkTitle="Download pdf"
-    href="/pdfs/hair-newsletter-october-23.pdf"
   />
 </div>
 
