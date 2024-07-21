@@ -10,6 +10,17 @@ const { onlyShowOnLg } = Astro.props;
 
 <div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
     <ReportCard
+      imgSrc="/images/index/reports/07-nick-min.png"
+      sectionTitle="Expert Interview"
+      title="Interview With Nick Howard"
+      description="The key to an accurate skin analysis? A ground truth. Eve Lab Insight, founded in 2019, can analyze more than 40 skin dimensions in less than 30 seconds. But how? We sat down with Nick Howard, Director of Global Strategy, to find out how an algorithm built on extensive analysis is the difference between simple marketing and scientifically accurate results. Read more via the link in the bio."
+      hasLink={true}
+      linkTitle="Download pdf"
+      href="/pdfs/07-nick.pdf"
+    />
+</div>
+<div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
+    <ReportCard
       imgSrc="/images/index/reports/06-maca-min.png"
       sectionTitle="Expert Interview"
       title="Interview With Maca Barrera"
