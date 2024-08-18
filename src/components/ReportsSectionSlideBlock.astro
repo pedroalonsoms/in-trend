@@ -10,6 +10,17 @@ const { onlyShowOnLg } = Astro.props;
 
 <div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
     <ReportCard
+      imgSrc="/images/index/reports/08-camsteph-min.png"
+      sectionTitle="Expert Interview"
+      title="Interview With Camille Katona & Stephanie Spence"
+      description="We chatted with Camille Katona and Stephanie Spence, the visionary founders of 19/99 Beauty, about their journey to create a brand that champions age-inclusive beauty. Read the full interview to discover more about their story and the future of age-inclusive beauty."
+      hasLink={true}
+      linkTitle="Download pdf"
+      href="/pdfs/08-camsteph.pdf"
+    />
+</div>
+<div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
+    <ReportCard
       imgSrc="/images/index/reports/07-nick-min.png"
       sectionTitle="Expert Interview"
       title="Interview With Nick Howard"
@@ -151,17 +162,6 @@ const { onlyShowOnLg } = Astro.props;
     hasLink={true}
     linkTitle="Find out more"
     href="https://www.linkedin.com/feed/update/urn:li:activity:7115356284773625858"
-  />
-</div>
-<div class=`swiper-slide ${onlyShowOnLg && "onlyShowOnLg"}`>
-  <ReportCard
-    imgSrc="/images/index/reports/germany-presentation.jpg"
-    sectionTitle="Out and about"
-    title="In-Trend's Germany Presentation on Textured Hair Market Opportunities"
-    description="For the next two days, In-Trend will be in Germany presenting alongside industry experts on the missed opportunities in the textured hair market."
-    hasLink={true}
-    linkTitle="Find out more"
-    href="https://www.linkedin.com/feed/update/urn:li:activity:7113145392803770368"
   />
 </div>
 
